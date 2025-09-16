@@ -2,7 +2,7 @@
 
 import FloatingSelector from "@/components/floating-selector"
 import HeroBackground from "@/components/hero-background"
-import ProjectsSection from "@/components/project-section"
+import PortfolioSection from "@/components/project-section"
 import ClientModal from "@/modal/client-modal"
 import ServiceModal from "@/modal/service-modal"
 import { useState, useEffect } from "react"
@@ -179,7 +179,7 @@ export default function HomePage() {
         onServiceModalOpen={() => setShowServiceModal(true)}
       />
 
-      <ProjectsSection />
+      <PortfolioSection />
     </>
   )
 }
