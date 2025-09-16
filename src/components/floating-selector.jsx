@@ -36,7 +36,7 @@ export default function FloatingSelector({
         className,
       )}
     >
-      <div className="bg-[#cfcdcd] font-sans backdrop-blur-sm px-6 py-4 rounded-lg">
+      <div className="bg-white/60 font-sans backdrop-blur-sm px-3 py-2 rounded-md">
         <div className="flex items-center justify-center gap-2 text-xl text-black">
           <span className="transition-all duration-500">We design</span>
 

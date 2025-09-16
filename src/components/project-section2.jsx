@@ -10,7 +10,7 @@ const projects = [
     title: "Royal Collection Trust",
     description:
       "Design system and retail brand architecture that honours the collection's heritage while enabling the creation of distinctive, high-quality products.",
-    image: "/image.png",
+    image: "/royal.png",
     categories: ["Brand Identity", "Design System"],
     link: "/projects/royal-collection",
     backgroundColor: "bg-slate-800",
@@ -20,7 +20,7 @@ const projects = [
     title: "Behold Wildlife Camera",
     description:
       "Industrial design of a species-detecting AI-powered camera that makes following wildlife in your garden simple, engaging and fun.",
-    image: "/image2.png",
+    image: "/behold.png",
     categories: ["Consumer Brands", "Technology"],
     link: "/projects/wildlife-camera",
     backgroundColor: "bg-gray-200",
@@ -30,7 +30,7 @@ const projects = [
     title: "Together for Palestine",
     description:
       "Visual identity for a new initiative that organises large, mainstream events to shift culture and public discourse on Palestine.",
-    image: "/image.png",
+    image: "/3.png",
     categories: ["Brand Identity", "Social Impact"],
     link: "/projects/together-palestine",
     backgroundColor: "bg-black",
@@ -40,7 +40,7 @@ const projects = [
     title: "KARRI Health Device",
     description:
       "Innovative health monitoring device with intuitive interface design for seamless user experience and medical data tracking.",
-    image: "/image2.png",
+    image: "/kaari.png",
     categories: ["Product Design", "Healthcare"],
     link: "/projects/karri-device",
     backgroundColor: "bg-gray-100",
@@ -50,7 +50,7 @@ const projects = [
     title: "Global Switch",
     description:
       "We design Everything for Everyone - comprehensive digital infrastructure and data center solutions with cutting-edge technology.",
-    image: "/image.png",
+    image: "/global.png",
     categories: ["Technology", "Infrastructure"],
     link: "/projects/global-switch",
     backgroundColor: "bg-emerald-900",
@@ -60,7 +60,7 @@ const projects = [
     title: "Grale",
     description:
       "Modern typography and brand identity system with clean, sophisticated design approach for contemporary business solutions.",
-    image: "/image2.png",
+    image: "/grale.png",
     categories: ["Typography", "Brand Identity"],
     link: "/projects/grale",
     backgroundColor: "bg-white",
@@ -84,26 +84,24 @@ export function PortfolioSection2() {
             onMouseLeave={() => setHoveredCard(null)}
           >
             <Link href={project.link} className="block">
-              <div className="relative overflow-hidden aspect-[4/3] mb-4">
+              <div className="relative overflow-hidden aspect-[4/3] mb-0">
                 <motion.div
-                  className={`absolute inset-0 ${project.backgroundColor}`}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
+                  className={`absolute inset-1`}
                 >
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-[90%] object-cover"
                   />
                 </motion.div>
 
-                {/* Hover overlay */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: hoveredCard === project.id ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 bg-black/20"
-                />
+                {/* Hover overlay
+                // <motion.div
+                //   initial={{ opacity: 0 }}
+                //   animate={{ opacity: hoveredCard === project.id ? 1 : 0 }}
+                //   transition={{ duration: 0.3 }}
+                //   className="absolute inset-0 bg-black/20"
+                // /> */}
               </div>
 
               <motion.div className="text-regular" initial={{ opacity: 0.8 }} whileHover={{ opacity: 1 }} transition={{ duration: 0.2 }}>

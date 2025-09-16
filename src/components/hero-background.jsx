@@ -3,35 +3,35 @@ import { cn } from "@/lib/utils"
 
 const heroImages = [
   {
-    url: "/modern-abstract-design-purple-gradient.jpg",
+    url: "/1.png",
     title: "Natural History Museum",
     subtitle: "Moving the Museum from catalogue to catalyst.",
     service: "Brand Identity",
     client: "Arts & Culture",
   },
   {
-    url: "/geometric-pattern-blue-cyan.jpg",
+    url: "/2.png",
     title: "General Catalyst",
     subtitle: "Designing the future of digital experiences.",
     service: "Brand Strategy",
     client: "Finance",
   },
   {
-    url: "/organic-shapes-green-nature.jpg",
+    url: "/3.png",
     title: "Sustainable Brand Initiative",
     subtitle: "Creating identity systems for environmental impact.",
     service: "Digital Experiences",
     client: "Non-profits",
   },
   {
-    url: "/typography-layout-orange-warm.jpg",
+    url: "/4.png",
     title: "Publishing Revolution",
     subtitle: "Transforming how stories are told and shared.",
     service: "Publications",
     client: "Publishing",
   },
   {
-    url: "/architectural-structure-red-bold.jpg",
+    url: "5.png",
     title: "Urban Development Project",
     subtitle: "Shaping spaces that bring communities together.",
     service: "Signage & Environmental Graphics",

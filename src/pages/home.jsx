@@ -4,6 +4,7 @@ import FloatingSelector from "@/components/floating-selector"
 import HeroBackground from "@/components/hero-background"
 import PortfolioSection from "@/components/project-section"
 import { PortfolioSection2 } from "@/components/project-section2"
+import { Quote } from "@/components/quote"
 import ClientModal from "@/modal/client-modal"
 import ServiceModal from "@/modal/service-modal"
 import { useState, useEffect } from "react"
@@ -181,7 +182,9 @@ export default function HomePage() {
       />
 
       <PortfolioSection />
+      <Quote />
       <PortfolioSection2 />
+      
     </div>
   )
 }
