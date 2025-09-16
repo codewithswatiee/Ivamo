@@ -44,7 +44,7 @@ export default function HeroBackground({ currentImageIndex, onImageChange }) {
   const currentImage = heroImages[currentImageIndex]
 
   return (
-    <section className="relative h-[80vh] overflow-hidden">
+    <section className="relative h-[85vh] overflow-hidden">
       {/* Background Images */}
       <div className="absolute inset-0">
         {heroImages.map((image, index) => (

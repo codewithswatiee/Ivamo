@@ -32,7 +32,7 @@ export default function FloatingSelector({
     <div
       className={cn(
         "fixed left-1/2 transform -translate-x-1/2 z-50 transition-all duration-700 ease-out",
-        isScrolled ? "bottom-8 scale-75 opacity-90" : "top-1/2 -translate-y-1/2 scale-100 opacity-100",
+        isScrolled ? "bottom-2 scale-75 opacity-90" : "top-1/2 -translate-y-1/2 scale-100 opacity-100",
         className,
       )}
     >

@@ -3,6 +3,7 @@
 import FloatingSelector from "@/components/floating-selector"
 import HeroBackground from "@/components/hero-background"
 import PortfolioSection from "@/components/project-section"
+import { PortfolioSection2 } from "@/components/project-section2"
 import ClientModal from "@/modal/client-modal"
 import ServiceModal from "@/modal/service-modal"
 import { useState, useEffect } from "react"
@@ -147,7 +148,7 @@ export default function HomePage() {
   }
 
   return (
-    <>
+    <div className='bg-white'>
       <HeroBackground currentImageIndex={currentImageIndex} onImageChange={setCurrentImageIndex} />
 
       <FloatingSelector
@@ -180,6 +181,7 @@ export default function HomePage() {
       />
 
       <PortfolioSection />
-    </>
+      <PortfolioSection2 />
+    </div>
   )
 }
