@@ -84,14 +84,14 @@ export function PortfolioSection2() {
             onMouseLeave={() => setHoveredCard(null)}
           >
             <Link href={project.link} className="block">
-              <div className="relative overflow-hidden aspect-[4/3] mb-0">
+              <div className="relative overflow-hidden aspect-[4/2.5] mb-0">
                 <motion.div
                   className={`absolute inset-1`}
                 >
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-[90%] object-cover"
+                    className="w-full h-full object-cover"
                   />
                 </motion.div>
 
