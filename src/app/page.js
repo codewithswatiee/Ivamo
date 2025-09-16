@@ -1,3 +1,4 @@
+import FloatingSelector from "@/components/floating-selector";
 import { Header } from "@/components/header";
 import HomePage from "@/pages/home";
 

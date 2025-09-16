@@ -36,14 +36,14 @@ export default function FloatingSelector({
         className,
       )}
     >
-      <div className="bg-white/20 backdrop-blur-md px-8 py-6 rounded-lg border border-white/30 shadow-2xl">
-        <div className="flex items-center justify-center gap-2 text-xl font-medium text-black">
+      <div className="bg-[#cfcdcd] font-sans backdrop-blur-sm px-6 py-4 rounded-lg">
+        <div className="flex items-center justify-center gap-2 text-xl text-black">
           <span className="transition-all duration-500">We design</span>
 
           {/* Service Dropdown */}
           <button
             onClick={onServiceClick}
-            className="inline-flex items-center gap-1 font-bold hover:opacity-80 transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-1 cursor-pointer hover:opacity-80"
           >
             <span className="whitespace-nowrap transition-all duration-500 ease-in-out">
               {isScrolled ? "Everything" : currentService}
@@ -56,7 +56,7 @@ export default function FloatingSelector({
           {/* Client Dropdown */}
           <button
             onClick={onClientClick}
-            className="inline-flex items-center gap-1 font-bold hover:opacity-80 transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-1 hover:opacity-80 cursor-pointer"
           >
             <span className="whitespace-nowrap transition-all duration-500 ease-in-out">
               {isScrolled ? "Everyone" : currentClient}

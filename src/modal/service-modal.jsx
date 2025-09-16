@@ -22,19 +22,19 @@ const designServices = [
 ]
 
 const serviceImages = {
-  Books: "/book-design-typography-layout.jpg",
-  "Brand Identity": "/brand-identity-logo-design.jpg",
-  "Brand Strategy": "/brand-strategy-planning-diagram.jpg",
-  Campaigns: "/marketing-campaign-design-black-white.jpg",
-  "Data Driven Experiences": "/data-visualization-dashboard.png",
-  "Digital Experiences": "/digital-interface-design.jpg",
-  Exhibitions: "/exhibition-design-museum-display.jpg",
-  "Industrial/Product Design": "/product-design-industrial.jpg",
-  "Motion Graphics & Film": "/motion-graphics-film-production.jpg",
-  Packaging: "/package-design-product-branding.jpg",
-  Publications: "/publication-design-magazine-layout.jpg",
-  "Signage & Environmental Graphics": "/environmental-signage-wayfinding.jpg",
-  Typefaces: "/typography-typeface-design-letters.jpg",
+  Books: "https://in.pinterest.com/pin/6896205672964547/",
+  "Brand Identity": "https://in.pinterest.com/pin/844493675684058/",
+  "Brand Strategy": "https://in.pinterest.com/pin/5348093302329626/",
+  Campaigns: "https://in.pinterest.com/pin/1234567890123456/",
+  "Data Driven Experiences": "https://in.pinterest.com/pin/1234567890123456/",
+  "Digital Experiences": "https://in.pinterest.com/pin/1234567890123456/",
+  Exhibitions: "https://in.pinterest.com/pin/1234567890123456/",
+  "Industrial/Product Design": "https://in.pinterest.com/pin/1234567890123456/",
+  "Motion Graphics & Film": "https://in.pinterest.com/pin/1234567890123456/",
+  Packaging: "https://in.pinterest.com/pin/1234567890123456/",
+  Publications: "https://in.pinterest.com/pin/1234567890123456/",
+  "Signage & Environmental Graphics": "https://in.pinterest.com/pin/1234567890123456/",
+  Typefaces: "https://in.pinterest.com/pin/1234567890123456/",
 }
 
 export default function ServiceModal({
@@ -66,11 +66,11 @@ export default function ServiceModal({
         <X className="w-6 h-6 text-white" />
       </button>
 
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl mx-4">
-        <div className="bg-white/95 backdrop-blur-lg rounded-3xl overflow-hidden shadow-2xl">
+      <div className="absolute top-[62%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl mx-4">
+        <div className="bg-gray-100 backdrop-blur-lg rounded-3xl overflow-hidden shadow-2xl">
           {/* Image Section */}
-          <div className="h-96 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50" />
+          <div className="h-96 flex items-center justify-center relative overflow-hidden">
+            <div className="absolute inset-0" />
             <img
               src={serviceImages[displayService] || serviceImages["Brand Strategy"]}
               alt={displayService}
@@ -79,10 +79,10 @@ export default function ServiceModal({
           </div>
 
           {/* Options Section */}
-          <div className="p-8">
-            <div className="space-y-4 mb-8">
+          <div className="p-5">
+            <div className="space-y-4 mb-4">
               {serviceRows.map((row, rowIndex) => (
-                <div key={rowIndex} className="flex flex-wrap justify-center gap-3">
+                <div key={rowIndex} className="flex flex-wrap justify-center gap-2">
                   {row.map((service) => (
                     <button
                       key={service}
@@ -90,10 +90,7 @@ export default function ServiceModal({
                       onMouseEnter={() => setHoveredService(service)}
                       onMouseLeave={() => setHoveredService(null)}
                       className={cn(
-                        "text-black text-base font-medium transition-all duration-300 px-6 py-3 rounded-full border border-gray-300",
-                        selectedService === service
-                          ? "bg-black text-white font-bold border-black scale-105"
-                          : "hover:bg-gray-50 hover:border-gray-500 hover:scale-105 hover:shadow-md",
+                        "text-black cursor-pointer transition-all text-base font-medium px-3 py-1 rounded-sm bg-gray-200 hover:bg-gray-300"
                       )}
                     >
                       {service}
@@ -103,7 +100,7 @@ export default function ServiceModal({
               ))}
             </div>
 
-            <div className="text-center text-black text-xl bg-white/60 backdrop-blur-sm px-8 py-4 rounded-lg border border-gray-200 mx-auto max-w-fit">
+            {/* <div className="text-center text-black text-xl bg-white/60 backdrop-blur-sm px-8 py-4 rounded-lg border border-gray-200 mx-auto max-w-fit">
               <span className="text-gray-600">We design </span>
               <button
                 onClick={onClose}
@@ -121,7 +118,7 @@ export default function ServiceModal({
               >
                 {currentClient} <ChevronDown className="w-5 h-5" />
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
