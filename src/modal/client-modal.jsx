@@ -26,23 +26,23 @@ const clientTypes = [
 ]
 
 const clientImages = {
-  "Arts & Culture": "https://in.pinterest.com/pin/68747264053/",
-  "Civic & Public": "https://in.pinterest.com/pin/375980268891752626/",
-  "Consumer Brands": "https://in.pinterest.com/pin/1234567890123456/",
-  "Education": "https://in.pinterest.com/pin/1234567890123456/",
-  "Entertainment": "https://in.pinterest.com/pin/1234567890123456/",
-  "Fashion & Beauty": "https://in.pinterest.com/pin/1234567890123456/",
-  "Finance": "https://in.pinterest.com/pin/1234567890123456/",
-  "Food & Drink": "https://in.pinterest.com/pin/1234567890123456/",
-  "Health": "https://in.pinterest.com/pin/1234567890123456/",
-  "Hospitality & Travel": "https://in.pinterest.com/pin/1234567890123456/",
-  "Manufacturing & Industrials": "https://in.pinterest.com/pin/1234567890123456/",
-  "Non-profits": "https://in.pinterest.com/pin/1234567890123456/",
-  "Professional Services": "https://in.pinterest.com/pin/1234567890123456/",
-  "Publishing": "https://in.pinterest.com/pin/1234567890123456/",
-  "Real Estate": "https://in.pinterest.com/pin/1234567890123456/",
-  "Technology": "https://in.pinterest.com/pin/1234567890123456/",
-  "Transport": "https://in.pinterest.com/pin/1234567890123456/",
+  "Arts & Culture": "/1.png",
+  "Civic & Public": "/2.png",
+  "Consumer Brands": "/3.png",
+  "Education": "/4.png",
+  "Entertainment": "/5.png",
+  "Fashion & Beauty": "/6.png",
+  "Finance": "/7.png",
+  "Food & Drink": "/8.png",
+  "Health": "/9.png",
+  "Hospitality & Travel": "/10.png",
+  "Manufacturing & Industrials": "/11.png",
+  "Non-profits": "/12.png",
+  "Professional Services": "/13.png",
+  "Publishing": "/14.png",
+  "Real Estate": "/15.png",
+  "Technology": "/16.png",
+  "Transport": "/17.png",
 }
 
 
@@ -73,7 +73,7 @@ export default function ClientModal({
       <div className="absolute top-[62%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl mx-4">
         <div className="bg-gray-100 backdrop-blur-lg rounded-3xl overflow-hidden shadow-2xl">
           {/* Image Section */}
-          <div className="h-96 flex items-center justify-center relative overflow-hidden">
+          <div className="h-96 w-[70%] mt-7 mx-auto flex items-center justify-center relative overflow-hidden">
             <div className="absolute inset-0 " />
             {/* Images need to be added here */}
             <img

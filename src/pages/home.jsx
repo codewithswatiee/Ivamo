@@ -1,10 +1,15 @@
 "use client"
 
+import Carousel from "@/components/carousel"
 import FloatingSelector from "@/components/floating-selector"
 import HeroBackground from "@/components/hero-background"
+import { ImageSection } from "@/components/ImageSection"
 import PortfolioSection from "@/components/project-section"
 import { PortfolioSection2 } from "@/components/project-section2"
 import { Quote } from "@/components/quote"
+import { belowProjects, projects } from "@/data/2sideImageData"
+import { gridData } from "@/data/6gridSection"
+import carouselItems from "@/data/carouselData"
 import ClientModal from "@/modal/client-modal"
 import ServiceModal from "@/modal/service-modal"
 import { useState, useEffect } from "react"
@@ -152,7 +157,7 @@ export default function HomePage() {
     <div className='bg-white'>
       <HeroBackground currentImageIndex={currentImageIndex} onImageChange={setCurrentImageIndex} />
 
-      <FloatingSelector
+      {/* <FloatingSelector
         currentService={designServices[currentServiceIndex]}
         currentClient={clientTypes[currentClientIndex]}
         onServiceClick={() => {
@@ -179,12 +184,14 @@ export default function HomePage() {
         currentClient={clientTypes[currentClientIndex]}
         onClientSelect={handleClientSelect}
         onServiceModalOpen={() => setShowServiceModal(true)}
-      />
+      /> */}
 
-      <PortfolioSection />
-      <Quote />
-      <PortfolioSection2 />
-      
+      <PortfolioSection left={projects.left} right={projects.right} showHeader={true} />
+      <PortfolioSection2 projects={gridData} />
+      <Carousel items={carouselItems} />
+      <PortfolioSection left={belowProjects.left} right={belowProjects.right} />
+      <PortfolioSection2 projects={gridData} />
+      <ImageSection imageAlt={'ivamo-studios'} imageSrcDesktop='/lastSection.png' imageSrcMobile='/lastSection-mobile.png'/>
     </div>
   )
 }

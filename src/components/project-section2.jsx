@@ -4,74 +4,27 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 import Link from "next/link"
 
-const projects = [
-  {
-    id: "royal-collection",
-    title: "Royal Collection Trust",
-    description:
-      "Design system and retail brand architecture that honours the collection's heritage while enabling the creation of distinctive, high-quality products.",
-    image: "/royal.png",
-    categories: ["Brand Identity", "Design System"],
-    link: "/projects/royal-collection",
-    backgroundColor: "bg-slate-800",
-  },
-  {
-    id: "wildlife-camera",
-    title: "Behold Wildlife Camera",
-    description:
-      "Industrial design of a species-detecting AI-powered camera that makes following wildlife in your garden simple, engaging and fun.",
-    image: "/behold.png",
-    categories: ["Consumer Brands", "Technology"],
-    link: "/projects/wildlife-camera",
-    backgroundColor: "bg-gray-200",
-  },
-  {
-    id: "together-palestine",
-    title: "Together for Palestine",
-    description:
-      "Visual identity for a new initiative that organises large, mainstream events to shift culture and public discourse on Palestine.",
-    image: "/3.png",
-    categories: ["Brand Identity", "Social Impact"],
-    link: "/projects/together-palestine",
-    backgroundColor: "bg-black",
-  },
-  {
-    id: "karri-device",
-    title: "KARRI Health Device",
-    description:
-      "Innovative health monitoring device with intuitive interface design for seamless user experience and medical data tracking.",
-    image: "/kaari.png",
-    categories: ["Product Design", "Healthcare"],
-    link: "/projects/karri-device",
-    backgroundColor: "bg-gray-100",
-  },
-  {
-    id: "global-switch",
-    title: "Global Switch",
-    description:
-      "We design Everything for Everyone - comprehensive digital infrastructure and data center solutions with cutting-edge technology.",
-    image: "/global.png",
-    categories: ["Technology", "Infrastructure"],
-    link: "/projects/global-switch",
-    backgroundColor: "bg-emerald-900",
-  },
-  {
-    id: "grale",
-    title: "Grale",
-    description:
-      "Modern typography and brand identity system with clean, sophisticated design approach for contemporary business solutions.",
-    image: "/grale.png",
-    categories: ["Typography", "Brand Identity"],
-    link: "/projects/grale",
-    backgroundColor: "bg-white",
-  },
-]
 
-export function PortfolioSection2() {
+
+export function PortfolioSection2({projects}) {
   const [hoveredCard, setHoveredCard] = useState(null)
 
   return (
-    <section className="py-16 px-4 w-full mx-auto font-regular">
+    <section className="py-3 px-4 w-full mx-auto">
+      {/* Responsive exact pixel font-size overrides for md+ screens and base mobile sizes */}
+      <style>{`
+        /* Mobile (base): title/desc 14px, tags 12px */
+        .ps2-title { font-size: 14px; color: #000000; }
+        .ps2-desc { font-size: 14px; color: #767676; }
+        .ps2-tag { font-size: 12px; background: #EDEDED; color: #000000; }
+
+        /* Desktop & tablet (md+): title/desc 16px, tags 14px */
+        @media (min-width: 768px) {
+          .ps2-title { font-size: 16px !important; }
+          .ps2-desc { font-size: 16px !important; }
+          .ps2-tag { font-size: 14px !important; }
+        }
+      `}</style>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {projects.map((project, index) => (
           <motion.div
@@ -86,7 +39,8 @@ export function PortfolioSection2() {
             <Link href={project.link} className="block">
               <div className="relative overflow-hidden aspect-[4/2.5] mb-0">
                 <motion.div
-                  className={`absolute inset-1`}
+                  /* use inset-0 so the image edges align flush with the container and the text below */
+                  className={`absolute inset-0`}
                 >
                   <img
                     src={project.image || "/placeholder.svg"}
@@ -104,11 +58,13 @@ export function PortfolioSection2() {
                 // /> */}
               </div>
 
-              <motion.div className="text-regular" initial={{ opacity: 0.8 }} whileHover={{ opacity: 1 }} transition={{ duration: 0.2 }}>
-                <h3 className="text-md text-black/90 mb-1 transition-colors">
-                  {project.title}
+              <motion.div className="text-regular mt-2">
+                {/* Title: desktop 16px, mobile 14px, color black */}
+                <h3 className="mb-1 transition-colors ps2-title">
+                  <span className="block md:inline">{project.title}</span>
                 </h3>
-                <p className="text-black/70 text-md font-[520] mb-3">{project.description}</p>
+                {/* Description: color #767676, desktop 16px, mobile 14px */}
+                <p className="mb-3 font-[520] ps2-desc">{project.description}</p>
 
                 <div className="relative overflow-hidden h-8">
                   <motion.div
@@ -133,11 +89,7 @@ export function PortfolioSection2() {
                           duration: 0.3,
                           delay: hoveredCard === project.id ? categoryIndex * 0.1 : 0,
                         }}
-                        className="bg-gray-100 text-gray-800/80 font-[100] px-2 py-0.5 rounded text-sm"
-                        style={{
-                          backgroundColor: "#e5e7eb !important",
-                          color: "#374151 !important",
-                        }}
+                        className="font-[100] px-2 py-0.5 rounded ps2-tag"
                       >
                         {category}
                       </motion.span>
