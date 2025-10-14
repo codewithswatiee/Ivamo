@@ -86,7 +86,7 @@ export const Header = () => {
 
                 {/* mobile controls */}
                 <div className="md:hidden flex items-center gap-3">
-                    <a href="#" className="px-3 py-2 rounded-full bg-white text-black text-sm inline-flex items-center gap-1">Book a Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a href="#" className="px-3 py-2 rounded-full bg-white text-black text-sm inline-flex items-center gap-1 whitespace-nowrap">Book a Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.5 1H10.5V8" stroke="black" stroke-width="1.5"/>
                             <path d="M10.5 1L2.5 9" stroke="black" stroke-width="1.5"/>
                             <path d="M2 9.5L1 10.5" stroke="black" stroke-width="1.5"/>
