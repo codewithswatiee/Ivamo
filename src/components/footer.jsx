@@ -26,7 +26,7 @@ export default function Footer() {
         </div>
 
         {/* main columns */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-36 sm:mb-12">
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-44">
           <div>
             <h4 className="text-gray-300 mb-4">Links</h4>
             <ul className="space-y-2 text-gray-200">
