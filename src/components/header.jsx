@@ -120,7 +120,7 @@ export const Header = () => {
                         className="fixed inset-0 z-50 flex"
                     >
                         <div className="flex-1" onClick={() => setOpen(false)} />
-                        <motion.div className="w-full h-full bg-[#111] text-white p-6 relative" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                        <motion.div className="w-full h-[100vh] bg-[#111] text-white p-6 relative" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                             <button onClick={() => setOpen(false)} aria-label="close menu" className="absolute top-4 right-4 p-2 rounded-md text-[1.5rem]">✕</button>
 
                             <div className="mt-12 mb-6 flex items-center justify-between">
