@@ -1,23 +1,27 @@
 "use client"
+import { useState } from "react"
 import { cn } from "@/lib/utils"
 
 const heroImages = [
   {
-    url: "/chorus_banner.jpg",
+    desktop: "/chorus_banner.jpg",
+    mobile: "/chorus-mobile.jpg",
     title: "Chorus",
     subtitle: "Evolved Moonray into Chorus through a complete rebrand, expressive digital identity, and immersive art-led web experience.",
     service: "Brand Strategy",
     client: "Finance",
   },
   {
-    url: "/init_banner.jpg",
+    desktop: "/init_banner.jpg",
+    mobile: "/init.png",
     title: "INIT",
     subtitle: "Revitalized INIT with a website redesign and expressive packaging that transforms fragrance into intimate, sensory storytelling.",
     service: "Brand Identity",
     client: "Furniture",
   },
   {
-    url: "/Raise_banner.jpg",
+    desktop: "/Raise_banner.jpg",
+    mobile: "/raise.png",
     title: "The Raise Project",
     subtitle: "Interactive website for research-driven child safety education project.",
     service: "Brand Identity",
@@ -26,7 +30,8 @@ const heroImages = [
 ]
 
 
-export default function HeroBackground({ currentImageIndex, onImageChange }) {
+export default function HeroBackground() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const currentImage = heroImages[currentImageIndex] || heroImages[0];
 
   return (
@@ -34,18 +39,33 @@ export default function HeroBackground({ currentImageIndex, onImageChange }) {
       {/* Background Images */}
       <div className="absolute inset-0">
         {heroImages.map((image, index) => (
-          <div
-            key={index}
-            className={cn(
-              "absolute inset-0 transition-opacity duration-1000",
-              index === currentImageIndex ? "opacity-100" : "opacity-0",
-            )}
-            style={{
-              backgroundImage: `url(${image.url})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          />
+          <div key={index}>
+            {/* Desktop background (md+) */}
+            <div
+              className={cn(
+                "hidden md:block absolute inset-0 transition-opacity duration-1000",
+                index === currentImageIndex ? "opacity-100" : "opacity-0",
+              )}
+              style={{
+                backgroundImage: `url(${image.desktop || image.mobile})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            />
+
+            {/* Mobile background (sm) */}
+            <div
+              className={cn(
+                "block md:hidden absolute inset-0 transition-opacity duration-1000",
+                index === currentImageIndex ? "opacity-100" : "opacity-0",
+              )}
+              style={{
+                backgroundImage: `url(${image.mobile || image.desktop})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            />
+          </div>
         ))}
       </div>
       {/* Project Info + Navigation (mobile: stacked, desktop: side-by-side) */}
@@ -58,7 +78,7 @@ export default function HeroBackground({ currentImageIndex, onImageChange }) {
         <div className="flex items-center gap-4 justify-center">
           <button
             aria-label="previous image"
-            onClick={() => onImageChange(Math.max(0, currentImageIndex - 1))}
+            onClick={() => setCurrentImageIndex((i) => Math.max(0, i - 1))}
             className={cn(
               "rounded-md p-4 shadow-sm transition",
               currentImageIndex === 0 ? "bg-[#5E5E5E] text-gray-600 cursor-not-allowed pointer-events-none" : "bg-white/90 cursor-pointer hover:opacity-95",
@@ -72,7 +92,7 @@ export default function HeroBackground({ currentImageIndex, onImageChange }) {
 
           <button
             aria-label="next image"
-            onClick={() => onImageChange(Math.min(heroImages.length - 1, currentImageIndex + 1))}
+            onClick={() => setCurrentImageIndex((i) => Math.min(heroImages.length - 1, i + 1))}
             className={cn(
               "rounded-md p-4 shadow-sm transition",
               currentImageIndex === heroImages.length - 1

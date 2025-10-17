@@ -8,6 +8,7 @@ export default function Carousel({ items }) {
   const trackRef = useRef(null)
   const [index, setIndex] = useState(0)
   const setRefs = useRef([])
+  const isInitialScroll = useRef(true)
   const CARD_WIDTH = 320
   const CARD_GAP = 24 // matches gap-6 (24px)
 
@@ -34,6 +35,12 @@ export default function Carousel({ items }) {
 
   // scroll into view when index changes
   useEffect(() => {
+    // skip scrolling on initial mount to avoid jumping the page
+    if (isInitialScroll.current) {
+      isInitialScroll.current = false
+      return
+    }
+
     // scroll to the set container (desktop behaviour)
     const el = setRefs.current[index]
     if (el && typeof el.scrollIntoView === "function") {
