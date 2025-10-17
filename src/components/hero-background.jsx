@@ -5,9 +5,10 @@ import { cn } from "@/lib/utils"
 const heroImages = [
   {
     desktop: "/chorus_banner.jpg",
-    mobile: "/chorus-mobile.jpg",
+    mobile: "/chorus-mobile.png",
     title: "Chorus",
-    subtitle: "Evolved Moonray into Chorus through a complete rebrand, expressive digital identity, and immersive art-led web experience.",
+    subtitle:
+      "Evolved Moonray into Chorus through a complete rebrand, expressive digital identity, and immersive art-led web experience.",
     service: "Brand Strategy",
     client: "Finance",
   },
@@ -15,7 +16,8 @@ const heroImages = [
     desktop: "/init_banner.jpg",
     mobile: "/init.png",
     title: "INIT",
-    subtitle: "Revitalized INIT with a website redesign and expressive packaging that transforms fragrance into intimate, sensory storytelling.",
+    subtitle:
+      "Revitalized INIT with a website redesign and expressive packaging that transforms fragrance into intimate, sensory storytelling.",
     service: "Brand Identity",
     client: "Furniture",
   },
@@ -32,7 +34,7 @@ const heroImages = [
 
 export default function HeroBackground() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const currentImage = heroImages[currentImageIndex] || heroImages[0];
+  const currentImage = heroImages[currentImageIndex] || heroImages[0]
 
   return (
     <section className="relative h-[92vh] overflow-hidden">
@@ -50,6 +52,8 @@ export default function HeroBackground() {
                 backgroundImage: `url(${image.desktop || image.mobile})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundColor: "#0b0b0b",
               }}
             />
 
@@ -63,11 +67,14 @@ export default function HeroBackground() {
                 backgroundImage: `url(${image.mobile || image.desktop})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundColor: "#0b0b0b",
               }}
             />
           </div>
         ))}
       </div>
+
       {/* Project Info + Navigation (mobile: stacked, desktop: side-by-side) */}
       <div className="absolute bottom-8 left-0 right-0 px-6 md:px-8 text-white flex flex-col md:flex-row items-center md:items-end justify-between">
         <div className="w-full md:w-auto text-left md:text-left mb-4 md:mb-0">
@@ -81,12 +88,14 @@ export default function HeroBackground() {
             onClick={() => setCurrentImageIndex((i) => Math.max(0, i - 1))}
             className={cn(
               "rounded-md p-4 shadow-sm transition",
-              currentImageIndex === 0 ? "bg-[#5E5E5E] text-gray-600 cursor-not-allowed pointer-events-none" : "bg-white/90 cursor-pointer hover:opacity-95",
+              currentImageIndex === 0
+                ? "bg-[#5E5E5E] text-gray-600 cursor-not-allowed pointer-events-none"
+                : "bg-white/90 cursor-pointer hover:opacity-95",
             )}
             disabled={currentImageIndex === 0}
           >
             <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 9.5L2 5.5M2 5.5L6 1.5M2 5.5H12" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>
+              <path d="M6 9.5L2 5.5M2 5.5L6 1.5M2 5.5H12" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10" />
             </svg>
           </button>
 
@@ -102,8 +111,8 @@ export default function HeroBackground() {
             disabled={currentImageIndex === heroImages.length - 1}
           >
             <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 9L10 5L6 1" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>
-              <path d="M10 5H0" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>
+              <path d="M6 9L10 5L6 1" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10" />
+              <path d="M10 5H0" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10" />
             </svg>
           </button>
         </div>
