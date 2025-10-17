@@ -64,7 +64,7 @@ export function PortfolioSection2({projects}) {
                   <span className="block md:inline">{project.title}</span>
                 </h3>
                 {/* Description: color #767676, desktop 16px, mobile 14px */}
-                <p className="mb-3 font-[520] ps2-desc">{project.description}</p>
+                <p className="mb-3 ps2-desc">{project.description}</p>
 
                 <div className="relative overflow-hidden h-8">
                   <motion.div
