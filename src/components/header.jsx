@@ -69,17 +69,12 @@ export const Header = () => {
                     <a className="hover:text-gray-400 transition-colors" href="#">About</a>
                     <a className="hover:text-gray-400 transition-colors" href="#">News</a>
                     <a className="hover:text-gray-400 transition-colors" href="#">Contact</a>
-                    <button aria-label="search" className="p-2 rounded-full hover:bg-white/10 transition">
-                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.82812 15C13.1418 15 15.8281 12.3137 15.8281 9C15.8281 5.68629 13.1418 3 9.82812 3C6.51442 3 3.82812 5.68629 3.82812 9C3.82812 12.3137 6.51442 15 9.82812 15Z" stroke="white" strokeOpacity="0.7" stroke-width="1.5"/>
-                        <path d="M13.8281 13L18.8281 18" stroke="white" stroke-opacity="0.7" stroke-width="1.5"/>
-                        </svg>
-                    </button>
+                    
                     <a href="#" className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-white text-black font-medium hover:opacity-95 transition">Book a Call
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.5 1H10.5V8" stroke="black" stroke-width="1.5"/>
-                            <path d="M10.5 1L2.5 9" stroke="black" stroke-width="1.5"/>
-                            <path d="M2 9.5L1 10.5" stroke="black" stroke-width="1.5"/>
+                            <path d="M3.5 1H10.5V8" stroke="black" strokeWidth="1.5"/>
+                            <path d="M10.5 1L2.5 9" stroke="black" strokeWidth="1.5"/>
+                            <path d="M2 9.5L1 10.5" stroke="black" strokeWidth="1.5"/>
                         </svg>
                     </a>
                 </nav>
@@ -87,22 +82,16 @@ export const Header = () => {
                 {/* mobile controls */}
                 <div className="md:hidden ml-3 flex items-center gap-2">
                     <a href="#" className="px-3 py-2 rounded-full bg-white text-black text-sm inline-flex items-center gap-1 whitespace-nowrap">Book a Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.5 1H10.5V8" stroke="black" stroke-width="1.5"/>
-                            <path d="M10.5 1L2.5 9" stroke="black" stroke-width="1.5"/>
-                            <path d="M2 9.5L1 10.5" stroke="black" stroke-width="1.5"/>
+                            <path d="M3.5 1H10.5V8" stroke="black" strokeWidth="1.5"/>
+                            <path d="M10.5 1L2.5 9" stroke="black" strokeWidth="1.5"/>
+                            <path d="M2 9.5L1 10.5" stroke="black" strokeWidth="1.5"/>
                         </svg></a>
-                    <button aria-label="search" className="p-2 rounded-full hover:bg-white/10 transition">
-                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.82812 15C13.1418 15 15.8281 12.3137 15.8281 9C15.8281 5.68629 13.1418 3 9.82812 3C6.51442 3 3.82812 5.68629 3.82812 9C3.82812 12.3137 6.51442 15 9.82812 15Z" stroke="white" stroke-opacity="0.7" stroke-width="1.5"/>
-                        <path d="M13.8281 13L18.8281 18" stroke="white" strokeOpacity="0.7" stroke-width="1.5"/>
-                        </svg>
-                    </button>
                     <button aria-label="open menu" onClick={() => setOpen(true)} className="p-2 rounded-md">
                         
                         <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15.5 0.543945H1" stroke="white" stroke-linecap="square"/>
-                        <path d="M15.5 6.54395H1" stroke="white" stroke-linecap="square"/>
-                        <path d="M15.5 12.5439H1" stroke="white" stroke-linecap="square"/>
+                        <path d="M15.5 0.543945H1" stroke="white" strokeLinecap="square"/>
+                        <path d="M15.5 6.54395H1" stroke="white" strokeLinecap="square"/>
+                        <path d="M15.5 12.5439H1" stroke="white" strokeLinecap="square"/>
                         </svg>
 
                     </button>

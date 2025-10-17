@@ -3,48 +3,34 @@ import { cn } from "@/lib/utils"
 
 const heroImages = [
   {
-    url: "/1.png",
-    title: "Natural History Museum",
-    subtitle: "Moving the Museum from catalogue to catalyst.",
-    service: "Brand Identity",
-    client: "Arts & Culture",
-  },
-  {
-    url: "/2.png",
-    title: "General Catalyst",
-    subtitle: "Designing the future of digital experiences.",
+    url: "/chorus_banner.jpg",
+    title: "Chorus",
+    subtitle: "Evolved Moonray into Chorus through a complete rebrand, expressive digital identity, and immersive art-led web experience.",
     service: "Brand Strategy",
     client: "Finance",
   },
   {
-    url: "/3.png",
-    title: "Sustainable Brand Initiative",
-    subtitle: "Creating identity systems for environmental impact.",
-    service: "Digital Experiences",
-    client: "Non-profits",
+    url: "/init_banner.jpg",
+    title: "INIT",
+    subtitle: "Revitalized INIT with a website redesign and expressive packaging that transforms fragrance into intimate, sensory storytelling.",
+    service: "Brand Identity",
+    client: "Furniture",
   },
   {
-    url: "/4.png",
-    title: "Publishing Revolution",
-    subtitle: "Transforming how stories are told and shared.",
-    service: "Publications",
-    client: "Publishing",
-  },
-  {
-    url: "5.png",
-    title: "Urban Development Project",
-    subtitle: "Shaping spaces that bring communities together.",
-    service: "Signage & Environmental Graphics",
-    client: "Civic & Public",
+    url: "/Raise_banner.jpg",
+    title: "The Raise Project",
+    subtitle: "Interactive website for research-driven child safety education project.",
+    service: "Brand Identity",
+    client: "Arts & Culture",
   },
 ]
 
 
 export default function HeroBackground({ currentImageIndex, onImageChange }) {
-  const currentImage = heroImages[currentImageIndex]
+  const currentImage = heroImages[currentImageIndex] || heroImages[0];
 
   return (
-    <section className="relative h-[85vh] overflow-hidden">
+    <section className="relative h-[100vh] overflow-hidden">
       {/* Background Images */}
       <div className="absolute inset-0">
         {heroImages.map((image, index) => (
@@ -64,16 +50,6 @@ export default function HeroBackground({ currentImageIndex, onImageChange }) {
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/60" />
       </div>
-
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative w-[500px] h-[500px]">
-          {/* Large circular logo/design */}
-          <div className="absolute inset-0 rounded-full border-[40px] border-white/90 flex items-center justify-center">
-            <div className="text-white text-[120px] font-bold">C</div>
-          </div>
-        </div>
-      </div>
-
       {/* Project Info */}
       <div className="absolute bottom-8 left-8 text-white">
         <h3 className="text-2xl font-bold mb-2">{currentImage.title}</h3>

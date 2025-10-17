@@ -4,8 +4,8 @@ import Carousel from "@/components/carousel"
 import FloatingSelector from "@/components/floating-selector"
 import HeroBackground from "@/components/hero-background"
 import { ImageSection } from "@/components/ImageSection"
-import PortfolioSection from "@/components/project-section"
-import { PortfolioSection2 } from "@/components/project-section2"
+import PortfolioSection from "@/components/work-banner"
+import { PortfolioSection2 } from "@/components/gridSection"
 import { Quote } from "@/components/quote"
 import { belowProjects, projects } from "@/data/2sideImageData"
 import { gridData } from "@/data/6gridSection"
@@ -154,7 +154,7 @@ export default function HomePage() {
   }
 
   return (
-    <div className='bg-white'>
+    <div>
       <HeroBackground currentImageIndex={currentImageIndex} onImageChange={setCurrentImageIndex} />
 
       {/* <FloatingSelector
@@ -190,7 +190,6 @@ export default function HomePage() {
       <PortfolioSection2 projects={gridData} />
       <Carousel items={carouselItems} />
       <PortfolioSection left={belowProjects.left} right={belowProjects.right} />
-      <PortfolioSection2 projects={gridData} />
       <ImageSection imageAlt={'ivamo-studios'} imageSrcDesktop='/lastSection.png' imageSrcMobile='/lastSection-mobile.png'/>
     </div>
   )

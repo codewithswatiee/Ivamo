@@ -59,40 +59,26 @@ const serviceImages = {
 }
 
 const heroImages = [
-  {
-    url: "/modern-abstract-design-purple-gradient.jpg",
-    title: "Natural History Museum",
-    subtitle: "Moving the Museum from catalogue to catalyst.",
+ {
+    url: "/burosys.png",
+    title: "Burosys",
+    subtitle: "Elevated the digital presence of Burosys with a website revamp, refined UI/UX, and cohesive high-end visual campaigns.",
     service: "Brand Identity",
     client: "Arts & Culture",
   },
   {
-    url: "/geometric-pattern-blue-cyan.jpg",
-    title: "General Catalyst",
-    subtitle: "Designing the future of digital experiences.",
+    url: "/chorus.png",
+    title: "Chorus",
+    subtitle: "Evolved Moonray into Chorus through a complete rebrand, expressive digital identity, and immersive art-led web experience.",
     service: "Brand Strategy",
     client: "Finance",
   },
   {
-    url: "/organic-shapes-green-nature.jpg",
-    title: "Sustainable Brand Initiative",
-    subtitle: "Creating identity systems for environmental impact.",
-    service: "Digital Experiences",
-    client: "Non-profits",
-  },
-  {
-    url: "/typography-layout-orange-warm.jpg",
-    title: "Publishing Revolution",
-    subtitle: "Transforming how stories are told and shared.",
-    service: "Publications",
-    client: "Publishing",
-  },
-  {
-    url: "/architectural-structure-red-bold.jpg",
-    title: "Urban Development Project",
-    subtitle: "Shaping spaces that bring communities together.",
-    service: "Signage & Environmental Graphics",
-    client: "Civic & Public",
+    url: "/rcomfort.png",
+    title: "RComfort",
+    subtitle: "Redefined R Comfort’s identity with a full rebrand and digital experience that elevates handcrafted furniture into a modern symbol of luxury living.",
+    service: "Brand Identity",
+    client: "Furniture",
   },
 ]
 

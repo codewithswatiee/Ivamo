@@ -45,7 +45,7 @@ export default function Carousel({ items }) {
     <div className="w-full bg-black text-white px-4">
       {/* top: header with title + description on left, nav on right */}
       <div className="mx-auto py-8 flex items-center justify-between gap-2 px-3">
-        <div className="flex-1 max-w-[70vw]">
+        <div className="flex-1 max-w-[77vw]">
           <h2 className="carousel-title">Designed for Now. Built for What’s Next.</h2>
           <p className="mt-3 carousel-desc">At Ivamo Studios, we design with purpose and build with perspective. Every brand has a story waiting to be redefined—our job is to translate that story into bold identities, intuitive interfaces, and digital experiences that feel unmistakably today while shaping tomorrow. We don’t just design brands; we evolve them for the world ahead.</p>
         </div>
@@ -95,10 +95,10 @@ export default function Carousel({ items }) {
       </div>
 
       {/* bottom quote */}
-      <div className="mx-auto border-t border-gray-700 py-10 text-left">
+      {/* <div className="mx-auto border-t border-gray-700 py-10 text-left">
         <blockquote className="carousel-quote">I believe design starts with truly understanding the problem—listening closely, questioning deeply, and then creating solutions that have real meaning and purpose.</blockquote>
         <div className="author">Shruti Mohan - Founder, Ivamo Studios</div>
-      </div>
+      </div> */}
 
       <style jsx>{`
         :global(body) { background: #000 }
@@ -113,21 +113,16 @@ export default function Carousel({ items }) {
         /* hide scrollbar (modern) */
         .carousel-track::-webkit-scrollbar { display: none }
         .carousel-track { -ms-overflow-style: none; scrollbar-width: none }
-
-        .carousel-quote { font-size: 32px; color: #ffffff; max-width: 900px; margin: 0 0 0 40% }
-        .author { margin: 4px 0 0 40%; font-size: 16px; }
         /* Desktop sizes */
         @media (min-width: 768px) {
           .carousel-title { font-size: 52px }
           .carousel-desc { font-size: 18px }
-          .carousel-quote { font-size: 32px }
         }
 
         /* Mobile sizes */
         @media (max-width: 767px) {
           .carousel-title { font-size: 36px }
-          .carousel-desc { font-size: 16px }
-          .carousel-quote { font-size: 24px }
+          .carousel-desc { font-size: 16px; text-align: justify }
         }
 
         /* exact card text sizes */
