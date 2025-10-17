@@ -7,9 +7,9 @@ import { ImageSection } from "@/components/ImageSection"
 import PortfolioSection from "@/components/work-banner"
 import { PortfolioSection2 } from "@/components/gridSection"
 import { Quote } from "@/components/quote"
-import { belowProjects, projects } from "@/data/2sideImageData"
-import { gridData } from "@/data/6gridSection"
-import carouselItems from "@/data/carouselData"
+import { belowProjects, projects } from "@/data/home/2sideImageData"
+import { gridData } from "@/data/home/6gridSection"
+import carouselItems from "@/data/home/carouselData"
 import { useState, useEffect } from "react"
 
 

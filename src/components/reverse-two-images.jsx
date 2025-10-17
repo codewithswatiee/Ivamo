@@ -4,14 +4,14 @@ import { useState } from "react"
 import Link from "next/link"
 
 
-export default function PortfolioSection({ left, right, headerLabel = "See latest projects", showHeader = false }) {
+export default function ReversePortfolioSection({ left, right, headerLabel = "See latest projects", showHeader = false }) {
   const [leftHovered, setLeftHovered] = useState(false)
   const [rightHovered, setRightHovered] = useState(false)
 
   const isExternal = (url) => /^https?:\/\//i.test(url)
 
   return (
-    <div className="w-full">
+    <div className="w-full mt-5 bg-white mb-3">
       {/* Header */}
       {showHeader && <div className="text-center font-regular py-4">
         <p className="text-gray-400 text-md">{headerLabel}</p>
@@ -24,9 +24,9 @@ export default function PortfolioSection({ left, right, headerLabel = "See lates
 
   {/* Portfolio Grid */}
   {/* NOTE: Keep original spacing and sizes on desktop; on mobile stack naturally without forcing full viewport height */}
-  <div className="flex gap-3 px-4 mb-2 pt-4 flex-col md:flex-row">
+  <div className="flex gap-3 px-4 mb-2 flex-col md:flex-row">
         {/* Left Project */}
-        <div className="flex-1 cursor-pointer">
+  <div className="flex-2 cursor-pointer">
           {/* Image Container with Link */}
           <div
             className="relative mb-3"
@@ -76,7 +76,7 @@ export default function PortfolioSection({ left, right, headerLabel = "See lates
         </div>
 
         {/* Right Project */}
-  <div className="flex-2 cursor-pointer">
+  <div className="flex-1 cursor-pointer">
           {/* Image Container with Link */}
           <div
             onMouseEnter={() => setRightHovered(true)}
@@ -95,8 +95,8 @@ export default function PortfolioSection({ left, right, headerLabel = "See lates
                 <img
                   src={right.imageSrcMobile || right.imageSrc || "/placeholder.svg"}
                   alt={right.imageAlt || right.alt}
-                  className="w-full object-cover h-[420px] md:h-[620px]"
-                  style={{ minHeight: '320px' }}
+                  className="w-full object-cover h-[50%] md:h-[50%]"
+                  style={{ minHeight: '60px' }}
                 />
               </picture>
             </Link>
