@@ -46,14 +46,13 @@ export default function ProjectPage({ params }) {
         </div>
       </section>
 
-      {/* Remaining images */}
       {item.images && item.images.length > 2 && (
-        <section className="max-w-6xl mx-auto p-6 md:p-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {item.images.slice(2).map((src, i) => (
-              <img key={i} src={src} alt={`${item.title} ${i + 3}`} className="w-full h-72 object-cover rounded" />
-            ))}
-          </div>
+        <section className="space-y-8">
+          {item.images.slice(2).map((src, i) => (
+            <div key={i} className="w-full p-3">
+              <img src={src} alt={`${item.title} ${i + 3}`} className="w-full h-auto md:h-auto object-cover" />
+            </div>
+          ))}
         </section>
       )}
     </main>
