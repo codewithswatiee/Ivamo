@@ -1,7 +1,6 @@
 "use client"
 
 import Carousel from "@/components/carousel"
-import FloatingSelector from "@/components/floating-selector"
 import HeroBackground from "@/components/hero-background"
 import { ImageSection } from "@/components/ImageSection"
 import PortfolioSection from "@/components/work-banner"
