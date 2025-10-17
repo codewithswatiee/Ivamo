@@ -154,7 +154,7 @@ export default function HomePage() {
   }
 
   return (
-    <div>
+    <div className="bg-white">
       <HeroBackground currentImageIndex={currentImageIndex} onImageChange={setCurrentImageIndex} />
 
       {/* <FloatingSelector

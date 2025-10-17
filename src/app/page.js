@@ -5,7 +5,7 @@ import HomePage from "@/pages/home";
 
 export default function Home() {
   return (
-    <div className="bg-white">
+    <div>
       <Header />
       <HomePage />
       <Footer />

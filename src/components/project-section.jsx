@@ -11,7 +11,7 @@ export default function PortfolioSection({ left, right, headerLabel = "See lates
   const isExternal = (url) => /^https?:\/\//i.test(url)
 
   return (
-    <div className="w-full mt-5">
+    <div className="w-full mt-5 bg-white">
       {/* Header */}
       {showHeader && <div className="text-center font-regular py-4">
         <p className="text-gray-400 text-md">{headerLabel}</p>
@@ -95,8 +95,8 @@ export default function PortfolioSection({ left, right, headerLabel = "See lates
                 <img
                   src={right.imageSrcMobile || right.imageSrc || "/placeholder.svg"}
                   alt={right.imageAlt || right.alt}
-                  className="w-full object-cover h-[420px] md:h-[520px]"
-                  style={{ minHeight: '320px' }}
+                  className="w-full object-cover h-[620px] md:h-[620px]"
+                  style={{ minHeight: '620px' }}
                 />
               </picture>
             </Link>

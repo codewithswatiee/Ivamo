@@ -30,7 +30,7 @@ export default function HeroBackground({ currentImageIndex, onImageChange }) {
   const currentImage = heroImages[currentImageIndex] || heroImages[0];
 
   return (
-    <section className="relative h-[100vh] overflow-hidden">
+    <section className="relative h-[92vh] overflow-hidden">
       {/* Background Images */}
       <div className="absolute inset-0">
         {heroImages.map((image, index) => (
@@ -57,17 +57,28 @@ export default function HeroBackground({ currentImageIndex, onImageChange }) {
       </div>
 
       {/* Navigation Dots */}
-      <div className="absolute bottom-8 right-8 flex space-x-2">
-        {heroImages.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => onImageChange(index)}
-            className={cn(
-              "w-3 h-3 rounded-full transition-all duration-300",
-              index === currentImageIndex ? "bg-white" : "bg-white/40",
-            )}
-          />
-        ))}
+      <div className="absolute bottom-8 right-8 flex items-center gap-4">
+        {/* prev / next buttons */}
+        <button
+          aria-label="previous image"
+          onClick={() => onImageChange(Math.max(0, currentImageIndex - 1))}
+          className="bg-white/90 rounded-md p-3 shadow-sm hover:opacity-95 transition"
+        >
+          <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9.5L2 5.5M2 5.5L6 1.5M2 5.5H12" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>
+          </svg>
+        </button>
+
+        <button
+          aria-label="next image"
+          onClick={() => onImageChange(Math.min(heroImages.length - 1, currentImageIndex + 1))}
+          className="bg-white/90 rounded-md p-3 shadow-sm hover:opacity-95 transition"
+        >
+          <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9L10 5L6 1" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>
+            <path d="M10 5H0" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>
+          </svg>
+        </button>
       </div>
     </section>
   )

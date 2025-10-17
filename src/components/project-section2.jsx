@@ -10,7 +10,7 @@ export function PortfolioSection2({projects}) {
   const [hoveredCard, setHoveredCard] = useState(null)
 
   return (
-    <section className="py-3 px-4 w-full mx-auto">
+    <section className="py-3 px-4 w-full mx-auto bg-white">
       {/* Responsive exact pixel font-size overrides for md+ screens and base mobile sizes */}
       <style>{`
         /* Mobile (base): title/desc 14px, tags 12px */

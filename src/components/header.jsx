@@ -54,7 +54,7 @@ export const Header = () => {
                 initial={false}
                 animate={{ y: isDesktop ? (visible ? 0 : -120) : 0 }}
                 transition={{ duration: 0.22 }}
-                className="sticky top-0 z-40 bg-black/95 backdrop-blur-sm flex items-center justify-between text-white py-4 px-4 md:px-8 shadow-sm"
+                className="sticky top-0 z-40 bg-[#000000]/88 flex items-center justify-between text-white py-4 px-4 md:px-8 shadow-sm"
             >
                 <a href="/" className="font-[900] font-laLuxes text-lg cursor-pointer">
                     <svg width="152" height="17" viewBox="0 0 152 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,37 +118,37 @@ export const Header = () => {
                                     </svg>
                                 </a>
                                 <a href="#" className="px-4 py-2 inline-flex items-center gap-1 rounded-full bg-white text-black font-medium">Book a Call  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3.5 1H10.5V8" stroke="black" stroke-width="1.5"/>
-                                    <path d="M10.5 1L2.5 9" stroke="black" stroke-width="1.5"/>
-                                    <path d="M2 9.5L1 10.5" stroke="black" stroke-width="1.5"/>
+                                    <path d="M3.5 1H10.5V8" stroke="black" strokeWidth="1.5"/>
+                                    <path d="M10.5 1L2.5 9" stroke="black" strokeWidth="1.5"/>
+                                    <path d="M2 9.5L1 10.5" stroke="black" strokeWidth="1.5"/>
                                 </svg></a>
                             </div>
 
                             <div className="mt-6 flex flex-col gap-5 pt-6">
                                 <a className="text-4xl inline-flex items-center gap-1  hover:opacity-80 transition" href="#">Work <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3.5 1H10.5V8" stroke="white" stroke-width="1.5"/>
-                                    <path d="M10.5 1L2.5 9" stroke="white" stroke-width="1.5"/>
-                                    <path d="M2 9.5L1 10.5" stroke="white" stroke-width="1.5"/>
+                                    <path d="M3.5 1H10.5V8" stroke="white" strokeWidth="1.5"/>
+                                    <path d="M10.5 1L2.5 9" stroke="white" strokeWidth="1.5"/>
+                                    <path d="M2 9.5L1 10.5" stroke="white" strokeWidth="1.5"/>
                                 </svg></a>
                                 <a className="text-4xl inline-flex items-center gap-1 hover:opacity-80 transition" href="#">Our Story <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3.5 1H10.5V8" stroke="white" stroke-width="1.5"/>
-                                    <path d="M10.5 1L2.5 9" stroke="white" stroke-width="1.5"/>
-                                    <path d="M2 9.5L1 10.5" stroke="white" stroke-width="1.5"/>
+                                    <path d="M3.5 1H10.5V8" stroke="white" strokeWidth="1.5"/>
+                                    <path d="M10.5 1L2.5 9" stroke="white" strokeWidth="1.5"/>
+                                    <path d="M2 9.5L1 10.5" stroke="white" strokeWidth="1.5"/>
                                 </svg></a>
                                 <a className="text-4xl inline-flex items-center gap-1 hover:opacity-80 transition" href="#">Blogs <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3.5 1H10.5V8" stroke="white" stroke-width="1.5"/>
-                                    <path d="M10.5 1L2.5 9" stroke="white" stroke-width="1.5"/>
-                                    <path d="M2 9.5L1 10.5" stroke="white" stroke-width="1.5"/>
+                                    <path d="M3.5 1H10.5V8" stroke="white" strokeWidth="1.5"/>
+                                    <path d="M10.5 1L2.5 9" stroke="white" strokeWidth="1.5"/>
+                                    <path d="M2 9.5L1 10.5" stroke="white" strokeWidth="1.5"/>
                                 </svg></a>
                                 <a className="text-4xl inline-flex items-center gap-1 hover:opacity-80 transition" href="#">Get in Touch <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3.5 1H10.5V8" stroke="white" stroke-width="1.5"/>
-                                    <path d="M10.5 1L2.5 9" stroke="white" stroke-width="1.5"/>
-                                    <path d="M2 9.5L1 10.5" stroke="white" stroke-width="1.5"/>
+                                    <path d="M3.5 1H10.5V8" stroke="white" strokeWidth="1.5"/>
+                                    <path d="M10.5 1L2.5 9" stroke="white" strokeWidth="1.5"/>
+                                    <path d="M2 9.5L1 10.5" stroke="white" strokeWidth="1.5"/>
                                 </svg></a>
                                 <a className="text-4xl inline-flex items-center gap-1 hover:opacity-80 transition" href="#">Careers <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3.5 1H10.5V8" stroke="white" stroke-width="1.5"/>
-                                    <path d="M10.5 1L2.5 9" stroke="white" stroke-width="1.5"/>
-                                    <path d="M2 9.5L1 10.5" stroke="white" stroke-width="1.5"/>
+                                    <path d="M3.5 1H10.5V8" stroke="white" strokeWidth="1.5"/>
+                                    <path d="M10.5 1L2.5 9" stroke="white" strokeWidth="1.5"/>
+                                    <path d="M2 9.5L1 10.5" stroke="white" strokeWidth="1.5"/>
                                 </svg></a>
                             </div>
 
