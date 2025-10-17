@@ -51,8 +51,15 @@ export default function Carousel({ items }) {
         </div>
         {/* hide controls on small screens, show on md+ */}
         <div className="hidden md:flex-shrink-0 md:flex items-center gap-3">
-          <button aria-label="previous" onClick={prev} className="carousel-btn">←</button>
-          <button aria-label="next" onClick={next} className="carousel-btn">→</button>
+          <button aria-label="previous" onClick={prev} className="carousel-btn"><svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9.5L2 5.5M2 5.5L6 1.5M2 5.5H12" stroke="#1A1A1A" stroke-width="1.5" stroke-miterlimit="10"/>
+            </svg>
+          </button>
+          <button aria-label="next" onClick={next} className="carousel-btn"><svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9L10 5L6 1" stroke="#1A1A1A" stroke-width="1.5" stroke-miterlimit="10"/>
+            <path d="M10 5H0" stroke="#1A1A1A" stroke-width="1.5" stroke-miterlimit="10"/>
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -104,7 +111,7 @@ export default function Carousel({ items }) {
         :global(body) { background: #000 }
         .carousel-title { color: #ffffff; font-weight: 400; font-size: 36px; line-height: 1.05 }
         .carousel-desc { color: #bfbfbf; font-size: 16px }
-        .carousel-btn { background: rgba(255,255,255,0.95); color: #000; border-radius: 8px; padding: 10px 14px; }
+        .carousel-btn { background: rgba(255,255,255,0.95); color: #000; border-radius: 8px; padding: 12px 18px; }
 
         .carousel-track { scroll-padding: 16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch }
   .set-panel { scroll-snap-align: center; border-radius: 8px; overflow: hidden; box-sizing: border-box }
