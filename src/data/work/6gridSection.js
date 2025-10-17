@@ -5,7 +5,7 @@ export const gridData = [
     description:"Redefined R Comfort’s identity with a full rebrand and digital experience that elevates handcrafted furniture into a modern symbol of luxury living.",
     image: "/rcomfort.png",
     categories: ["Furniture", "Lifestyle", "Luxury"],
-    link: "/projects/royal-collection",
+    link: "/projects/rcomfort",
     backgroundColor: "bg-slate-800",
   },
   {
@@ -15,7 +15,7 @@ export const gridData = [
       "Created a bold, youth-driven perfume brand with expressive packaging, immersive storytelling, and a digital identity that celebrates Indian individuality.",
     image: "/+91.png",
     categories: ["Beauty", "Lifestyle"],
-    link: "/projects/wildlife-camera",
+    link: "/projects/91",
     backgroundColor: "bg-gray-200",
   },
   {
@@ -25,7 +25,7 @@ export const gridData = [
       "Revitalized INIT with a website redesign and expressive packaging that transforms fragrance into intimate, sensory storytelling.",
     image: "/init.png",
     categories: ["Beauty", "Lifestyle", "Experiential Design"],
-    link: "/projects/together-palestine",
+    link: "/projects/init",
     backgroundColor: "bg-black",
   },
   {
@@ -35,7 +35,7 @@ export const gridData = [
       "Designed an elegant and intuitive UI/UX for Do It Up, bringing its luxury event styling brand to life online.",
     image: "/doitup.png",
     categories: ["Lifestyle", "Events", "Digital Experience"],
-    link: "/projects/do-it-up",
+    link: "/projects/doitup",
     backgroundColor: "bg-gray-100",
   },
   {
@@ -45,7 +45,7 @@ export const gridData = [
       "Redesigned the digital gallery for Fine Arts with a refined website, intuitive UI/UX, and immersive visual storytelling.",
     image: "/fine-arts.png",
     categories: ["Art", "Lifestyle", "Digital Experience"],
-    link: "/projects/global-switch",
+    link: "/projects/finearts",
     backgroundColor: "bg-emerald-900",
   },
   {
@@ -55,7 +55,7 @@ export const gridData = [
       "Designed a vibrant visual identity and seamless digital platform that makes healthy eating simple, engaging, and effortless.",
     image: "/foodo.png",
     categories: ["Food Tech", "Health", "Lifestyle"],
-    link: "/projects/grale",
+    link: "/projects/foodo",
     backgroundColor: "bg-white",
   },
 ]

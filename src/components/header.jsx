@@ -153,27 +153,7 @@ export const Header = () => {
                             </div>
 
                             <div className="mt-6 flex flex-col gap-5 pt-6">
-                                <a className="text-4xl inline-flex items-center gap-1  hover:opacity-80 transition" href="#">Work <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3.5 1H10.5V8" stroke="white" strokeWidth="1.5"/>
-                                    <path d="M10.5 1L2.5 9" stroke="white" strokeWidth="1.5"/>
-                                    <path d="M2 9.5L1 10.5" stroke="white" strokeWidth="1.5"/>
-                                </svg></a>
-                                <a className="text-4xl inline-flex items-center gap-1 hover:opacity-80 transition" href="#">Our Story <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3.5 1H10.5V8" stroke="white" strokeWidth="1.5"/>
-                                    <path d="M10.5 1L2.5 9" stroke="white" strokeWidth="1.5"/>
-                                    <path d="M2 9.5L1 10.5" stroke="white" strokeWidth="1.5"/>
-                                </svg></a>
-                                <a className="text-4xl inline-flex items-center gap-1 hover:opacity-80 transition" href="#">Blogs <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3.5 1H10.5V8" stroke="white" strokeWidth="1.5"/>
-                                    <path d="M10.5 1L2.5 9" stroke="white" strokeWidth="1.5"/>
-                                    <path d="M2 9.5L1 10.5" stroke="white" strokeWidth="1.5"/>
-                                </svg></a>
-                                <a className="text-4xl inline-flex items-center gap-1 hover:opacity-80 transition" href="#">Get in Touch <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3.5 1H10.5V8" stroke="white" strokeWidth="1.5"/>
-                                    <path d="M10.5 1L2.5 9" stroke="white" strokeWidth="1.5"/>
-                                    <path d="M2 9.5L1 10.5" stroke="white" strokeWidth="1.5"/>
-                                </svg></a>
-                                <a className="text-4xl inline-flex items-center gap-1 hover:opacity-80 transition" href="#">Careers <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <a className="text-4xl inline-flex items-center gap-1  hover:opacity-80 transition" href="/work">Work <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M3.5 1H10.5V8" stroke="white" strokeWidth="1.5"/>
                                     <path d="M10.5 1L2.5 9" stroke="white" strokeWidth="1.5"/>
                                     <path d="M2 9.5L1 10.5" stroke="white" strokeWidth="1.5"/>
@@ -181,11 +161,11 @@ export const Header = () => {
                             </div>
 
                             <footer className="absolute bottom-6 left-6 right-6 text-sm text-gray-400">
-                                <div className="flex justify-between mb-4">
+                                {/* <div className="flex justify-between mb-4">
                                     <a href="#">Privacy Policy</a>
                                     <a href="#">Terms of Service</a>
                                     <a href="#">Legal</a>
-                                </div>
+                                </div> */}
                                 <div>© 2025 Ivamo Studios.</div>
                             </footer>
                         </motion.div>

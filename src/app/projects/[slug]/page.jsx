@@ -13,9 +13,9 @@ export default function ProjectPage({ params }) {
   return (
     <main className="min-h-screen bg-white text-black">
       {/* Title, description, tags */}
-      <section className="max-w-6xl p-3 md:p-12">
-        <div className="mb-6">
-          <h1 className="text-[18px] md:text-[18px] font-bold mb-4">{item.title}</h1>
+      <section className="p-4 md:p-4">
+        <div className="mb-6 mt-5">
+          <h1 className="text-[18px] md:text-[38px] mb-4">{item.title}</h1>
           <p className="max-w-3xl text-[16px] opacity-90 mb-4">{item.description}</p>
 
           {item.tags && (
@@ -40,9 +40,9 @@ export default function ProjectPage({ params }) {
       )}
 
       {/* About */}
-      <section className="p-3 md:p-3">
+      <section className="p-3  md:p-3">
         <div className="mb-8 flex flex-col items-end">
-          <p className="text-gray-700">{item.about}</p>
+          <p className="text-gray-700 max-w-[60vw] text-justify">{item.about}</p>
         </div>
       </section>
 
