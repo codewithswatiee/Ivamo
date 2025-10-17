@@ -10,8 +10,6 @@ import { Quote } from "@/components/quote"
 import { belowProjects, projects } from "@/data/2sideImageData"
 import { gridData } from "@/data/6gridSection"
 import carouselItems from "@/data/carouselData"
-import ClientModal from "@/modal/client-modal"
-import ServiceModal from "@/modal/service-modal"
 import { useState, useEffect } from "react"
 
 

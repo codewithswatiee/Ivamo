@@ -7,7 +7,10 @@ export const Header = () => {
     const [open, setOpen] = useState(false)
     const [visible, setVisible] = useState(true)
     const [isDesktop, setIsDesktop] = useState(false)
+    const [showThankYou, setShowThankYou] = useState(false)
     const prevScroll = useRef(0)
+
+    const CALENDLY_URL = 'https://calendly.com/swati-ivamostudios/30min'
 
     useEffect(() => {
         // initialize
@@ -48,6 +51,33 @@ export const Header = () => {
         }
     }, [isDesktop])
 
+    // Calendly flow: mark when user opens calendly, show a thank-you popup when they return
+    useEffect(() => {
+        const checkReturn = () => {
+            try {
+                const ts = localStorage.getItem('ivamo_calendly')
+                const ack = localStorage.getItem('ivamo_calendly_ack')
+                if (ts && !ack) {
+                    // show a small thank-you popup once
+                    setShowThankYou(true)
+                    localStorage.setItem('ivamo_calendly_ack', '1')
+                }
+            } catch (e) {
+                // ignore storage errors
+            }
+        }
+
+        const onVisibility = () => { if (!document.hidden) checkReturn() }
+        window.addEventListener('focus', checkReturn)
+        document.addEventListener('visibilitychange', onVisibility)
+        // in case they returned and the page loaded after
+        checkReturn()
+        return () => {
+            window.removeEventListener('focus', checkReturn)
+            document.removeEventListener('visibilitychange', onVisibility)
+        }
+    }, [])
+
     return (
         <>
             <motion.header
@@ -70,7 +100,7 @@ export const Header = () => {
                     <a className="hover:text-gray-400 transition-colors" href="#">News</a>
                     <a className="hover:text-gray-400 transition-colors" href="#">Contact</a>
                     
-                    <a href="#" className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-white text-black font-medium hover:opacity-95 transition">Book a Call
+                    <a onClick={(e) => { e.preventDefault(); window.open(CALENDLY_URL, '_blank'); try{ localStorage.setItem('ivamo_calendly', String(Date.now())) }catch{} }} href="#" className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-white text-black font-medium hover:opacity-95 transition">Book a Call
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.5 1H10.5V8" stroke="black" strokeWidth="1.5"/>
                             <path d="M10.5 1L2.5 9" stroke="black" strokeWidth="1.5"/>
@@ -81,7 +111,7 @@ export const Header = () => {
 
                 {/* mobile controls */}
                 <div className="md:hidden ml-3 flex items-center gap-2">
-                    <a href="#" className="px-3 py-2 rounded-full bg-white text-black text-sm inline-flex items-center gap-1 whitespace-nowrap">Book a Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a onClick={(e) => { e.preventDefault(); window.open(CALENDLY_URL, '_blank'); try{ localStorage.setItem('ivamo_calendly', String(Date.now())) }catch{} }} href="#" className="px-3 py-2 rounded-full bg-white text-black text-sm inline-flex items-center gap-1 whitespace-nowrap">Book a Call <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.5 1H10.5V8" stroke="black" strokeWidth="1.5"/>
                             <path d="M10.5 1L2.5 9" stroke="black" strokeWidth="1.5"/>
                             <path d="M2 9.5L1 10.5" stroke="black" strokeWidth="1.5"/>
@@ -117,7 +147,7 @@ export const Header = () => {
                                     <path d="M0.584 0.599999H3.62V16H0.584V0.599999ZM11.105 16C10.2543 16 9.64565 15.5307 9.27898 14.592L3.97698 0.599999H7.14498L11.193 12.15H11.237L15.307 0.599999H18.453L12.535 16H11.105ZM25.5858 12.414H19.8218L18.4578 16H15.2898L21.3178 0.599999H22.6818C23.6351 0.599999 24.2805 1.04 24.6178 1.92L30.0958 16H26.9278L25.5858 12.414ZM20.6358 9.862H24.7718L22.7258 4.318H22.7038L20.6358 9.862ZM30.2204 0.599999H32.9264L37.9644 9.752L42.8924 0.599999H45.5984V16H42.6284V6.254L39.3944 12.106C39.1744 12.502 38.9471 12.788 38.7124 12.964C38.4924 13.1253 38.2357 13.206 37.9424 13.206H37.1064L33.1904 6.254V16H30.2204V0.599999ZM52.4457 16.176C51.2871 16.176 50.2604 15.934 49.3657 15.45C48.4857 14.9513 47.7964 14.262 47.2977 13.382C46.8137 12.4873 46.5717 11.4533 46.5717 10.28V6.32C46.5717 5.14667 46.8137 4.12 47.2977 3.24C47.7964 2.34533 48.4857 1.656 49.3657 1.172C50.2604 0.673333 51.2871 0.424 52.4457 0.424H54.7777C55.9364 0.424 56.9557 0.673333 57.8357 1.172C58.7304 1.656 59.4197 2.34533 59.9037 3.24C60.4024 4.12 60.6517 5.14667 60.6517 6.32V10.28C60.6517 11.4533 60.4024 12.4873 59.9037 13.382C59.4197 14.262 58.7304 14.9513 57.8357 15.45C56.9557 15.934 55.9364 16.176 54.7777 16.176H52.4457ZM54.7777 13.492C55.6284 13.492 56.3104 13.184 56.8237 12.568C57.3517 11.952 57.6157 11.1453 57.6157 10.148V6.452C57.6157 5.45467 57.3517 4.648 56.8237 4.032C56.3104 3.416 55.6284 3.108 54.7777 3.108H52.4457C51.5951 3.108 50.9057 3.416 50.3777 4.032C49.8644 4.648 49.6077 5.45467 49.6077 6.452V10.148C49.6077 11.1453 49.8644 11.952 50.3777 12.568C50.9057 13.184 51.5951 13.492 52.4457 13.492H54.7777ZM71.2495 16.176C69.6362 16.176 68.3749 15.7287 67.4655 14.834C66.5562 13.9247 66.1015 12.6633 66.1015 11.05H69.0935C69.0935 11.8127 69.2842 12.414 69.6655 12.854C70.0615 13.2793 70.6042 13.492 71.2935 13.492H73.7355C74.3809 13.492 74.9015 13.36 75.2975 13.096C75.7082 12.8173 75.9135 12.4507 75.9135 11.996V11.248C75.9135 10.5293 75.3855 10.082 74.3295 9.906L70.2815 9.224C68.9615 9.004 67.9569 8.586 67.2675 7.97C66.5929 7.33933 66.2555 6.54 66.2555 5.572V4.34C66.2555 3.56267 66.4609 2.88067 66.8715 2.294C67.2969 1.69267 67.8909 1.23067 68.6535 0.907999C69.4309 0.585333 70.3255 0.424 71.3375 0.424H73.8235C74.7769 0.424 75.6202 0.622 76.3535 1.018C77.0869 1.414 77.6515 1.97133 78.0475 2.69C78.4582 3.394 78.6635 4.21533 78.6635 5.154H75.6715C75.6715 4.538 75.5029 4.04667 75.1655 3.68C74.8282 3.29867 74.3809 3.108 73.8235 3.108H71.3375C70.7215 3.108 70.2229 3.24 69.8415 3.504C69.4749 3.768 69.2915 4.12 69.2915 4.56V5.154C69.2915 5.88733 69.7975 6.342 70.8095 6.518L74.8355 7.222C76.1702 7.45667 77.1895 7.87467 77.8935 8.476C78.5975 9.06267 78.9495 9.82533 78.9495 10.764V12.216C78.9495 12.9933 78.7295 13.6827 78.2895 14.284C77.8642 14.8853 77.2629 15.3547 76.4855 15.692C75.7082 16.0147 74.8062 16.176 73.7795 16.176H71.2495ZM83.1873 3.24H78.3033V0.599999H91.1073V3.24H86.2233V16H83.1873V3.24ZM96.7931 16.176C95.7078 16.176 94.7544 15.9487 93.9331 15.494C93.1118 15.0247 92.4738 14.372 92.0191 13.536C91.5644 12.7 91.3371 11.732 91.3371 10.632V0.599999H94.3731V10.544C94.3731 11.424 94.5931 12.1353 95.0331 12.678C95.4878 13.2207 96.0744 13.492 96.7931 13.492H99.1251C99.8584 13.492 100.452 13.2207 100.907 12.678C101.362 12.1353 101.589 11.424 101.589 10.544V0.599999H104.625V10.632C104.625 11.732 104.398 12.7 103.943 13.536C103.488 14.372 102.843 15.0247 102.007 15.494C101.171 15.9487 100.21 16.176 99.1251 16.176H96.7931ZM108.073 16C107.442 16 106.929 15.8093 106.533 15.428C106.137 15.0467 105.939 14.548 105.939 13.932V0.599999H113.287C114.46 0.599999 115.487 0.819999 116.367 1.26C117.262 1.7 117.951 2.32333 118.435 3.13C118.934 3.93667 119.183 4.868 119.183 5.924V10.236C119.183 12.128 118.692 13.5653 117.709 14.548C116.726 15.516 115.282 16 113.375 16H108.073ZM113.287 13.316C114.226 13.316 114.937 13.0447 115.421 12.502C115.905 11.9593 116.147 11.16 116.147 10.104V6.056C116.147 5.22 115.876 4.55267 115.333 4.054C114.79 3.54067 114.079 3.284 113.199 3.284H108.975V13.316H113.287ZM120.286 0.599999H123.322V16H120.286V0.599999ZM130.389 16.176C129.231 16.176 128.204 15.934 127.309 15.45C126.429 14.9513 125.74 14.262 125.241 13.382C124.757 12.4873 124.515 11.4533 124.515 10.28V6.32C124.515 5.14667 124.757 4.12 125.241 3.24C125.74 2.34533 126.429 1.656 127.309 1.172C128.204 0.673333 129.231 0.424 130.389 0.424H132.721C133.88 0.424 134.899 0.673333 135.779 1.172C136.674 1.656 137.363 2.34533 137.847 3.24C138.346 4.12 138.595 5.14667 138.595 6.32V10.28C138.595 11.4533 138.346 12.4873 137.847 13.382C137.363 14.262 136.674 14.9513 135.779 15.45C134.899 15.934 133.88 16.176 132.721 16.176H130.389ZM132.721 13.492C133.572 13.492 134.254 13.184 134.767 12.568C135.295 11.952 135.559 11.1453 135.559 10.148V6.452C135.559 5.45467 135.295 4.648 134.767 4.032C134.254 3.416 133.572 3.108 132.721 3.108H130.389C129.539 3.108 128.849 3.416 128.321 4.032C127.808 4.648 127.551 5.45467 127.551 6.452V10.148C127.551 11.1453 127.808 11.952 128.321 12.568C128.849 13.184 129.539 13.492 130.389 13.492H132.721ZM144.175 16.176C142.562 16.176 141.301 15.7287 140.391 14.834C139.482 13.9247 139.027 12.6633 139.027 11.05H142.019C142.019 11.8127 142.21 12.414 142.591 12.854C142.987 13.2793 143.53 13.492 144.219 13.492H146.661C147.307 13.492 147.827 13.36 148.223 13.096C148.634 12.8173 148.839 12.4507 148.839 11.996V11.248C148.839 10.5293 148.311 10.082 147.255 9.906L143.207 9.224C141.887 9.004 140.883 8.586 140.193 7.97C139.519 7.33933 139.181 6.54 139.181 5.572V4.34C139.181 3.56267 139.387 2.88067 139.797 2.294C140.223 1.69267 140.817 1.23067 141.579 0.907999C142.357 0.585333 143.251 0.424 144.263 0.424H146.749C147.703 0.424 148.546 0.622 149.279 1.018C150.013 1.414 150.577 1.97133 150.973 2.69C151.384 3.394 151.589 4.21533 151.589 5.154H148.597C148.597 4.538 148.429 4.04667 148.091 3.68C147.754 3.29867 147.307 3.108 146.749 3.108H144.263C143.647 3.108 143.149 3.24 142.767 3.504C142.401 3.768 142.217 4.12 142.217 4.56V5.154C142.217 5.88733 142.723 6.342 143.735 6.518L147.761 7.222C149.096 7.45667 150.115 7.87467 150.819 8.476C151.523 9.06267 151.875 9.82533 151.875 10.764V12.216C151.875 12.9933 151.655 13.6827 151.215 14.284C150.79 14.8853 150.189 15.3547 149.411 15.692C148.634 16.0147 147.732 16.176 146.705 16.176H144.175Z" fill="white"/>
                                     </svg>
                                 </a>
-                                <a href="#" className="px-4 py-2 inline-flex items-center gap-1 rounded-full bg-white text-black font-medium">Book a Call  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <a onClick={(e) => { e.preventDefault(); window.open(CALENDLY_URL, '_blank'); try{ localStorage.setItem('ivamo_calendly', String(Date.now())) }catch{} }} href="#" className="px-4 py-2 inline-flex items-center gap-1 rounded-full bg-white text-black font-medium">Book a Call  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M3.5 1H10.5V8" stroke="black" strokeWidth="1.5"/>
                                     <path d="M10.5 1L2.5 9" stroke="black" strokeWidth="1.5"/>
                                     <path d="M2 9.5L1 10.5" stroke="black" strokeWidth="1.5"/>
@@ -162,6 +192,24 @@ export const Header = () => {
                             </footer>
                         </motion.div>
                     </motion.aside>
+                )}
+            </AnimatePresence>
+
+            {/* Thank you popup (shows briefly when user returns from Calendly) */}
+            <AnimatePresence>
+                {showThankYou && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 20 }}
+                        transition={{ duration: 0.35 }}
+                        className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 bg-black text-white px-6 py-3 rounded-lg shadow-lg"
+                    >
+                        <div className="flex items-center gap-4">
+                            <div className="text-sm">Thanks for booking — we'll follow up shortly.</div>
+                            <button onClick={() => setShowThankYou(false)} className="text-gray-400 hover:text-white">Close</button>
+                        </div>
+                    </motion.div>
                 )}
             </AnimatePresence>
         </>

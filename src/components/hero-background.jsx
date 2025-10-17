@@ -47,38 +47,46 @@ export default function HeroBackground({ currentImageIndex, onImageChange }) {
             }}
           />
         ))}
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60" />
       </div>
-      {/* Project Info */}
-      <div className="absolute bottom-8 left-8 text-white">
-        <h3 className="text-2xl font-bold mb-2">{currentImage.title}</h3>
-        <p className="text-lg opacity-90">{currentImage.subtitle}</p>
-      </div>
+      {/* Project Info + Navigation (mobile: stacked, desktop: side-by-side) */}
+      <div className="absolute bottom-8 left-0 right-0 px-6 md:px-8 text-white flex flex-col md:flex-row items-center md:items-end justify-between">
+        <div className="w-full md:w-auto text-left md:text-left mb-4 md:mb-0">
+          <h3 className="text-[16px] font-bold mb-2">{currentImage.title}</h3>
+          <p className="text-[15px] opacity-90 max-w-2xl">{currentImage.subtitle}</p>
+        </div>
 
-      {/* Navigation Dots */}
-      <div className="absolute bottom-8 right-8 flex items-center gap-4">
-        {/* prev / next buttons */}
-        <button
-          aria-label="previous image"
-          onClick={() => onImageChange(Math.max(0, currentImageIndex - 1))}
-          className="bg-white/90 cursor-pointer rounded-md p-3 shadow-sm hover:opacity-95 transition"
-        >
-          <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 9.5L2 5.5M2 5.5L6 1.5M2 5.5H12" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>
-          </svg>
-        </button>
+        <div className="flex items-center gap-4 justify-center">
+          <button
+            aria-label="previous image"
+            onClick={() => onImageChange(Math.max(0, currentImageIndex - 1))}
+            className={cn(
+              "rounded-md p-4 shadow-sm transition",
+              currentImageIndex === 0 ? "bg-[#5E5E5E] text-gray-600 cursor-not-allowed pointer-events-none" : "bg-white/90 cursor-pointer hover:opacity-95",
+            )}
+            disabled={currentImageIndex === 0}
+          >
+            <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 9.5L2 5.5M2 5.5L6 1.5M2 5.5H12" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>
+            </svg>
+          </button>
 
-        <button
-          aria-label="next image"
-          onClick={() => onImageChange(Math.min(heroImages.length - 1, currentImageIndex + 1))}
-          className="bg-white/90 cursor-pointer rounded-md p-3 shadow-sm hover:opacity-95 transition"
-        >
-          <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 9L10 5L6 1" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>
-            <path d="M10 5H0" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>
-          </svg>
-        </button>
+          <button
+            aria-label="next image"
+            onClick={() => onImageChange(Math.min(heroImages.length - 1, currentImageIndex + 1))}
+            className={cn(
+              "rounded-md p-4 shadow-sm transition",
+              currentImageIndex === heroImages.length - 1
+                ? "bg-[#5E5E5E] text-gray-600 cursor-not-allowed pointer-events-none"
+                : "bg-white/90 cursor-pointer hover:opacity-95",
+            )}
+            disabled={currentImageIndex === heroImages.length - 1}
+          >
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 9L10 5L6 1" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>
+              <path d="M10 5H0" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
   )

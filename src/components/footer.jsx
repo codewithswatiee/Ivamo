@@ -68,7 +68,16 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <h4 className="text-gray-300 mb-4">Have Questions?</h4>
             <p className="text-gray-400 mb-4">Drop us your email to learn what's next.</p>
-            <a href="#" className="inline-flex items-center gap-3 bg-white text-black px-5 py-3 rounded-full font-medium hover:scale-[0.99] transition-transform">
+            <a
+              onClick={(e) => {
+                e.preventDefault()
+                const CALENDLY_URL = 'https://calendly.com/swati-ivamostudios/30min'
+                window.open(CALENDLY_URL, '_blank')
+                try { localStorage.setItem('ivamo_calendly', String(Date.now())) } catch (err) {}
+              }}
+              href="#"
+              className="inline-flex items-center gap-3 bg-white text-black px-5 py-3 rounded-full font-medium hover:scale-[0.99] transition-transform"
+            >
               <span>Book a Call</span>
               <span aria-hidden>
                 {/* arrow svg provided */}

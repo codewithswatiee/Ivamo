@@ -91,19 +91,7 @@ export default function HeroSection() {
   const [showClientModal, setShowClientModal] = useState(false)
   const [modalSelectedService, setModalSelectedService] = useState("Brand Strategy")
 
-  // Image rotation every 5-6 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => {
-        const newIndex = (prev + 1) % heroImages.length
-        const newImage = heroImages[newIndex]
-        setCurrentServiceIndex(designServices.indexOf(newImage.service))
-        setCurrentClientIndex(clientTypes.indexOf(newImage.client))
-        return newIndex
-      })
-    }, 5500)
-    return () => clearInterval(interval)
-  }, [])
+  // auto-advance removed: manual navigation only
 
   useEffect(() => {
     const handleScroll = () => {

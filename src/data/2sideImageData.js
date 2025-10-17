@@ -36,7 +36,7 @@ export const belowProjects = {
             description:
               "Designed the UI/UX for the Raise Project, an initiative by Taara, to create an intuitive and impactful digital platform for community-driven connectivity.",
             imageSrcDesktop: "/raise.png",
-            imageSrcMobile: "/chorus-mobile.png",
+            imageSrcMobile: "/raise.png",
             imageAlt: "Raise",
             href: "/projects/raise",
             tags: ["UI-technology", "Social Impact", "Innovation"],
