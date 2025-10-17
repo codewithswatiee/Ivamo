@@ -62,7 +62,7 @@ export default function HeroBackground({ currentImageIndex, onImageChange }) {
         <button
           aria-label="previous image"
           onClick={() => onImageChange(Math.max(0, currentImageIndex - 1))}
-          className="bg-white/90 rounded-md p-3 shadow-sm hover:opacity-95 transition"
+          className="bg-white/90 cursor-pointer rounded-md p-3 shadow-sm hover:opacity-95 transition"
         >
           <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 9.5L2 5.5M2 5.5L6 1.5M2 5.5H12" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>
@@ -72,7 +72,7 @@ export default function HeroBackground({ currentImageIndex, onImageChange }) {
         <button
           aria-label="next image"
           onClick={() => onImageChange(Math.min(heroImages.length - 1, currentImageIndex + 1))}
-          className="bg-white/90 rounded-md p-3 shadow-sm hover:opacity-95 transition"
+          className="bg-white/90 cursor-pointer rounded-md p-3 shadow-sm hover:opacity-95 transition"
         >
           <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 9L10 5L6 1" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>

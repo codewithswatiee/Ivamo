@@ -51,11 +51,11 @@ export default function Carousel({ items }) {
         </div>
         {/* hide controls on small screens, show on md+ */}
         <div className="hidden md:flex-shrink-0 md:flex items-center gap-3">
-          <button aria-label="previous" onClick={prev} className="carousel-btn"><svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <button aria-label="previous" onClick={prev} className="carousel-btn cursor-pointer"><svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 9.5L2 5.5M2 5.5L6 1.5M2 5.5H12" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>
             </svg>
           </button>
-          <button aria-label="next" onClick={next} className="carousel-btn"><svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <button aria-label="next" onClick={next} className="carousel-btn cursor-pointer"><svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 9L10 5L6 1" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>
             <path d="M10 5H0" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10"/>
             </svg>
