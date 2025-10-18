@@ -10,7 +10,7 @@ export const Header = () => {
     const [showThankYou, setShowThankYou] = useState(false)
     const prevScroll = useRef(0)
 
-    const CALENDLY_URL = 'https://calendly.com/swati-ivamostudios/30min'
+    const CALENDLY_URL = 'https://calendly.com/sshruti-ivamostudios/30min'
 
     useEffect(() => {
         // initialize

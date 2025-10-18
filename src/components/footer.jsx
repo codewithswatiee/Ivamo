@@ -30,16 +30,16 @@ export default function Footer() {
           <div>
             <h4 className="text-gray-300 mb-4">Links</h4>
             <ul className="space-y-2 text-gray-200">
-              <li><a href="#">Our Story</a></li>
-              <li><a href="#">Work</a></li>
-              <li><a href="#">Careers</a></li>
+              {/* /<li><a href="#">Our Story</a></li> */}
+              <li><a href="/work">Work</a></li>
+              {/* <li><a href="#">Careers</a></li>
               <li><a href="#">Get in touch</a></li>
-              <li><a href="#">Blogs</a></li>
+              <li><a href="#">Blogs</a></li> */}
             </ul>
           </div>
 
           <div>
-            <h4 className="text-gray-300 mb-4">Social</h4>
+            <h4 className="text-gray-300 mb-4">Socials</h4>
             <ul className="space-y-2 text-gray-200">
               <li><a href="#">Instagram</a></li>
               <li><a href="#">Linkedin</a></li>
@@ -71,7 +71,7 @@ export default function Footer() {
             <a
               onClick={(e) => {
                 e.preventDefault()
-                const CALENDLY_URL = 'https://calendly.com/swati-ivamostudios/30min'
+                const CALENDLY_URL = 'https://calendly.com/sshruti-ivamostudios/30min'
                 window.open(CALENDLY_URL, '_blank')
                 try { localStorage.setItem('ivamo_calendly', String(Date.now())) } catch (err) {}
               }}
