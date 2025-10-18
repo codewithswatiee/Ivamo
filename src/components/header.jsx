@@ -165,7 +165,7 @@ export const Header = () => {
                                     <a href="#">Terms of Service</a>
                                     <a href="#">Legal</a>
                                 </div> */}
-                                <div>© 2025 Ivamo Studios.</div>
+                                <div>© 2025 IVAMO Studios.</div>
                             </footer>
                         </motion.div>
                     </motion.aside>

@@ -54,7 +54,7 @@ export default function Carousel({ items }) {
       <div className="mx-auto py-8 flex items-center justify-between gap-2 px-3">
         <div className="flex-1 max-w-[77vw]">
           <h2 className="carousel-title">Designed for Now. Built for What’s Next.</h2>
-          <p className="mt-3 carousel-desc">At Ivamo Studios, we design with purpose and build with perspective. Every brand has a story waiting to be redefined—our job is to translate that story into bold identities, intuitive interfaces, and digital experiences that feel unmistakably today while shaping tomorrow. We don’t just design brands; we evolve them for the world ahead.</p>
+          <p className="mt-3 carousel-desc">At IVAMO Studios, we design with purpose and build with perspective. Every brand has a story waiting to be redefined—our job is to translate that story into bold identities, intuitive interfaces, and digital experiences that feel unmistakably today while shaping tomorrow. We don’t just design brands; we evolve them for the world ahead.</p>
         </div>
         {/* hide controls on small screens, show on md+ */}
         <div className="hidden md:flex-shrink-0 md:flex items-center gap-3">

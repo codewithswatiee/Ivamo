@@ -92,7 +92,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
-          <div className="mb-4 md:mb-0">© 2025 Ivamo Studios.</div>
+          <div className="mb-4 md:mb-0">© 2025 IVAMO Studios.</div>
           <div className="flex gap-6">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
