@@ -26,82 +26,112 @@ export const workData = {
         href: "/projects/raf-clothing",
     },
     'raise': {
-        title: "+91",
-        description: "Created a bold, youth-driven perfume brand with expressive packaging, immersive storytelling, and a digital identity that celebrates Indian individuality.",
-        images: ["/+91.png", "/+91_2.png", "/+91_3.png"],
-        about: "A fragrance brand that captures the essence of Indian youth culture through bold scents and vibrant storytelling.",
-        tags: ["Beauty", "Lifestyle"],
-        href: "/projects/+91",
+        title: "Raise",
+        description: "Designed the UI/UX for the Raise Project, an initiative by Taara, to create an intuitive and impactful digital platform for community-driven connectivity.",
+        images: ["/raise/1.jpg", "/raise/2.svg"],
+        about: `The Raise Project, an initiative by Taara, sought to empower communities by providing them with the tools and resources to advocate for better connectivity solutions. The goal was to create a digital platform that was not only functional but also engaging and accessible, enabling users to easily navigate and participate in the project.
+
+IVAMO Studios collaborated with Taara to design the entire UI/UX for the Raise Project. Our approach focused on creating a user-friendly interface that facilitated seamless interaction, clear communication, and effective advocacy. We ensured that the design was intuitive, with a clean layout and responsive elements that adapted to various devices, making the platform accessible to a wide audience.
+
+The visual design was crafted to reflect the project's mission of community empowerment and technological innovation. We employed a modern aesthetic with a cohesive color palette, typography, and iconography that aligned with Taara's brand identity. Interactive features were integrated to encourage user engagement, such as easy navigation through resources, participation in discussions, and sharing of experiences.
+
+Through this collaboration, we helped Taara develop a digital platform that not only served as a hub for information and advocacy but also fostered a sense of community among users. The Raise Project's website now stands as a testament to the power of design in driving social impact and technological advancement.`,
+        tags: ["technology", "social impact", "innovation"],
+        href: "/projects/raise",
     },
     'chorus':{
         title: "Chorus",
         description: "Evolved Moonray into Chorus through a complete rebrand, expressive digital identity, and immersive art-led web experience.",
         images: ["/chorus/233.jpg", "/chorus/236.svg", "/chorus.png"],
         about: `IVAMO Studios partnered with the creative collective formerly known as Moonray to guide its transformation into Chorus — a new identity that unites fashion, art, and experiential design within one expressive universe.
+        This evolution marked a significant moment for the brand. What began as a clothing label rooted in craft and consciousness expanded into a multidisciplinary movement that celebrates collaboration and collective creation. The new name, Chorus, reflects this shift — a convergence of voices, ideas, and forms that harmonize into something greater than their parts.
 
-This evolution marked a significant moment for the brand. What began as a clothing label rooted in craft and consciousness expanded into a multidisciplinary movement that celebrates collaboration and collective creation. The new name, Chorus, reflects this shift — a convergence of voices, ideas, and forms that harmonize into something greater than their parts.
+        The process was deeply collaborative. Working closely with the founders, our team built the digital and visual foundation for Chorus from the ground up. The objective was to preserve Moonray’s artisanal soul while creating a broader world where texture, motion, and narrative could coexist. Every design decision was shaped by the tension between fluidity and structure, restraint and expression.
 
-The process was deeply collaborative. Working closely with the founders, our team built the digital and visual foundation for Chorus from the ground up. The objective was to preserve Moonray’s artisanal soul while creating a broader world where texture, motion, and narrative could coexist. Every design decision was shaped by the tension between fluidity and structure, restraint and expression.
+        The new web experience embodies that philosophy. It moves like a piece of performance art — each scroll, transition, and interaction choreographed to feel organic and alive. The UI and UX systems were crafted to merge storytelling and commerce seamlessly, allowing garments, art objects, and installations to be presented as part of a unified narrative rather than separate offerings.
 
-The new web experience embodies that philosophy. It moves like a piece of performance art — each scroll, transition, and interaction choreographed to feel organic and alive. The UI and UX systems were crafted to merge storytelling and commerce seamlessly, allowing garments, art objects, and installations to be presented as part of a unified narrative rather than separate offerings.
+        Visual language played a central role in defining this identity. Minimal compositions and soft, immersive color palettes echo the tactile sensibility of handmade materials, while subtle animations evoke the rhythm of breath and movement. The typography, both grounded and lyrical, ties together the brand’s evolving creative landscape.
 
-Visual language played a central role in defining this identity. Minimal compositions and soft, immersive color palettes echo the tactile sensibility of handmade materials, while subtle animations evoke the rhythm of breath and movement. The typography, both grounded and lyrical, ties together the brand’s evolving creative landscape.
-
-Through this transformation, IVAMO Studios helped Chorus find its new voice — one that is open, expressive, and collective. The result is not just a digital rebrand, but the creation of a living platform for art, fashion, and experience to converge.`,
+        Through this transformation, IVAMO Studios helped Chorus find its new voice — one that is open, expressive, and collective. The result is not just a digital rebrand, but the creation of a living platform for art, fashion, and experience to converge.`,
         tags: ['Fashion', 'Art', 'Lifestyle'],
         href: "/projects/chorus",
     },
     'burosys':{
         title: "Burosys",
         description: "Elevated the digital presence of Burosys with a website revamp, refined UI/UX, and cohesive high-end visual campaigns.",
-        images: ["/burosys/1.png", "/burosys/2.png", "/burosys/3.png"],
+        images: ["/burosys.png"],
         about: "In a market where workspace furniture often demands showroom visits, manual quotations, and lengthy consultations, Burosys envisioned a seamless digital experience that empowers businesses to design and purchase with clarity and ease. IVAMO Studios partnered with Burosys to reimagine their brand and website for a new generation of B2B clients who expect efficiency, transparency, and sophistication at every click. The result is a complete rebrand and digital transformation that shifts Burosys from a traditional supplier to a technology driven workspace solutions partner. The new website eliminates unnecessary human touchpoints, turning complexity into simplicity. A smart space configurator allows users to visualize and customize office layouts with Burosys products in real time, transforming imagination into measurable plans. A dedicated professional portal enables architects, designers, and interior experts to access resources, order samples, and collaborate directly through a personalized dashboard. Visually, the design mirrors the brand’s philosophy of refined minimalism and functional precision. Neutral palettes, modular layouts, and subtle motion bring the tactile warmth of furniture into the digital realm, echoing the craftsmanship that defines Burosys products. Every interface decision reinforces trust and modernity, replacing friction with flow and human dependency with digital empowerment. This rebrand positions Burosys not just as a furniture supplier but as a partner in shaping the future of workspaces — agile, intelligent, and beautifully efficient.",
         tags: ["Design", "B2B", "Technology", "Furniture"],
         href: "/projects/burosys",
     },
     'init':{
-        title: "+91",
-        description: "Created a bold, youth-driven perfume brand with expressive packaging, immersive storytelling, and a digital identity that celebrates Indian individuality.",
-        images: ["/+91.png", "/+91_2.png", "/+91_3.png"],
-        about: "A fragrance brand that captures the essence of Indian youth culture through bold scents and vibrant storytelling.",
-        tags: ["Beauty", "Lifestyle"],
-        href: "/projects/+91",
+        title: "INIT",
+        description: "Revitalized INIT with a website redesign and expressive packaging that transforms fragrance into intimate, sensory storytelling.",
+        images: ["/init/1.jpg", "/init/2.jpg", "/init/3.jpg","/init/4.jpg" , "/init/5.jpg"],
+        about: `INIT is a perfume house that exists between memory and imagination. Its fragrances are letters to the self — intimate, emotional, and deeply personal. The brand was conceived not as a commodity but as an experience: a pause in the day, a moment of remembrance, a rush of emotion. Each scent is an invitation to explore identity, memory, and desire, giving form to feelings that linger just beneath consciousness.
+
+                IVAMO Studios partnered with INIT to bring this philosophy to life through a complete packaging overhaul and website revamp. The goal was to create a digital and physical presence that mirrors the poetry of the fragrances themselves — elegant, sensory, and atmospheric. The packaging was designed to reflect a modern, summery Italian sensibility: sunlit palettes, tactile materials, and refined structural details that evoke warmth, sophistication, and emotional resonance.
+
+                The website redesign translates this ethos into digital form. It embraces a slow, intentional rhythm, allowing visitors to explore scents and stories with clarity and delight. Subtle motion, immersive imagery, and considered typography create a space that feels as personal as opening a letter. Every interaction is designed to reinforce the intimacy of the experience, connecting users to the brand’s narrative of self-reflection and exploration.
+
+                Through this transformation, INIT now lives as a complete sensory universe. Packaging, web, and story converge to make fragrance more than a product — it becomes a lived emotional experience, a pause to reflect, and an invitation to inhabit one’s inner world.`,
+        tags: ["beauty", "lifestyle", "experiential design"],
+        href: "/projects/INIT",
     },
     'rcomfort':{
-        title: "+91",
-        description: "Created a bold, youth-driven perfume brand with expressive packaging, immersive storytelling, and a digital identity that celebrates Indian individuality.",
-        images: ["/+91.png", "/+91_2.png", "/+91_3.png"],
-        about: "A fragrance brand that captures the essence of Indian youth culture through bold scents and vibrant storytelling.",
+        title: "R Comfort",
+        description: "Redefined R Comfort’s identity with a full rebrand and digital experience that elevates handcrafted furniture into a modern symbol of luxury living.",
+        images: ["/rcomfort.png"],
+        about: `R Comfort began as a homegrown furniture company with a simple mission — to bring comfort and craftsmanship into everyday spaces. As the brand matured, its founder envisioned something greater: a transition from a maker of furniture to a curator of lifestyle. This ambition marked the beginning of R Comfort’s evolution into the luxury segment.
+
+IVAMO Studios was entrusted with this transformation from the ground up. The project extended far beyond design — it was about shaping a new identity for a first-generation entrepreneur stepping into a world of refined branding and storytelling. Every element, from tone to typography, was crafted to articulate a sense of sophistication while honoring the authenticity that defines the brand’s roots.
+
+The new identity reflects modern comfort and timeless design. Soft tones and tactile imagery bring out the warmth of natural materials, while a restrained layout language highlights craftsmanship and detail. The visual system draws inspiration from the textures of wood and fabric, translating them into a digital experience that feels elegant yet approachable.
+
+The redesigned website embodies this balance between intimacy and aspiration. It presents each piece not merely as a product but as part of a lifestyle — inviting visitors to explore the artistry behind form and function. Through carefully curated imagery and thoughtful narrative flow, R Comfort’s story unfolds with quiet confidence.
+
+The result is a brand reborn — contemporary, elevated, and deeply human. R Comfort now stands as a symbol of emerging luxury rooted in sincerity, where design becomes an expression of both comfort and character.`,
         tags: ["Beauty", "Lifestyle"],
-        href: "/projects/+91",
+        href: "/projects/RComfort",
     },
     'foodo':{
-        title: "+91",
-        description: "Created a bold, youth-driven perfume brand with expressive packaging, immersive storytelling, and a digital identity that celebrates Indian individuality.",
-        images: ["/+91.png", "/+91_2.png", "/+91_3.png"],
-        about: "A fragrance brand that captures the essence of Indian youth culture through bold scents and vibrant storytelling.",
-        tags: ["Beauty", "Lifestyle"],
-        href: "/projects/+91",
+        title: "Foodo",
+        description: "Designed a vibrant visual identity and seamless digital platform that makes healthy eating simple, engaging, and effortless.",
+        images: ["/foodo.png"],
+        about: `Foodo set out to solve one of modern life’s quiet challenges — eating well without overthinking it. As a food-tech brand, their goal was to simplify healthy eating through a digital platform that inspires confidence, clarity, and delight.
+
+IVAMO Studios collaborated with Foodo to design a complete visual and digital identity that reflects their promise of quality and convenience. The task was to create a system that balances nourishment with energy, and structure with spontaneity — a brand that feels both reliable and refreshing.
+
+The website serves as the heart of this ecosystem. Its design prioritizes intuition: clear typography, fluid navigation, and a color palette that evokes freshness and appetite. Every element works toward one simple goal — to make discovery and ordering feel as satisfying as the food itself.
+
+Vibrant imagery brings real ingredients to life, while subtle motion enhances the sense of ease and vitality. The digital experience is supported by a set of brand guidelines and marketing-ready visual assets, ensuring consistency across every touchpoint, from social media to packaging.
+
+The result is a cohesive, human-centered identity that transforms healthy eating from a routine into an experience — bright, accessible, and full of flavor. Foodo now stands as a digital-first brand that proves simplicity and sophistication can share the same plate.`,
+        tags: ["food tech", "health", "lifestyle"],
+        href: "/projects/FOODO",
     },
     'doitup':{
-        title: "+91",
-        description: "Created a bold, youth-driven perfume brand with expressive packaging, immersive storytelling, and a digital identity that celebrates Indian individuality.",
-        images: ["/+91.png", "/+91_2.png", "/+91_3.png"],
-        about: "A fragrance brand that captures the essence of Indian youth culture through bold scents and vibrant storytelling.",
+        title: "DO IT UP",
+        description: "Designed an elegant and intuitive UI/UX for Do It Up, bringing its luxury event styling brand to life online.",
+        images: ["/doitup/1.jpg"],
+        about: `Do It Up began as a blog by Architect Taral Jadhav during the lockdown of 2020, offering refined tips on transforming spaces with elegance and creativity. What started as a personal exploration of home styling quickly evolved into Mumbai’s most sought-after luxury event design and decor brand, trusted by celebrities and prestigious lifestyle brands alike.
+
+                IVAMO Studios collaborated with Do It Up to translate this ethos into a digital experience. The objective was to create a UI/UX that reflected the sophistication, personality, and attention to detail that defines every curated event while making the brand accessible and engaging online.
+
+                The platform balances elegance with usability. Clean layouts, intuitive navigation, and immersive visuals allow users to explore the brand’s portfolio, understand its design philosophy, and connect effortlessly with services. Subtle animations and interactive elements convey the craftsmanship and care that underpin every project, while maintaining a seamless browsing experience.
+
+                Through this partnership, Do It Up’s website became more than a showcase — it became a digital extension of its luxury service, capturing the warmth, style, and sophistication of each event. Users can now experience the brand’s vision online, appreciating the same thoughtful curation and design sensibility that has made Do It Up a household name in Mumbai’s event and wedding industry.`,
         tags: ["Beauty", "Lifestyle"],
-        href: "/projects/+91",
+        href: "/projects/doitup",
     },
     'finearts':{
         title: "Fine Arts",
         description: "Redesigned the digital gallery for Fine Arts with a refined website, intuitive UI/UX, and immersive visual storytelling.",
-        images: ["/finearts.png", "/finearts_2.png", "/finearts_3.png"],
+        images: ["/fine-arts.png"],
         about: `"Fine Arts was founded to celebrate and showcase the finest artistic creations from the UAE, offering a window into a world of creativity, craftsmanship, and vision. Founder Maisha Samiha envisioned a digital presence that could match the elegance of the physical gallery — immersive, sophisticated, and effortless to navigate.
-
-IVAMO Studios collaborated with Fine Arts to create a seamless online experience that transforms the gallery into a digital extension of its physical space. Every aspect of the redesign — from UI and UX to visual hierarchy and interaction design — was crafted to guide visitors naturally through the collection while maintaining the integrity and beauty of each artwork.
-
-The platform emphasizes clarity and refinement. High-resolution imagery, subtle motion, and clean layouts allow artworks to take center stage, while interactive features provide context and depth for art enthusiasts. The experience is intuitive yet elevated, balancing usability with a sense of discovery and engagement.
-
-Through this digital transformation, Fine Arts now offers an online gallery that is not only functional but emotionally resonant. Visitors can explore, appreciate, and connect with art in a manner that mirrors the sophistication and care of the physical gallery, making the digital space an elegant destination in its own right."`,
+            IVAMO Studios collaborated with Fine Arts to create a seamless online experience that transforms the gallery into a digital extension of its physical space. Every aspect of the redesign — from UI and UX to visual hierarchy and interaction design — was crafted to guide visitors naturally through the collection while maintaining the integrity and beauty of each artwork.
+            The platform emphasizes clarity and refinement. High-resolution imagery, subtle motion, and clean layouts allow artworks to take center stage, while interactive features provide context and depth for art enthusiasts. The experience is intuitive yet elevated, balancing usability with a sense of discovery and engagement.
+            Through this digital transformation, Fine Arts now offers an online gallery that is not only functional but emotionally resonant. Visitors can explore, appreciate, and connect with art in a manner that mirrors the sophistication and care of the physical gallery, making the digital space an elegant destination in its own right."`,
         tags: ['art', 'lifestyle', 'digital experience'],
         href: "/projects/finearts",
     }
