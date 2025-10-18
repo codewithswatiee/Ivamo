@@ -21,14 +21,6 @@ const heroImages = [
     service: "Brand Identity",
     client: "Furniture",
   },
-  {
-    desktop: "/Raise_banner.jpg",
-    mobile: "/raise.png",
-    title: "The Raise Project",
-    subtitle: "Interactive website for research-driven child safety education project.",
-    service: "Brand Identity",
-    client: "Arts & Culture",
-  },
 ]
 
 
