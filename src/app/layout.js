@@ -30,14 +30,20 @@ const regular = localFont({
   variable: "--font-regular",
 });
 
-export const metadata = {
-  title: "Ivamo",
-  description: "Ivamo - Crafting Digital Experiences",
-};
+// export const metadata = {
+//   title: "IVAMO Studios: Creative Branding & Marketing Agency in Mumbai",
+//   description: "Mumbai-based creative agency delivering branding, design, and marketing solutions. IVAMO crafts campaigns, identities, and websites that make brands unforgettable.",
+// };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="hJd-IgVeJ3oYBeTWs0O-YHE-yJZTs8KRZjfJt6djGOE"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${laLuxes.variable} ${regular.variable} antialiased`}
       >

@@ -29,9 +29,9 @@ export default function HeroBackground() {
   const currentImage = heroImages[currentImageIndex] || heroImages[0]
 
   return (
-    <section className="relative h-[92vh] overflow-hidden">
+    <section className="relative h-[92vh] overflow-hidden rounded-t-3xl bg-black">
       {/* Background Images */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-black">
         {heroImages.map((image, index) => (
           <div key={index}>
             {/* Desktop background (md+) */}

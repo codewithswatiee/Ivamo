@@ -49,7 +49,7 @@ export default function Carousel({ items }) {
   }, [index])
 
   return (
-    <div className="w-full bg-black text-white px-4">
+    <div className="w-full relative bg-black text-white px-4">
       {/* top: header with title + description on left, nav on right */}
       <div className="mx-auto py-8 flex items-center justify-between gap-2 px-3">
         <div className="flex-1 max-w-[77vw]">

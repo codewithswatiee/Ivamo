@@ -14,13 +14,6 @@ export const carouselItems = [
     tags: [],
   },
   {
-    id: "burosys",
-    title: "Burosys",
-    description: "Elevated the digital presence of Burosys with a website revamp, refined UI/UX, and cohesive high-end visual campaigns.",
-    image: "/burosys2.png",
-    tags: [],
-  },
-  {
     id: "init",
     title: "INIT",
     description: "Revitalized INIT with a website redesign and expressive packaging that transforms fragrance into intimate, sensory storytelling.",

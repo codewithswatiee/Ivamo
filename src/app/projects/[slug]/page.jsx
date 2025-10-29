@@ -1,6 +1,29 @@
 import { notFound } from 'next/navigation'
 import { workData } from '@/data/work/allworkData'
 
+// import { Helmet } from 'react-helmet'
+// Use Next.js app-router metadata function instead of react-helmet which
+// causes SSR/runtime errors in this environment.
+export async function generateMetadata({ params }) {
+  const { slug } = params
+  const normalized = slug.startsWith('+') ? slug.slice(1) : slug
+  const item = workData[slug] || workData[normalized]
+
+  if (!item) {
+    return {
+      title: 'Project | IVAMO Studios',
+    }
+  }
+
+  return {
+    title: `${item.title} | IVAMO Studios`,
+    openGraph: {
+      title: `${item.title} | IVAMO Studios`,
+      images: item.images && item.images.length > 0 ? [item.images[0]] : undefined,
+    },
+  }
+}
+
 export default function ProjectPage({ params }) {
   const { slug } = params
 
@@ -11,8 +34,8 @@ export default function ProjectPage({ params }) {
   if (!item) return notFound()
 
   return (
-    <main className="min-h-screen bg-white text-black">
-      {/* Title, description, tags */}
+    <div className="min-h-screen bg-white text-black">
+      
       <section className="p-4 md:p-4">
         <div className="mb-6 mt-5">
           <h1 className="text-[18px] md:text-[38px] mb-4">{item.title}</h1>
@@ -55,6 +78,6 @@ export default function ProjectPage({ params }) {
           ))}
         </section>
       )}
-    </main>
+    </div>
   )
 }

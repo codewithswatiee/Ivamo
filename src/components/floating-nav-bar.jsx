@@ -21,7 +21,6 @@ export function FloatingNavBar() {
   const combinationIndexRef = useRef(0)
 
   const combinations = [
-    { design: "Brand Strategy", industry: "B2B" },
     { design: "Brand Creation", industry: "Beauty & Wellness" },
     { design: "Brand Identity", industry: "Fashion & Lifestyle" },
     { design: "Visual Identity", industry: "Luxury & Premium Goods" },

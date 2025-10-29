@@ -32,21 +32,19 @@ const industryToBrands = {
   "Fashion & Lifestyle": ["Chorus", "Plus 91", "SU:VE:OR", "RAF Clothing"],
   "Beauty & Wellness": ["Plus 91", "INIT"],
   "Luxury & Premium Goods": ["rComfort", "INIT", "SU:VE:OR", "Do it Up", "Homestolife"],
-  "Furniture & Interiors": ["Burosys", "rComfort", "Do it Up", "Homestolife"],
-  "Technology & Innovation": ["Burosys", "Foodoo", "Raise"],
+  "Furniture & Interiors": ["rComfort", "Do it Up", "Homestolife"],
+  "Technology & Innovation": [ "Foodoo", "Raise"],
   "Food & Hospitality": ["Foodoo"],
   "Sustainability & Conscious Design": ["SU:VE:OR"],
   "Social Impact": ["Raise"],
   "Retail": ["RAF Clothing"],
   "Wellness": ["Foodoo"],
-  "B2B": ["Burosys"],
 }
 
 // Map brand to image paths (relative to /public)
 const brandToImages = {
-  "Burosys": ["/burosys.png", "/burosys2.png"],
   "Plus 91": ["/+91/1.jpg", "/+91/2.svg", "/+91.png", "/+91_2.png"],
-  "Chorus": ["/chorus/233.jpg", "/chorus/236.svg", "/chorus-mobile.png", "/chorus.png", "/chorus_banner.jpg"],
+  "Chorus": ["/chorus/233.jpg", "/chorus/236.svg", "/chorus.png", "/chorus_banner.jpg"],
   "rComfort": ["/rcomfort.png", "/rcomfort-2.png"],
   "INIT": ["/init/1.jpg", "/init/2.jpg", "/init/3.jpg", "/init/4.jpg", "/init/5.jpg", "/init.png", "/init (2).png", "/init_banner.jpg"],
   "Foodoo": ["/foodo.png", "/foodo2.png"],
@@ -80,6 +78,51 @@ export default function ClientModal({
   let imagesForIndustry = (industryToBrands[currentIndustry] || [])
     .flatMap(brand => brandToImages[brand] || [])
     .filter(Boolean)
+  let displayClient = currentIndustry
+
+  // If there are no images for the current industry, try fallbacks:
+  // 1) prefer the first industry in industryNames (skip 'Everyone' if others exist)
+  // 2) pick the first industry in industryNames that has images
+  // 3) pick the first non-empty brand images from brandToImages
+  // 4) final fallback: inline SVG data URL so we always have an image
+  if (!imagesForIndustry || imagesForIndustry.length === 0) {
+    const candidates = Array.isArray(industryNames) && industryNames.length > 0
+      ? industryNames
+      : Object.keys(industryToBrands)
+
+    let found = []
+    for (let i = 0; i < candidates.length; i++) {
+      const cand = candidates[i]
+      if (cand === 'Everyone' && candidates.length > 1) continue
+      const imgs = (industryToBrands[cand] || [])
+        .flatMap(b => brandToImages[b] || [])
+        .filter(Boolean)
+      if (imgs && imgs.length > 0) {
+        found = imgs
+        displayClient = cand
+        break
+      }
+    }
+
+    if (!found || found.length === 0) {
+      for (const arr of Object.values(brandToImages)) {
+        if (Array.isArray(arr) && arr.length > 0) {
+          found = arr.slice()
+          displayClient = 'Featured'
+          break
+        }
+      }
+    }
+
+    imagesForIndustry = found || []
+  }
+
+  if (!imagesForIndustry || imagesForIndustry.length === 0) {
+    imagesForIndustry = [
+      'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="100%" height="100%" fill="%23f3f4f6"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%238b8b8b" font-size="20">No preview available</text></svg>'
+    ]
+    displayClient = 'Preview'
+  }
 
   // Ensure at least 10 images for each tag (repeat or mix as needed)
   if (imagesForIndustry.length > 0 && imagesForIndustry.length < 10) {
@@ -100,18 +143,18 @@ export default function ClientModal({
     return () => clearInterval(intervalRef.current)
   }, [isOpen, currentIndustry, imagesForIndustry.length])
 
-  const displayClient = hoveredClient || currentClient
+  
   return (
-    <div className="fixed inset-0 z-[100] bg-black/30 backdrop-blur-xl">
+    <div className="fixed inset-0 z-[100] bg-white/80 backdrop-blur-xl">
       {/* Fixed close button */}
       <button
         onClick={onClose}
         className="fixed top-8 right-8 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 z-[101]"
       >
-        <X className="w-6 h-6 text-white" />
+        <X className="w-6 h-6 text-black" />
       </button>
 
-      <div className="absolute top-[62%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl mx-4">
+      <div className="absolute top-[52%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl mx-4">
         <div className="bg-gray-100 backdrop-blur-lg rounded-3xl overflow-hidden shadow-2xl">
           {/* Image Section - Slideshow for selected industry */}
           <div className="h-96 w-[70%] mt-7 mx-auto flex items-center justify-center relative overflow-hidden">

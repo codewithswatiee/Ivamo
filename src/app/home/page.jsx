@@ -10,14 +10,27 @@ import { belowProjects, projects } from "@/data/home/2sideImageData"
 import { gridData } from "@/data/home/6gridSection"
 import carouselItems from "@/data/home/carouselData"
 import { FloatingNavBar } from "@/components/floating-nav-bar"
+import { Helmet } from "react-helmet"
+import HeroBanner from "@/components/hero-banner"
 
 export default function HomePage() {
 
   return (
     <div className="bg-white">
-     
-      <HeroBackground currentImageIndex={0} onImageChange={() => {}} />
-<FloatingNavBar />
+      <Helmet>
+        <title>IVAMO Studios: Creative Branding & Marketing Agency in Mumbai</title>
+        <meta name="description" content="Mumbai-based creative agency delivering branding, design, and marketing solutions. IVAMO crafts campaigns, identities, and websites that make brands unforgettable." />
+        <meta property="og:title" content="IVAMO Studios: Creative Branding & Marketing Agency in Mumbai" />
+        <meta property="og:description" content="Mumbai-based creative agency delivering branding, design, and marketing solutions. IVAMO crafts campaigns, identities, and websites that make brands unforgettable." />
+        <meta property="og:image" content="https://ivamostudios.in/favicon.ico" />
+        <meta property="og:url" content="https://ivamostudios.in" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+     <HeroBanner />
+      <div className="bg-black">
+        <HeroBackground currentImageIndex={0} onImageChange={() => {}} />
+      </div>
+      <FloatingNavBar />
       <PortfolioSection left={projects.left} right={projects.right} showHeader={true} />
       <PortfolioSection2 projects={gridData} />
       <Carousel items={carouselItems} />

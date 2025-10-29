@@ -56,13 +56,13 @@ Through this collaboration, we helped Taara develop a digital platform that not 
         tags: ['Fashion', 'Art', 'Lifestyle'],
         href: "/projects/chorus",
     },
-    'burosys':{
-        title: "Burosys",
-        description: "Elevated the digital presence of Burosys with a website revamp, refined UI/UX, and cohesive high-end visual campaigns.",
-        images: ["/burosys.png"],
-        about: "In a market where workspace furniture often demands showroom visits, manual quotations, and lengthy consultations, Burosys envisioned a seamless digital experience that empowers businesses to design and purchase with clarity and ease. IVAMO Studios partnered with Burosys to reimagine their brand and website for a new generation of B2B clients who expect efficiency, transparency, and sophistication at every click. The result is a complete rebrand and digital transformation that shifts Burosys from a traditional supplier to a technology driven workspace solutions partner. The new website eliminates unnecessary human touchpoints, turning complexity into simplicity. A smart space configurator allows users to visualize and customize office layouts with Burosys products in real time, transforming imagination into measurable plans. A dedicated professional portal enables architects, designers, and interior experts to access resources, order samples, and collaborate directly through a personalized dashboard. Visually, the design mirrors the brand’s philosophy of refined minimalism and functional precision. Neutral palettes, modular layouts, and subtle motion bring the tactile warmth of furniture into the digital realm, echoing the craftsmanship that defines Burosys products. Every interface decision reinforces trust and modernity, replacing friction with flow and human dependency with digital empowerment. This rebrand positions Burosys not just as a furniture supplier but as a partner in shaping the future of workspaces — agile, intelligent, and beautifully efficient.",
-        tags: ["Design", "B2B", "Technology", "Furniture"],
-        href: "/projects/burosys",
+    'homestolife':{
+        title: "HomesToLife",
+        description: "Elevated a luxury furniture brand’s digital presence through refined UI/UX design and visual storytelling that mirrors its sophistication and global ambition.",
+        images: ["/homestolife/1.png", "/homestolife/2.png"],
+        about: "Homestolife, a Singaporean luxury furniture giant, sought to expand its international reach by entering the Indian market, a bold move that demanded a digital identity as refined as its craftsmanship. IVAMO Studios partnered with the brand to design a web experience that embodies Homestolife’s ethos of modern comfort and elegance. Our UI/UX approach focused on visual harmony with clean compositions, intuitive navigation, and elevated imagery that echo the brand’s commitment to quality and design excellence. Beyond aesthetics, the redesign translated into performance. Through strategic visual communication and user-centered flow, Homestolife achieved a 10× increase in revenue, demonstrating how thoughtful design can drive tangible business growth. This project stands as a testament to the power of strategic creativity where design decisions don’t just look good, but also deliver measurable impact.",
+        tags: ["LifeStyle", "Furniture"],
+        href: "/projects/homestolife",
     },
     'init':{
         title: "INIT",

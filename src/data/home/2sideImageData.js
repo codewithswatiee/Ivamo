@@ -1,12 +1,12 @@
 export const projects = {
     left: {
-    title: "Burosys",
-    description: "Elevated the digital presence of Burosys with a website revamp, refined UI/UX, and cohesive high-end visual campaigns.",
-    imageSrcDesktop: "/burosys.png",
-    imageSrcMobile: "/burosys.png",
-    imageAlt: "Burosys",
-    href: "/projects/burosys",
-    tags: ["Design", "B2B", "Technology", "Furniture"],
+    title: "HomesToLife",
+    description: "Elevated a luxury furniture brand’s digital presence through refined UI/UX design and visual storytelling that mirrors its sophistication and global ambition.",
+    imageSrcDesktop: "/homestolife.png",
+    imageSrcMobile: "/homestolife.png",
+    imageAlt: "HomesToLife",
+    href: "/projects/homestolife",
+    tags: ["Lifestyle", "Furniture"],
     },
     right: {
     title: "Chorus",

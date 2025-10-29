@@ -11,7 +11,7 @@ export default function PortfolioSection({ left, right, headerLabel = "See lates
   const isExternal = (url) => /^https?:\/\//i.test(url)
 
   return (
-    <div className="w-full">
+    <div className="w-full relative bg-white">
       {/* Header */}
       {showHeader && <div className="text-center font-regular py-4">
         <p className="text-gray-400 text-md">{headerLabel}</p>
@@ -24,7 +24,7 @@ export default function PortfolioSection({ left, right, headerLabel = "See lates
 
   {/* Portfolio Grid */}
   {/* NOTE: Keep original spacing and sizes on desktop; on mobile stack naturally without forcing full viewport height */}
-  <div className="flex gap-3 px-4 mb-2 pt-4 flex-col md:flex-row">
+  <div className="flex gap-3 px-4 pb-2 pt-4 flex-col md:flex-row">
         {/* Left Project */}
         <div className="flex-1 cursor-pointer">
           {/* Image Container with Link */}

@@ -8,7 +8,6 @@ const designServices = [
   "Everything",
   "Books",
   "Brand Identity",
-  "Brand Strategy",
   "Campaigns",
   "Data Driven Experiences",
   "Digital Experiences",
@@ -24,15 +23,14 @@ const designServices = [
 
 // Map design to brands
 const designToBrands = {
-  "Brand Strategy": ["Burosys"],
   "Brand Creation": ["Plus 91"],
-  "Brand Identity": ["Burosys", "Chorus", "rComfort", "Plus 91", "INIT", "Foodoo", "SU:VE:OR", "RAF Clothing", "Do it Up", "Homestolife"],
+  "Brand Identity": ["rComfort", "Plus 91", "INIT", "RAF Clothing", "Do it Up", "Homestolife"],
   "Visual Identity": ["rComfort"],
   "Packaging": ["Plus 91", "INIT", "SU:VE:OR"],
-  "Website": ["Burosys", "Chorus", "rComfort", "Plus 91", "INIT", "Foodoo", "SU:VE:OR", "RAF Clothing", "Fine Arts", "Do it Up", "Homestolife"],
-  "UI/UX": ["Burosys", "INIT", "Foodoo", "RAF Clothing", "Fine Arts", "Raise", "Do it Up", "Homestolife"],
-  "Digital Experience": ["Burosys", "Chorus", "rComfort", "Plus 91", "INIT", "Foodoo", "SU:VE:OR", "RAF Clothing", "Fine Arts", "Raise", "Do it Up", "Homestolife"],
-  "Creative Direction": ["Burosys", "Chorus", "Plus 91", "INIT", "SU:VE:OR"],
+  "Website": ["Chorus", "rComfort", "Plus 91", "INIT", "Foodoo", "SU:VE:OR", "RAF Clothing", "Fine Arts", "Do it Up", "Homestolife"],
+  "UI/UX": ["INIT", "Foodoo", "RAF Clothing", "Fine Arts", "Raise", "Do it Up", "Homestolife"],
+  "Digital Experience": ["Chorus", "rComfort", "Plus 91", "INIT", "Foodoo", "SU:VE:OR", "RAF Clothing", "Fine Arts", "Raise", "Do it Up", "Homestolife"],
+  "Creative Direction": ["Chorus", "Plus 91", "INIT", "SU:VE:OR"],
   "Art Direction": ["Chorus", "rComfort", "Plus 91"],
   "Motion": ["Chorus", "Plus 91"],
   "Product Strategy": ["SU:VE:OR"],
@@ -44,7 +42,6 @@ const designToBrands = {
 
 // Map brand to image paths (relative to /public)
 const brandToImages = {
-  "Burosys": ["/burosys.png", "/burosys2.png"],
   "Plus 91": ["/+91/1.jpg", "/+91/2.svg", "/+91.png", "/+91_2.png"],
   "Chorus": ["/chorus/233.jpg", "/chorus/236.svg", "/chorus-mobile.png", "/chorus.png", "/chorus_banner.jpg"],
   "rComfort": ["/rcomfort.png", "/rcomfort-2.png"],
@@ -81,6 +78,53 @@ export default function ServiceModal({
   let imagesForDesign = (designToBrands[currentDesign] || [])
     .flatMap(brand => brandToImages[brand] || [])
     .filter(Boolean)
+  let displayDesign = currentDesign
+
+  // If there are no images for the current design, try to fall back to
+  // the first design in `designNames`, or the first design that has images.
+  if (!imagesForDesign || imagesForDesign.length === 0) {
+    // Prefer the first provided design name (if it isn't "Everything")
+    const candidates = Array.isArray(designNames) && designNames.length > 0
+      ? designNames
+      : Object.keys(designToBrands)
+
+    // Try the first candidate, then any candidate that has images
+    let found = []
+    for (let i = 0; i < candidates.length; i++) {
+      const cand = candidates[i]
+      // Skip a generic 'Everything' if more specific options exist
+      if (cand === 'Everything' && candidates.length > 1) continue
+      const imgs = (designToBrands[cand] || [])
+        .flatMap(b => brandToImages[b] || [])
+        .filter(Boolean)
+      if (imgs && imgs.length > 0) {
+        found = imgs
+        displayDesign = cand
+        break
+      }
+    }
+
+    // As a last resort, pick the first non-empty brand images from brandToImages
+    if (!found || found.length === 0) {
+      for (const arr of Object.values(brandToImages)) {
+        if (Array.isArray(arr) && arr.length > 0) {
+          found = arr.slice()
+          displayDesign = 'Featured'
+          break
+        }
+      }
+    }
+    imagesForDesign = found || []
+  }
+
+  // As an absolute last resort, ensure there's at least one image so we never
+  // render the "No images" placeholder. Use a tiny SVG data URL if needed.
+  if (!imagesForDesign || imagesForDesign.length === 0) {
+    imagesForDesign = [
+      'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="100%" height="100%" fill="%23f3f4f6"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%238b8b8b" font-size="20">No preview available</text></svg>'
+    ]
+    displayDesign = 'Preview'
+  }
 
   // Ensure at least 10 images for each tag (repeat or mix as needed)
   if (imagesForDesign.length > 0 && imagesForDesign.length < 10) {
@@ -111,7 +155,7 @@ export default function ServiceModal({
         onClick={onClose}
         className="fixed top-8 right-8 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 z-[101]"
       >
-        <X className="w-6 h-6 text-white" />
+        <X className="w-6 h-6 text-black" />
       </button>
 
       <div className="absolute top-[52%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl mx-4">
