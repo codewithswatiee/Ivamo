@@ -1,8 +1,8 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { ChevronDown, X } from "lucide-react"
-import { useState } from "react"
+import { X } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
 
 const clientTypes = [
   "Everyone",
@@ -25,24 +25,37 @@ const clientTypes = [
   "Transport",
 ]
 
-const clientImages = {
-  "Arts & Culture": "/1.png",
-  "Civic & Public": "/2.png",
-  "Consumer Brands": "/3.png",
-  "Education": "/4.png",
-  "Entertainment": "/5.png",
-  "Fashion & Beauty": "/6.png",
-  "Finance": "/7.png",
-  "Food & Drink": "/8.png",
-  "Health": "/9.png",
-  "Hospitality & Travel": "/10.png",
-  "Manufacturing & Industrials": "/11.png",
-  "Non-profits": "/12.png",
-  "Professional Services": "/13.png",
-  "Publishing": "/14.png",
-  "Real Estate": "/15.png",
-  "Technology": "/16.png",
-  "Transport": "/17.png",
+
+// Map industry to brands
+const industryToBrands = {
+  "Arts & Culture": ["Chorus", "Fine Arts", "Do it Up"],
+  "Fashion & Lifestyle": ["Chorus", "Plus 91", "SU:VE:OR", "RAF Clothing"],
+  "Beauty & Wellness": ["Plus 91", "INIT"],
+  "Luxury & Premium Goods": ["rComfort", "INIT", "SU:VE:OR", "Do it Up", "Homestolife"],
+  "Furniture & Interiors": ["Burosys", "rComfort", "Do it Up", "Homestolife"],
+  "Technology & Innovation": ["Burosys", "Foodoo", "Raise"],
+  "Food & Hospitality": ["Foodoo"],
+  "Sustainability & Conscious Design": ["SU:VE:OR"],
+  "Social Impact": ["Raise"],
+  "Retail": ["RAF Clothing"],
+  "Wellness": ["Foodoo"],
+  "B2B": ["Burosys"],
+}
+
+// Map brand to image paths (relative to /public)
+const brandToImages = {
+  "Burosys": ["/burosys.png", "/burosys2.png"],
+  "Plus 91": ["/+91/1.jpg", "/+91/2.svg", "/+91.png", "/+91_2.png"],
+  "Chorus": ["/chorus/233.jpg", "/chorus/236.svg", "/chorus-mobile.png", "/chorus.png", "/chorus_banner.jpg"],
+  "rComfort": ["/rcomfort.png", "/rcomfort-2.png"],
+  "INIT": ["/init/1.jpg", "/init/2.jpg", "/init/3.jpg", "/init/4.jpg", "/init/5.jpg", "/init.png", "/init (2).png", "/init_banner.jpg"],
+  "Foodoo": ["/foodo.png", "/foodo2.png"],
+  "SU:VE:OR": [],
+  "RAF Clothing": ["/raf/1.png", "/raf/2.png", "/raf.png"],
+  "Do it Up": ["/doitup/1.jpg", "/doitup.png"],
+  "Homestolife": ["/homestolife/1.png", "/homestolife/2.png", "/homestostay.png"],
+  "Raise": ["/raise/1.jpg", "/raise/2.svg", "/raise.png", "/Raise_banner.jpg"],
+  "Fine Arts": ["/fine-arts.png"],
 }
 
 
@@ -54,11 +67,39 @@ export default function ClientModal({
   currentClient,
   onClientSelect,
   onServiceModalOpen,
+  industryNames = [],
 }) {
   if (!isOpen) return null
   const [hoveredClient, setHoveredClient] = useState(null)
+  const [slideIndex, setSlideIndex] = useState(0)
+  const intervalRef = useRef(null)
 
-  const clientRows = [clientTypes.slice(1, 7), clientTypes.slice(7, 13), clientTypes.slice(13)]
+  // Get the current industry (hovered or selected)
+  const currentIndustry = hoveredClient || currentClient
+  // Get all images for brands mapped to this industry
+  let imagesForIndustry = (industryToBrands[currentIndustry] || [])
+    .flatMap(brand => brandToImages[brand] || [])
+    .filter(Boolean)
+
+  // Ensure at least 10 images for each tag (repeat or mix as needed)
+  if (imagesForIndustry.length > 0 && imagesForIndustry.length < 10) {
+    const original = imagesForIndustry.slice()
+    let i = 0
+    while (imagesForIndustry.length < 10) {
+      imagesForIndustry.push(original[i % original.length])
+      i++
+    }
+  }
+
+  useEffect(() => {
+    if (!isOpen) return
+    setSlideIndex(0)
+    intervalRef.current = setInterval(() => {
+      setSlideIndex(prev => imagesForIndustry.length > 0 ? (prev + 1) % imagesForIndustry.length : 0)
+    }, 600)
+    return () => clearInterval(intervalRef.current)
+  }, [isOpen, currentIndustry, imagesForIndustry.length])
+
   const displayClient = hoveredClient || currentClient
   return (
     <div className="fixed inset-0 z-[100] bg-black/30 backdrop-blur-xl">
@@ -72,39 +113,35 @@ export default function ClientModal({
 
       <div className="absolute top-[62%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl mx-4">
         <div className="bg-gray-100 backdrop-blur-lg rounded-3xl overflow-hidden shadow-2xl">
-          {/* Image Section */}
+          {/* Image Section - Slideshow for selected industry */}
           <div className="h-96 w-[70%] mt-7 mx-auto flex items-center justify-center relative overflow-hidden">
             <div className="absolute inset-0 " />
-            {/* Images need to be added here */}
-            <img
-              src={clientImages[displayClient] || clientImages["Arts & Culture"]}
-              alt={displayClient}
-              className="max-h-full max-w-full object-contain relative z-10 transition-all duration-500 ease-out"
-            />
+            {imagesForIndustry.length > 0 ? (
+              <img
+                src={imagesForIndustry[slideIndex]}
+                alt={displayClient}
+                className="max-h-full max-w-full object-contain relative z-10 transition-all duration-500 ease-out"
+              />
+            ) : (
+              <div className="text-gray-400 text-lg">No images for this industry</div>
+            )}
           </div>
 
           {/* Options Section */}
           <div className="p-5">
-            <div className="space-y-4 mb-4">
-              {clientRows.map((row, rowIndex) => (
-                <div key={rowIndex} className="flex flex-wrap justify-center gap-2">
-                  {row.map((client) => (
-                    <button
-                      key={client}
-                      onClick={() => {
-                        onClientSelect(client, clientTypes.indexOf(client))
-                        onClose()
-                      }}
-                      onMouseEnter={() => setHoveredClient(client)}
-                      onMouseLeave={() => setHoveredClient(null)}
-                      className={cn(
-                        "text-black cursor-pointer transition-all text-base font-medium px-3 py-1 rounded-sm bg-gray-200 hover:bg-gray-300"
-                      )}
-                    >
-                      {client}
-                    </button>
-                  ))}
-                </div>
+            <div className="flex flex-wrap justify-center gap-2 mb-4">
+              {industryNames.map((client) => (
+                <button
+                  key={client}
+                  onClick={() => onClientSelect(client)}
+                  onMouseEnter={() => setHoveredClient(client)}
+                  onMouseLeave={() => setHoveredClient(null)}
+                  className={cn(
+                    "text-black cursor-pointer transition-all text-base font-medium px-3 py-1 rounded bg-gray-200 hover:bg-gray-300"
+                  )}
+                >
+                  {client}
+                </button>
               ))}
             </div>
 
