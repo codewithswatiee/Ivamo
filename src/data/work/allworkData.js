@@ -143,7 +143,7 @@ export const workData = {
     'kaya':{
         title: "Kaya SkinCare",
         description: "The Kaya Bride reimagines bridal beauty, offering a flawless skincare journey for every bride",
-        images: ["/kaya/kaya1.png", "/kaya/kaya2.png", "/kaya/kaya3.png", "/kaya/kaya4.png"],
+        images: ["/kaya/Kaya1.png", "/kaya/kaya2.png", "/kaya/kaya3.png", "/kaya/kaya4.png"],
         about: "For The Kaya Bride, we focused on elevating the brand’s identity by bringing a refined digital experience to brides-to-be. From creating a stunning video shoot and visual communication strategy to revamping the website’s UI/UX, we crafted a seamless journey that showcases Kaya’s skincare expertise. The result? A digital transformation that brings luxury skincare closer to brides, making their experience feel as special as their big day.",
         tags: ["UI/UX", "Website"],
         href: "/projects/kaya",
