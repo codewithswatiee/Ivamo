@@ -28,32 +28,33 @@ const clientTypes = [
 
 // Map industry to brands
 const industryToBrands = {
-  "Arts & Culture": ["Chorus", "Fine Arts", "Do it Up"],
+  "Arts & Culture": ["Chorus", "rComfort", "Do it Up", "Fine Arts", "Homestolife", "RAF Clothing", "Foodo", "INIT"],
   "Fashion & Lifestyle": ["Chorus", "Plus 91", "SU:VE:OR", "RAF Clothing"],
   "Beauty & Wellness": ["Plus 91", "INIT"],
   "Luxury & Premium Goods": ["rComfort", "INIT", "SU:VE:OR", "Do it Up", "Homestolife"],
-  "Furniture & Interiors": ["rComfort", "Do it Up", "Homestolife"],
+  "Furniture & Interiors": ["rComfort", "INIT"],
   "Technology & Innovation": [ "Foodoo", "Raise"],
   "Food & Hospitality": ["Foodoo"],
-  "Sustainability & Conscious Design": ["SU:VE:OR"],
+  "Sustainability & Conscious Design": ["SU:VE:OR", "Plus 91"],
   "Social Impact": ["Raise"],
   "Retail": ["RAF Clothing"],
   "Wellness": ["Foodoo"],
+  "Everyone": ["Chorus", "rComfort", "Plus 91", "INIT", "Foodoo", "SU:VE:OR", "RAF Clothing", "Fine Arts", "Raise", "Do it Up", "Homestolife"],
 }
 
 // Map brand to image paths (relative to /public)
 const brandToImages = {
-  "Plus 91": ["/+91/1.jpg", "/+91/2.svg", "/+91.png", "/+91_2.png"],
-  "Chorus": ["/chorus/233.jpg", "/chorus/236.svg", "/chorus.png", "/chorus_banner.jpg"],
-  "rComfort": ["/rcomfort.png", "/rcomfort-2.png"],
-  "INIT": ["/init/1.jpg", "/init/2.jpg", "/init/3.jpg", "/init/4.jpg", "/init/5.jpg", "/init.png", "/init (2).png", "/init_banner.jpg"],
-  "Foodoo": ["/foodo.png", "/foodo2.png"],
+  "Plus 91": ["/+91/1.png"],
+  "Chorus": ["/chorus/1.jpg"],
+  "rComfort": ["/rcomfort/3.png"],
+  "INIT": ["/init/1.jpg"],
+  "Foodoo": ["/foodo.png"],
   "SU:VE:OR": [],
-  "RAF Clothing": ["/raf/1.png", "/raf/2.png", "/raf.png"],
-  "Do it Up": ["/doitup/1.jpg", "/doitup.png"],
-  "Homestolife": ["/homestolife/1.png", "/homestolife/2.png", "/homestostay.png"],
-  "Raise": ["/raise/1.jpg", "/raise/2.svg", "/raise.png", "/Raise_banner.jpg"],
-  "Fine Arts": ["/fine-arts.png"],
+  "RAF Clothing": ["/raf/1.png"],
+  "Do it Up": ["/doitup/1.jpg"],
+  "Homestolife": ["/homestolife/1.png"],
+  "Raise": ["/raise/5.png"],
+  "Fine Arts": ["/fine-arts/fine.png"],
 }
 
 

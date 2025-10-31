@@ -3,7 +3,7 @@ export const gridData = [
     id: "rComfort",
     title: "rComfort",
     description:"Redefined R Comfort’s identity with a full rebrand and digital experience that elevates handcrafted furniture into a modern symbol of luxury living.",
-    image: "/rcomfort.png",
+    image: "/rcomfort/1.png",
     categories: ["Furniture", "Lifestyle", "Luxury"],
     link: "/projects/rcomfort",
     backgroundColor: "bg-slate-800",
@@ -13,9 +13,9 @@ export const gridData = [
     title: "+91",
     description:
       "Created a bold, youth-driven perfume brand with expressive packaging, immersive storytelling, and a digital identity that celebrates Indian individuality.",
-    image: "/+91.png",
+    image: "/+91/1.png",
     categories: ["Beauty", "Lifestyle"],
-    link: "/projects/91",
+    link: "/projects/plus-91",
     backgroundColor: "bg-gray-200",
   },
   {
@@ -23,7 +23,7 @@ export const gridData = [
     title: "INIT",
     description:
       "Revitalized INIT with a website redesign and expressive packaging that transforms fragrance into intimate, sensory storytelling.",
-    image: "/init.png",
+    image: "/init/3.jpg",
     categories: ["Beauty", "Lifestyle", "Experiential Design"],
     link: "/projects/init",
     backgroundColor: "bg-black",
@@ -33,7 +33,7 @@ export const gridData = [
     title: "Do It Up",
     description:
       "Designed an elegant and intuitive UI/UX for Do It Up, bringing its luxury event styling brand to life online.",
-    image: "/doitup.png",
+    image: "/doitup/1.jpg",
     categories: ["Lifestyle", "Events", "Digital Experience"],
     link: "/projects/doitup",
     backgroundColor: "bg-gray-100",
@@ -43,7 +43,7 @@ export const gridData = [
     title: "Fine Arts",
     description:
       "Redesigned the digital gallery for Fine Arts with a refined website, intuitive UI/UX, and immersive visual storytelling.",
-    image: "/fine-arts.png",
+    image: "/fine-arts/fine-arts.png",
     categories: ["Art", "Lifestyle", "Digital Experience"],
     link: "/projects/finearts",
     backgroundColor: "bg-emerald-900",
@@ -53,7 +53,7 @@ export const gridData = [
     title: "Foodoo",
     description:
       "Designed a vibrant visual identity and seamless digital platform that makes healthy eating simple, engaging, and effortless.",
-    image: "/foodo.png",
+    image: "/foodo/foodo.png",
     categories: ["Food Tech", "Health", "Lifestyle"],
     link: "/projects/foodo",
     backgroundColor: "bg-white",

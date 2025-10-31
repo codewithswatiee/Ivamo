@@ -5,9 +5,8 @@ import HeroBackground from "@/components/hero-background"
 import { ImageSection } from "@/components/ImageSection"
 import PortfolioSection from "@/components/work-banner"
 import { PortfolioSection2 } from "@/components/gridSection"
-import { Quote } from "@/components/quote"
 import { belowProjects, projects } from "@/data/home/2sideImageData"
-import { gridData } from "@/data/home/6gridSection"
+import { gridData2, gridData1} from "@/data/home/6gridSection"
 import carouselItems from "@/data/home/carouselData"
 import { FloatingNavBar } from "@/components/floating-nav-bar"
 import { Helmet } from "react-helmet"
@@ -32,9 +31,10 @@ export default function HomePage() {
       </div>
       <FloatingNavBar />
       <PortfolioSection left={projects.left} right={projects.right} showHeader={true} />
-      <PortfolioSection2 projects={gridData} />
+      <PortfolioSection2 projects={gridData1} />
       <Carousel items={carouselItems} />
       <PortfolioSection left={belowProjects.left} right={belowProjects.right} />
+      <PortfolioSection2 projects={gridData2} />
       <ImageSection imageAlt={'ivamo-studios'} imageSrcDesktop='/lastSection.png' imageSrcMobile='/lastSection-mobile.png'/>
     </div>
   )

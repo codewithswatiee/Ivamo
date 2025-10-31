@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import { workData } from '@/data/work/allworkData'
+import ZoomImageSection from '@/components/ZoomImage'
 
 // import { Helmet } from 'react-helmet'
 // Use Next.js app-router metadata function instead of react-helmet which
@@ -56,7 +57,7 @@ export default function ProjectPage({ params }) {
         <section className="space-y-8">
           {item.images.slice(0, 2).map((src, i) => (
             <div key={i} className="w-full p-3">
-              <img src={src} alt={`${item.title} ${i + 1}`} className="w-full h-auto md:h-auto object-cover" />
+              <ZoomImageSection image={src} />
             </div>
           ))}
         </section>
@@ -73,7 +74,7 @@ export default function ProjectPage({ params }) {
         <section className="space-y-8">
           {item.images.slice(2).map((src, i) => (
             <div key={i} className="w-full p-3">
-              <img src={src} alt={`${item.title} ${i + 3}`} className="w-full h-auto md:h-auto object-cover" />
+              <ZoomImageSection image={src} />
             </div>
           ))}
         </section>

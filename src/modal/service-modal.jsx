@@ -23,36 +23,38 @@ const designServices = [
 
 // Map design to brands
 const designToBrands = {
-  "Brand Creation": ["Plus 91"],
-  "Brand Identity": ["rComfort", "Plus 91", "INIT", "RAF Clothing", "Do it Up", "Homestolife"],
-  "Visual Identity": ["rComfort"],
-  "Packaging": ["Plus 91", "INIT", "SU:VE:OR"],
-  "Website": ["Chorus", "rComfort", "Plus 91", "INIT", "Foodoo", "SU:VE:OR", "RAF Clothing", "Fine Arts", "Do it Up", "Homestolife"],
-  "UI/UX": ["INIT", "Foodoo", "RAF Clothing", "Fine Arts", "Raise", "Do it Up", "Homestolife"],
-  "Digital Experience": ["Chorus", "rComfort", "Plus 91", "INIT", "Foodoo", "SU:VE:OR", "RAF Clothing", "Fine Arts", "Raise", "Do it Up", "Homestolife"],
-  "Creative Direction": ["Chorus", "Plus 91", "INIT", "SU:VE:OR"],
-  "Art Direction": ["Chorus", "rComfort", "Plus 91"],
-  "Motion": ["Chorus", "Plus 91"],
+  "Brand Creation": ["Plus 91", "rComfort"],
+  "Brand Identity": ["rComfort", "INIT"],
+  "Visual Identity": ["rComfort", "Plus 91", "SU:VE:OR", "Foodoo", "RAF Clothing", "Do it Up", "Homestolife"],
+  "Packaging": ["Plus 91", "INIT", "skift"],
+  "Website": ["Chorus", "rComfort", "INIT","Scoo boo", "Skifit", "Kaya", "Foodoo", "RAF Clothing", "Fine Arts", "Do it Up", "Homestolife", "Raise"],
+  "UI/UX": ["Chorus", "rComfort", "INIT", "Foodoo","Scoo boo","Kaya", "RAF Clothing", "Fine Arts", "Raise", "Do it Up", "Homestolife"],
+  "Digital Experience": ["Chorus", "Foodoo", "Do it Up", "Plus 91"],
+  "Creative Direction": ["Plus 91", "SU:VE:OR"],
+  "Art Direction": ["rComfort", "Fine Arts"],
   "Product Strategy": ["SU:VE:OR"],
   "E-commerce": ["RAF Clothing"],
-  "Platform Design": ["Raise"],
-  "Visual Storytelling": ["Fine Arts"],
-  "Visual System": ["Foodoo"]
+  "Platform Design": ["Chorus", "Homestolife"],
+  "Visual Storytelling": ["rComfort", "INIT","Fine Arts"],
+  "Everything": ["Chorus", "rComfort", "Plus 91", "INIT", "Foodoo", "SU:VE:OR", "RAF Clothing", "Fine Arts", "Raise", "Do it Up", "Homestolife"],
 }
 
 // Map brand to image paths (relative to /public)
 const brandToImages = {
-  "Plus 91": ["/+91/1.jpg", "/+91/2.svg", "/+91.png", "/+91_2.png"],
-  "Chorus": ["/chorus/233.jpg", "/chorus/236.svg", "/chorus-mobile.png", "/chorus.png", "/chorus_banner.jpg"],
-  "rComfort": ["/rcomfort.png", "/rcomfort-2.png"],
-  "INIT": ["/init/1.jpg", "/init/2.jpg", "/init/3.jpg", "/init/4.jpg", "/init/5.jpg", "/init.png", "/init (2).png", "/init_banner.jpg"],
-  "Foodoo": ["/foodo.png", "/foodo2.png"],
+ "Plus 91": ["/+91/1.png"],
+  "Chorus": ["/chorus/1.jpg"],
+  "rComfort": ["/rcomfort/3.png"],
+  "INIT": ["/init/1.jpg"],
+  "Foodoo": ["/foodo.png"],
   "SU:VE:OR": [],
-  "RAF Clothing": ["/raf/1.png", "/raf/2.png", "/raf.png"],
-  "Do it Up": ["/doitup/1.jpg", "/doitup.png"],
-  "Homestolife": ["/homestolife/1.png", "/homestolife/2.png", "/homestostay.png"],
-  "Raise": ["/raise/1.jpg", "/raise/2.svg", "/raise.png", "/Raise_banner.jpg"],
-  "Fine Arts": ["/fine-arts.png"],
+  "RAF Clothing": ["/raf/1.png"],
+  "Do it Up": ["/doitup/1.jpg"],
+  "Homestolife": ["/homestolife/1.png"],
+  "Raise": ["/raise/5.png"],
+  "Fine Arts": ["/fine-arts/fine.png"],
+  "Scoo boo": ["/Scooboo/sb1.png"],
+  "Skift": ["/skifit/skifit1.png"],
+  "Kaya": ["/kaya/kaya1.png"],
 }
 
 

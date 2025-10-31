@@ -5,22 +5,8 @@ import { useEffect, useRef, useState } from "react"
 
 const heroImages = [
   {
-    desktop: "/chorus_banner.jpg",
-    mobile: "/chorus-mobile.png",
-    title: "Chorus",
-    subtitle:
-      "Evolved Moonray into Chorus through a complete rebrand, expressive digital identity, and immersive art-led web experience.",
-    service: "Brand Strategy",
-    client: "Finance",
-  },
-  {
-    desktop: "/init_banner.jpg",
-    mobile: "/init.png",
-    title: "INIT",
-    subtitle:
-      "Revitalized INIT with a website redesign and expressive packaging that transforms fragrance into intimate, sensory storytelling.",
-    service: "Brand Identity",
-    client: "Furniture",
+    desktop: "/init/init_banner.png",
+    mobile: "/init/init.png",
   },
 ]
 
@@ -63,7 +49,7 @@ export default function HeroBackground() {
   }, [scrollYProgress])
 
   return (
-      <section id="hero-background" className="relative h-[92vh] overflow-hidden rounded-t-3xl bg-black">
+      <section id="hero-background" className="relative h-[92vh] overflow-hidden bg-black">
       {/* Background Images (motion-driven scale) */}
       <motion.div
         ref={heroBgRef}
@@ -111,7 +97,7 @@ export default function HeroBackground() {
       </motion.div>
 
       {/* Project Info + Navigation (mobile: stacked, desktop: side-by-side) */}
-      <div className="absolute bottom-8 left-0 right-0 px-6 md:px-8 text-white flex flex-col md:flex-row items-center md:items-end justify-between">
+      {/* <div className="absolute bottom-8 left-0 right-0 px-6 md:px-8 text-white flex flex-col md:flex-row items-center md:items-end justify-between">
         <div className="w-full md:w-auto text-left md:text-left mb-4 md:mb-0">
           <h3 className="text-[16px] font-bold mb-2">{currentImage.title}</h3>
           <p className="text-[15px] opacity-90 max-w-2xl">{currentImage.subtitle}</p>
@@ -151,7 +137,7 @@ export default function HeroBackground() {
             </svg>
           </button>
         </div>
-      </div>
+      </div> */}
     </section>
   )
 }

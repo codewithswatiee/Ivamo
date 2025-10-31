@@ -11,7 +11,7 @@ export function FloatingNavBar() {
   const [combinationIndex, setCombinationIndex] = useState(0)
   const [designAnimating, setDesignAnimating] = useState(false)
   const [industryAnimating, setIndustryAnimating] = useState(false)
-  const [prevCombination, setPrevCombination] = useState({ design: '', industry: '' })
+  const [prevCombination, setPrevCombination] = useState({ design: '', industry: [] })
   // Modal state
   const [serviceModalOpen, setServiceModalOpen] = useState(false)
   const [clientModalOpen, setClientModalOpen] = useState(false)
@@ -21,20 +21,19 @@ export function FloatingNavBar() {
   const combinationIndexRef = useRef(0)
 
   const combinations = [
-    { design: "Brand Creation", industry: "Beauty & Wellness" },
-    { design: "Brand Identity", industry: "Fashion & Lifestyle" },
-    { design: "Visual Identity", industry: "Luxury & Premium Goods" },
-    { design: "Packaging", industry: "Sustainability & Conscious Design" },
-    { design: "Website", industry: "Furniture & Interiors" },
-    { design: "UI/UX", industry: "Technology & Innovation" },
-    { design: "Digital Experience", industry: "Arts & Culture" },
-    { design: "Creative Direction", industry: "Luxury & Premium Goods" },
-    { design: "Art Direction", industry: "Fashion & Lifestyle" },
-    { design: "Motion", industry: "Beauty & Wellness" },
-    { design: "Product Strategy", industry: "Fashion & Lifestyle" },
-    { design: "E-commerce", industry: "Retail" },
-    { design: "Platform Design", industry: "Social Impact" },
-    { design: "Visual Storytelling", industry: "Arts & Culture" }
+    { design: "Brand Creation", industry: ["Furniture & Interiors", "Beauty & Wellness", "Sustainability & Conscious Design"] },
+    { design: "Brand Identity", industry: ["Furniture & Interiors", "Luxury & Premium Goods"] },
+    { design: "Visual Identity", industry: ["Furniture & Interiors", "Beauty & Wellness", "Food & Hospitality", "Sustainability & Conscious Design", "Fashion & Lifestyle", "Luxury & Premium Goods"] },
+    { design: "Packaging", industry: ["Beauty & Wellness", "Luxury & Premium Goods"] },
+    { design: "Website", industry: ["Fashion & Lifestyle", "Furniture & Interiors", "Luxury & Premium Goods", "Food & Hospitality", "Arts & Culture"] },
+    { design: "UI/UX", industry: ["Fashion & Lifestyle", "Furniture & Interiors", "Luxury & Premium Goods", "Food & Hospitality", "Arts & Culture"] },
+    { design: "Digital Experience", industry: ["Fashion & Lifestyle", "Beauty & Wellness", "Food & Hospitality", "Luxury & Premium Goods"] },
+    { design: "Creative Direction", industry: ["Beauty & Wellness", "Sustainability & Conscious Design"] },
+    { design: "Art Direction", industry: ["Furniture & Interiors", "Arts & Culture"] },
+    { design: "Product Strategy", industry: ["Sustainability & Conscious Design"] },
+    { design: "E-commerce", industry: ["Fashion & Lifestyle"] },
+    { design: "Platform Design", industry: ["Fashion & Lifestyle", "Furniture & Interiors"] },
+    { design: "Visual Storytelling", industry: ["Furniture & Interiors", "Luxury & Premium Goods", "Arts & Culture"] },
   ]
 
   useEffect(() => {
@@ -187,14 +186,14 @@ export function FloatingNavBar() {
                   <span
                     className={`flex justify-center animated-span ${industryAnimating ? "slide-out-down" : "hidden"}`}
                   >
-                    {prevCombination.industry}
+                    {Array.isArray(prevCombination.industry) ? prevCombination.industry[0] : prevCombination.industry}
                   </span>
                   <span
                     className={`flex justify-center animated-span ${industryAnimating ? "slide-in-up" : ""}`}
                     style={{ cursor: 'pointer', textDecoration: 'underline' }}
                     onClick={handleClientClick}
                   >
-                    {combinations[combinationIndex].industry}
+                    {Array.isArray(combinations[combinationIndex].industry) ? combinations[combinationIndex].industry[0] : combinations[combinationIndex].industry}
                   </span>
                 </div>
               </div>
@@ -225,7 +224,7 @@ export function FloatingNavBar() {
           setClientModalOpen(false)
           setServiceModalOpen(true)
         }}
-        industryNames={[...new Set(combinations.map(c => c.industry))]}
+        industryNames={[...new Set(combinations.flatMap(c => Array.isArray(c.industry) ? c.industry : [c.industry]))]}
       />
     </>
   )
