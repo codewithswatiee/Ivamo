@@ -1,6 +1,7 @@
 "use client"
-import { useState } from "react"
 import { cn } from "@/lib/utils"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useEffect, useRef, useState } from "react"
 
 const heroImages = [
   {
@@ -28,10 +29,51 @@ export default function HeroBackground() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const currentImage = heroImages[currentImageIndex] || heroImages[0]
 
+  // zoom state using Framer Motion
+  const initialScale = 0.90 // start zoomed out
+  const [isOverlay, setIsOverlay] = useState(false)
+  const bannerDisabledRef = useRef(false)
+  const heroBgRef = useRef(null)
+
+  // useScroll tied to the hero background element; offsets map when top hits bottom -> 0, bottom hits top -> 1
+  const { scrollYProgress } = useScroll({ target: heroBgRef, offset: ["start end", "end start"] })
+  const scale = useTransform(scrollYProgress, [0, 1.2], [initialScale, 1.2])
+
+  // subscribe to progress changes to toggle overlay and sticky behaviour
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.onChange((v) => {
+      const progress = Math.max(0, Math.min(1, v || 0))
+      setIsOverlay(progress < 1)
+
+      const banner = document.getElementById('hero-banner')
+      const heroBg = heroBgRef.current
+      if (!banner || !heroBg) return
+      const bgRect = heroBg.getBoundingClientRect()
+
+      if ((bgRect.top <= 0 && progress >= 1) || bgRect.bottom <= 0) {
+        banner.classList.remove('sticky')
+        bannerDisabledRef.current = true
+      } else {
+        if (!bannerDisabledRef.current && !banner.classList.contains('sticky')) banner.classList.add('sticky')
+      }
+    })
+
+    return () => unsubscribe()
+  }, [scrollYProgress])
+
   return (
-    <section className="relative h-[92vh] overflow-hidden rounded-t-3xl bg-black">
-      {/* Background Images */}
-      <div className="absolute inset-0 bg-black">
+      <section id="hero-background" className="relative h-[92vh] overflow-hidden rounded-t-3xl bg-black">
+      {/* Background Images (motion-driven scale) */}
+      <motion.div
+        ref={heroBgRef}
+        className="absolute inset-0 bg-black"
+        style={{
+          scale,
+          transformOrigin: 'center top',
+          pointerEvents: isOverlay ? 'none' : 'auto',
+          zIndex: isOverlay ? 40 : 'auto',
+        }}
+      >
         {heroImages.map((image, index) => (
           <div key={index}>
             {/* Desktop background (md+) */}
@@ -65,7 +107,7 @@ export default function HeroBackground() {
             />
           </div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Project Info + Navigation (mobile: stacked, desktop: side-by-side) */}
       <div className="absolute bottom-8 left-0 right-0 px-6 md:px-8 text-white flex flex-col md:flex-row items-center md:items-end justify-between">
@@ -114,3 +156,4 @@ export default function HeroBackground() {
 }
 
 export { heroImages }
+
