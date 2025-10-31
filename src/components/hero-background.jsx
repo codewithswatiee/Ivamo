@@ -50,7 +50,8 @@ export default function HeroBackground() {
       if (!banner || !heroBg) return
       const bgRect = heroBg.getBoundingClientRect()
 
-      if ((bgRect.top <= 0 && progress >= 1) || bgRect.bottom <= 0) {
+      // Unstick the banner once the hero background progress is >= 0.5 (covers ~50% of viewport)
+      if (progress >= 0.5 || bgRect.bottom <= 0) {
         banner.classList.remove('sticky')
         bannerDisabledRef.current = true
       } else {
