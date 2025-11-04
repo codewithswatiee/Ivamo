@@ -10,7 +10,6 @@ import { gridData2, gridData1} from "@/data/home/6gridSection"
 import carouselItems from "@/data/home/carouselData"
 import { FloatingNavBar } from "@/components/floating-nav-bar"
 import { Helmet } from "react-helmet"
-import HeroBanner from "@/components/hero-banner"
 
 export default function HomePage() {
 
@@ -25,10 +24,7 @@ export default function HomePage() {
         <meta property="og:url" content="https://ivamostudios.in" />
         <meta property="og:type" content="website" />
       </Helmet>
-     <HeroBanner />
-      <div className="bg-black">
-        <HeroBackground currentImageIndex={0} onImageChange={() => {}} />
-      </div>
+      <HeroBackground currentImageIndex={0} onImageChange={() => {}} />
       <FloatingNavBar />
       <PortfolioSection left={projects.left} right={projects.right} showHeader={true} />
       <PortfolioSection2 projects={gridData1} />

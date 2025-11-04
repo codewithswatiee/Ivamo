@@ -79,6 +79,10 @@ export function FloatingNavBar() {
     setClientModalOpen(false)
   }
 
+  // force bottom when modal open or user scrolled past threshold; also add a class when modal open
+  const forcedBottom = isAtBottom || serviceModalOpen || clientModalOpen
+  const modalOpenClass = (serviceModalOpen || clientModalOpen) ? 'modal-open' : ''
+
   return (
     <>
       <style>{`
@@ -159,9 +163,9 @@ export function FloatingNavBar() {
         .animated-span {
           will-change: transform, opacity;
         }
+        .nav-bar-container.modal-open { z-index: 110; }
       `}</style>
-
-      <div className={`nav-bar-container ${isAtBottom ? "at-bottom" : ""}`}>
+      <div className={`nav-bar-container ${forcedBottom ? "at-bottom" : ""} ${modalOpenClass}`}>
         <div className="pointer-events-auto relative">
           <div className="bg-white/70 backdrop-blur-sm border border-black/20 rounded-lg shadow-lg px-6 py-3 sm:px-4 sm:py-2 flex items-center justify-center gap-2 whitespace-nowrap">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 whitespace-nowrap">

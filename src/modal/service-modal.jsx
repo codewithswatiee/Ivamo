@@ -155,7 +155,7 @@ export default function ServiceModal({
       {/* Fixed close button */}
       <button
         onClick={onClose}
-        className="fixed top-8 right-8 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 z-[101]"
+        className="fixed cursor-pointer top-8 right-8 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 z-[101]"
       >
         <X className="w-6 h-6 text-black" />
       </button>

@@ -84,7 +84,8 @@ export const Header = () => {
                 initial={false}
                 animate={{ y: isDesktop ? (visible ? 0 : -120) : 0 }}
                 transition={{ duration: 0.22 }}
-                className="sticky top-0 z-40 bg-[#000000]/88 flex items-center justify-between text-white py-4 px-4 md:px-8 shadow-sm"
+                // Make header fixed so it overlays content (no reserved space), on all viewports
+                className="fixed top-0 left-0 right-0 z-40 bg-[#000000]/88 flex items-center justify-between text-white py-4 px-4 md:px-8 shadow-sm"
             >
                 <a href="/" className="font-[900] font-laLuxes text-lg cursor-pointer">
                     <svg width="152" height="17" viewBox="0 0 152 17" fill="none" xmlns="http://www.w3.org/2000/svg">

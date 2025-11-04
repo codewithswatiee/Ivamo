@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export const ImageSection = ({imageSrcDesktop, imageSrcMobile, imageAlt}) => {
   return (
-    <picture className="relative">
+    <picture className="">
       <source media="(min-width: 768px)" srcSet={imageSrcDesktop} />
       <Image
         width={100}

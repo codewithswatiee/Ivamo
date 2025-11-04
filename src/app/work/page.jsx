@@ -20,7 +20,7 @@ export default function Work() {
           <meta property="og:url" content="https://ivamostudios.in/work" />
           <meta property="og:type" content="website" />
       </Helmet>
-      <h1 className="text-[18px] md:text-[48px] mb-4 text-black pt-3 m-3">Work</h1>
+      <h1 className="text-[18px] md:text-[48px] mb-4 text-black pt-24 pl-3">Work</h1>
       <PortfolioSection left={projects.left} right={projects.right}/>
       <PortfolioSection2 projects={gridData1} />
       <ReversePortfolioSection left={belowProjects.left} right={belowProjects.right} />
