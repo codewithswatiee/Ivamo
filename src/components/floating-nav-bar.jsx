@@ -4,8 +4,25 @@
 import { useEffect, useRef, useState } from "react"
 import ClientModal from "../modal/client-modal"
 import ServiceModal from "../modal/service-modal"
+import { getValidCombinations } from "./hero-background"
+
+// Custom hook to communicate current combination to other components
+function useHeroCombination() {
+  const [currentCombination, setCurrentCombination] = useState(null)
+  const [isNavAtBottom, setIsNavAtBottom] = useState(false)
+  
+  // Make these available globally via window for hero background to access
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.floatingNavState = { currentCombination, isNavAtBottom }
+    }
+  }, [currentCombination, isNavAtBottom])
+  
+  return { setCurrentCombination, setIsNavAtBottom }
+}
 
 export function FloatingNavBar() {
+  const { setCurrentCombination, setIsNavAtBottom } = useHeroCombination()
 
   const [isAtBottom, setIsAtBottom] = useState(false)
   const [combinationIndex, setCombinationIndex] = useState(0)
@@ -20,31 +37,23 @@ export function FloatingNavBar() {
 
   const combinationIndexRef = useRef(0)
 
-  const combinations = [
-    { design: "Brand Creation", industry: ["Furniture & Interiors", "Beauty & Wellness", "Sustainability & Conscious Design"] },
-    { design: "Brand Identity", industry: ["Furniture & Interiors", "Luxury & Premium Goods"] },
-    { design: "Visual Identity", industry: ["Furniture & Interiors", "Beauty & Wellness", "Food & Hospitality", "Sustainability & Conscious Design", "Fashion & Lifestyle", "Luxury & Premium Goods"] },
-    { design: "Packaging", industry: ["Beauty & Wellness", "Luxury & Premium Goods"] },
-    { design: "Website", industry: ["Fashion & Lifestyle", "Furniture & Interiors", "Luxury & Premium Goods", "Food & Hospitality", "Arts & Culture"] },
-    { design: "UI/UX", industry: ["Fashion & Lifestyle", "Furniture & Interiors", "Luxury & Premium Goods", "Food & Hospitality", "Arts & Culture"] },
-    { design: "Digital Experience", industry: ["Fashion & Lifestyle", "Beauty & Wellness", "Food & Hospitality", "Luxury & Premium Goods"] },
-    { design: "Creative Direction", industry: ["Beauty & Wellness", "Sustainability & Conscious Design"] },
-    { design: "Art Direction", industry: ["Furniture & Interiors", "Arts & Culture"] },
-    { design: "Product Strategy", industry: ["Sustainability & Conscious Design"] },
-    { design: "E-commerce", industry: ["Fashion & Lifestyle"] },
-    { design: "Platform Design", industry: ["Fashion & Lifestyle", "Furniture & Interiors"] },
-    { design: "Visual Storytelling", industry: ["Furniture & Interiors", "Luxury & Premium Goods", "Arts & Culture"] },
-  ]
+  // Get valid combinations from brands that have hero images
+  const validCombinations = getValidCombinations()
+  
+  // Use the raw valid combinations (each has one service-industry pair)
+  const combinations = validCombinations
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY
-      setIsAtBottom(scrollPosition > 100)
+      const atBottom = scrollPosition > 100
+      setIsAtBottom(atBottom)
+      setIsNavAtBottom(atBottom)
     }
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [setIsNavAtBottom])
 
   useEffect(() => {
     const changeInterval = setInterval(() => {
@@ -54,6 +63,9 @@ export function FloatingNavBar() {
       setCombinationIndex(nextIndex)
       setDesignAnimating(true)
       setIndustryAnimating(true)
+      
+      // Update current combination for hero background
+      setCurrentCombination(combinations[nextIndex])
 
       setTimeout(() => {
         setDesignAnimating(false)
@@ -61,8 +73,11 @@ export function FloatingNavBar() {
       }, 500)
     }, 3000)
 
+    // Set initial combination
+    setCurrentCombination(combinations[0])
+
     return () => clearInterval(changeInterval)
-  }, [combinations.length])
+  }, [combinations.length, setCurrentCombination])
 
   // Handlers for modal open/close
   const handleServiceClick = () => setServiceModalOpen(true)
@@ -190,14 +205,14 @@ export function FloatingNavBar() {
                   <span
                     className={`flex justify-center animated-span ${industryAnimating ? "slide-out-down" : "hidden"}`}
                   >
-                    {Array.isArray(prevCombination.industry) ? prevCombination.industry[0] : prevCombination.industry}
+                    {prevCombination.industry}
                   </span>
                   <span
                     className={`flex justify-center animated-span ${industryAnimating ? "slide-in-up" : ""}`}
                     style={{ cursor: 'pointer', textDecoration: 'underline' }}
                     onClick={handleClientClick}
                   >
-                    {Array.isArray(combinations[combinationIndex].industry) ? combinations[combinationIndex].industry[0] : combinations[combinationIndex].industry}
+                    {combinations[combinationIndex].industry}
                   </span>
                 </div>
               </div>
@@ -216,7 +231,6 @@ export function FloatingNavBar() {
           setServiceModalOpen(false)
           setClientModalOpen(true)
         }}
-        designNames={[...new Set(combinations.map(c => c.design))]}
       />
       <ClientModal
         isOpen={clientModalOpen}
@@ -228,7 +242,6 @@ export function FloatingNavBar() {
           setClientModalOpen(false)
           setServiceModalOpen(true)
         }}
-        industryNames={[...new Set(combinations.flatMap(c => Array.isArray(c.industry) ? c.industry : [c.industry]))]}
       />
     </>
   )

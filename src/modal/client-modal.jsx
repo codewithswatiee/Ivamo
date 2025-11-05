@@ -5,42 +5,43 @@ import { X } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 
 const clientTypes = [
-  "Everyone",
-  "Arts & Culture",
-  "Civic & Public",
-  "Consumer Brands",
-  "Education",
-  "Entertainment",
-  "Fashion & Beauty",
-  "Finance",
-  "Food & Drink",
-  "Health",
-  "Hospitality & Travel",
-  "Manufacturing & Industrials",
-  "Non-profits",
-  "Professional Services",
-  "Publishing",
-  "Real Estate",
-  "Technology",
-  "Transport",
+  "Fashion and Apparel",
+  "Furniture and home interior", 
+  "Cosmetics and personal care",
+  "SaaS for Hospitality",
+  "Fashion and Accessories",
+  "Luxury Jewellery",
+  "Luxury Event & Decor Services",
+  "Home Fragrance & Decor",
+  "Personal Care / Grooming", 
+  "Skincare / Haircare / Beauty Services",
+  "Stationery & Art Supplies",
+  "Not for profit/ NGO",
+  "Everyone"
 ]
 
 
 // Map industry to brands
 const industryToBrands = {
-  "Arts & Culture": ["Chorus", "rComfort", "Do it Up", "Fine Arts", "Homestolife", "RAF Clothing", "Foodo", "INIT"],
-  "Fashion & Lifestyle": ["Chorus", "Plus 91", "SU:VE:OR", "RAF Clothing"],
-  "Beauty & Wellness": ["Plus 91", "INIT"],
-  "Luxury & Premium Goods": ["rComfort", "INIT", "SU:VE:OR", "Do it Up", "Homestolife"],
-  "Furniture & Interiors": ["rComfort", "INIT"],
-  "Technology & Innovation": [ "Foodoo", "Raise"],
-  "Food & Hospitality": ["Foodoo"],
-  "Sustainability & Conscious Design": ["SU:VE:OR", "Plus 91"],
-  "Social Impact": ["Raise"],
-  "Retail": ["RAF Clothing"],
-  "Wellness": ["Foodoo"],
-  "Everyone": ["Chorus", "rComfort", "Plus 91", "INIT", "Foodoo", "SU:VE:OR", "RAF Clothing", "Fine Arts", "Raise", "Do it Up", "Homestolife"],
-}
+  "Fashion and Apparel": ["CHORUS", "RAF Clothing"],
+  "Furniture and Home Interior": ["R Comfort", "Homestolife"],
+  "Cosmetics and Personal Care": ["Plus 91", "INIT", "Skift"],
+  "SaaS for Hospitality": ["Foodo"],
+  "Fashion and Accessories": ["SU:VE:OR"],
+  "Luxury Jewellery": ["Fine Arts"],
+  "Luxury Event & Decor Services": ["Do It Up"],
+  "Home Fragrance & Decor": ["Rad Living"],
+  "Skincare / Haircare / Beauty Services": ["Kaya"],
+  "Stationery and Art Supplies": ["Scooboo"],
+  "Not for profit/ NGO": ["Raise", "Taara"],
+  "Everyone": [
+    "CHORUS", "R Comfort", "Plus 91", "INIT", "Foodo",
+    "SU:VE:OR", "RAF Clothing", "Fine Arts", "Do It Up",
+    "Homestolife", "Rad Living", "Skift", "Kaya", "Scooboo",
+    "Raise", "Taara"
+  ]
+};
+
 
 // Map brand to image paths (relative to /public)
 const brandToImages = {
@@ -66,72 +67,69 @@ export default function ClientModal({
   currentClient,
   onClientSelect,
   onServiceModalOpen,
-  industryNames = [],
 }) {
   if (!isOpen) return null
   const [hoveredClient, setHoveredClient] = useState(null)
   const [slideIndex, setSlideIndex] = useState(0)
   const intervalRef = useRef(null)
 
-  // Get the current industry (hovered or selected)
-  const currentIndustry = hoveredClient || currentClient
-  // Get all images for brands mapped to this industry
-  let imagesForIndustry = (industryToBrands[currentIndustry] || [])
-    .flatMap(brand => brandToImages[brand] || [])
-    .filter(Boolean)
-  let displayClient = currentIndustry
+  // Get the current industry (only show preview when hovering a tag)
+  // NOTE: we intentionally *do not* use `currentClient` here so the modal
+  // only shows previews on hover.
+  const currentIndustry = hoveredClient || null
+  let imagesForIndustry = []
+  let displayClient = null
 
-  // If there are no images for the current industry, try fallbacks:
-  // 1) prefer the first industry in industryNames (skip 'Everyone' if others exist)
-  // 2) pick the first industry in industryNames that has images
-  // 3) pick the first non-empty brand images from brandToImages
-  // 4) final fallback: inline SVG data URL so we always have an image
-  if (!imagesForIndustry || imagesForIndustry.length === 0) {
-    const candidates = Array.isArray(industryNames) && industryNames.length > 0
-      ? industryNames
-      : Object.keys(industryToBrands)
+  if (currentIndustry) {
+    imagesForIndustry = (industryToBrands[currentIndustry] || [])
+      .flatMap(brand => brandToImages[brand] || [])
+      .filter(Boolean)
+    displayClient = currentIndustry
 
-    let found = []
-    for (let i = 0; i < candidates.length; i++) {
-      const cand = candidates[i]
-      if (cand === 'Everyone' && candidates.length > 1) continue
-      const imgs = (industryToBrands[cand] || [])
-        .flatMap(b => brandToImages[b] || [])
-        .filter(Boolean)
-      if (imgs && imgs.length > 0) {
-        found = imgs
-        displayClient = cand
-        break
-      }
-    }
-
-    if (!found || found.length === 0) {
-      for (const arr of Object.values(brandToImages)) {
-        if (Array.isArray(arr) && arr.length > 0) {
-          found = arr.slice()
-          displayClient = 'Featured'
+    // Try fallbacks only when hovered
+    if (!imagesForIndustry || imagesForIndustry.length === 0) {
+      const candidates = clientTypes
+      let found = []
+      for (let i = 0; i < candidates.length; i++) {
+        const cand = candidates[i]
+        if (cand === 'Everyone' && candidates.length > 1) continue
+        const imgs = (industryToBrands[cand] || [])
+          .flatMap(b => brandToImages[b] || [])
+          .filter(Boolean)
+        if (imgs && imgs.length > 0) {
+          found = imgs
+          displayClient = cand
           break
         }
       }
+
+      if (!found || found.length === 0) {
+        for (const arr of Object.values(brandToImages)) {
+          if (Array.isArray(arr) && arr.length > 0) {
+            found = arr.slice()
+            displayClient = 'Featured'
+            break
+          }
+        }
+      }
+
+      imagesForIndustry = found || []
     }
 
-    imagesForIndustry = found || []
-  }
+    if (imagesForIndustry.length > 0 && imagesForIndustry.length < 10) {
+      const original = imagesForIndustry.slice()
+      let i = 0
+      while (imagesForIndustry.length < 10) {
+        imagesForIndustry.push(original[i % original.length])
+        i++
+      }
+    }
 
-  if (!imagesForIndustry || imagesForIndustry.length === 0) {
-    imagesForIndustry = [
-      'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="100%" height="100%" fill="%23f3f4f6"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%238b8b8b" font-size="20">No preview available</text></svg>'
-    ]
-    displayClient = 'Preview'
-  }
-
-  // Ensure at least 10 images for each tag (repeat or mix as needed)
-  if (imagesForIndustry.length > 0 && imagesForIndustry.length < 10) {
-    const original = imagesForIndustry.slice()
-    let i = 0
-    while (imagesForIndustry.length < 10) {
-      imagesForIndustry.push(original[i % original.length])
-      i++
+    if (!imagesForIndustry || imagesForIndustry.length === 0) {
+      imagesForIndustry = [
+        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="100%" height="100%" fill="%23f3f4f6"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%238b8b8b" font-size="20">No preview available</text></svg>'
+      ]
+      displayClient = 'Preview'
     }
   }
 
@@ -146,7 +144,7 @@ export default function ClientModal({
 
   
   return (
-    <div className="fixed inset-0 z-[100] bg-white/80 backdrop-blur-xl">
+    <div className="fixed inset-0 z-[100] bg-gray/80 backdrop-blur-2xl">
       {/* Fixed close button */}
       <button
         onClick={onClose}
@@ -160,21 +158,25 @@ export default function ClientModal({
           {/* Image Section - Slideshow for selected industry */}
           <div className="h-96 w-[70%] mt-7 mx-auto flex items-center justify-center relative overflow-hidden">
             <div className="absolute inset-0 " />
-            {imagesForIndustry.length > 0 ? (
-              <img
-                src={imagesForIndustry[slideIndex]}
-                alt={displayClient}
-                className="max-h-full max-w-full object-contain relative z-10 transition-all duration-500 ease-out"
-              />
+            {currentIndustry ? (
+              imagesForIndustry.length > 0 ? (
+                <img
+                  src={imagesForIndustry[slideIndex]}
+                  alt={displayClient}
+                  className="max-h-full max-w-full object-contain relative z-10 transition-all duration-500 ease-out"
+                />
+              ) : (
+                <div className="text-gray-400 text-lg">No images for this industry</div>
+              )
             ) : (
-              <div className="text-gray-400 text-lg">No images for this industry</div>
+              <div className="text-gray-500 text-lg">Hover a tag to preview</div>
             )}
           </div>
 
           {/* Options Section */}
           <div className="p-5">
             <div className="flex flex-wrap justify-center gap-2 mb-4">
-              {industryNames.map((client) => (
+              {clientTypes.map((client) => (
                 <button
                   key={client}
                   onClick={() => onClientSelect(client)}

@@ -5,39 +5,94 @@ import { X } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 
 const designServices = [
-  "Everything",
-  "Books",
+  "Website",
+  "UI/UX", 
+  "Digital Experience",
+  "Platform Design",
   "Brand Identity",
-  "Campaigns",
-  "Data Driven Experiences",
-  "Digital Experiences",
-  "Exhibitions",
-  "Industrial/Product Design",
-  "Motion Graphics & Film",
+  "Visual Storytelling",
+  "Brand Creation",
+  "Art Direction", 
+  "Creative Direction",
+  "Visual Identity",
   "Packaging",
-  "Publications",
-  "Signage & Environmental Graphics",
-  "Typefaces",
+  "E-Commerce",
+  "Product Strategy",
+  "Performance Marketing",
+  "MarComm",
+  "Go-To-Market Strategy",
+  "Everything"
 ]
 
 
 // Map design to brands
 const designToBrands = {
-  "Brand Creation": ["Plus 91", "rComfort"],
-  "Brand Identity": ["rComfort", "INIT"],
-  "Visual Identity": ["rComfort", "Plus 91", "SU:VE:OR", "Foodoo", "RAF Clothing", "Do it Up", "Homestolife"],
-  "Packaging": ["Plus 91", "INIT", "skift"],
-  "Website": ["Chorus", "rComfort", "INIT","Scoo boo", "Skifit", "Kaya", "Foodoo", "RAF Clothing", "Fine Arts", "Do it Up", "Homestolife", "Raise"],
-  "UI/UX": ["Chorus", "rComfort", "INIT", "Foodoo","Scoo boo","Kaya", "RAF Clothing", "Fine Arts", "Raise", "Do it Up", "Homestolife"],
-  "Digital Experience": ["Chorus", "Foodoo", "Do it Up", "Plus 91"],
-  "Creative Direction": ["Plus 91", "SU:VE:OR"],
-  "Art Direction": ["rComfort", "Fine Arts"],
-  "Product Strategy": ["SU:VE:OR"],
-  "E-commerce": ["RAF Clothing"],
-  "Platform Design": ["Chorus", "Homestolife"],
-  "Visual Storytelling": ["rComfort", "INIT","Fine Arts"],
-  "Everything": ["Chorus", "rComfort", "Plus 91", "INIT", "Foodoo", "SU:VE:OR", "RAF Clothing", "Fine Arts", "Raise", "Do it Up", "Homestolife"],
-}
+  "Website": [
+    "CHORUS", "R Comfort", "INIT", "Foodo",
+    "RAF Clothing", "Fine Arts", "Do It Up",
+    "Homestolife", "Raise", "Taara"
+  ],
+  "UI/UX": [
+    "CHORUS", "R Comfort", "INIT", "Foodo",
+    "RAF Clothing", "Fine Arts", "Do It Up",
+    "Homestolife", "Raise", "Taara"
+  ],
+  "Digital Experience": [
+    "CHORUS", "Foodo", "Do It Up"
+  ],
+  "Platform Design": [
+    "CHORUS", "Homestolife"
+  ],
+  "Brand Identity": [
+    "R Comfort", "INIT"
+  ],
+  "Visual Storytelling": [
+    "R Comfort", "INIT", "Fine Arts"
+  ],
+  "Brand Creation": [
+    "R Comfort", "Plus 91", "SU:VE:OR"
+  ],
+  "UI/UX": [
+    "CHORUS", "R Comfort", "INIT", "Foodo",
+    "RAF Clothing", "Fine Arts", "Do It Up",
+    "Homestolife", "Raise", "Taara"
+  ],
+  "Art Direction": [
+    "R Comfort", "Fine Arts"
+  ],
+  "Creative Direction": [
+    "R Comfort", "Plus 91", "SU:VE:OR", "Do It Up"
+  ],
+  "Visual Identity": [
+    "R Comfort", "Plus 91", "SU:VE:OR", "Foodo",
+    "RAF Clothing", "Do It Up", "Homestolife"
+  ],
+  "Packaging": [
+    "Plus 91", "INIT", "Skift"
+  ],
+  "E-Commerce": [
+    "RAF Clothing"
+  ],
+  "Product Strategy": [
+    "SU:VE:OR"
+  ],
+  "Performance Marketing": [
+    "Rad Living"
+  ],
+  "MarComm": [
+    "Rad Living", "Skift"
+  ],
+  "Go-To-Market Strategy": [
+    "Skift"
+  ],
+  "Everything": [
+    "CHORUS", "R Comfort", "Plus 91", "INIT", "Foodo",
+    "SU:VE:OR", "RAF Clothing", "Fine Arts", "Do It Up",
+    "Homestolife", "Rad Living", "Skift", "Kaya", "Scooboo",
+    "Raise", "Taara"
+  ]
+};
+
 
 // Map brand to image paths (relative to /public)
 const brandToImages = {
@@ -67,74 +122,75 @@ export default function ServiceModal({
   currentClient,
   onServiceSelect,
   onClientModalOpen,
-  designNames = [],
 }) {
   const [hoveredService, setHoveredService] = useState(null)
   const [slideIndex, setSlideIndex] = useState(0)
   const intervalRef = useRef(null)
 
-  // Get the current design (hovered or selected)
-  const currentDesign = hoveredService || selectedService
+  // Get the current design (only show preview when hovering a tag)
+  // NOTE: we intentionally *do not* use `selectedService` here so that
+  // the modal only shows previews on hover.
+  const currentDesign = hoveredService || null
 
-  // Get all images for brands mapped to this design
-  let imagesForDesign = (designToBrands[currentDesign] || [])
-    .flatMap(brand => brandToImages[brand] || [])
-    .filter(Boolean)
-  let displayDesign = currentDesign
+  // Compute images only when there is a hovered design. When nothing is
+  // hovered we show a neutral placeholder.
+  let imagesForDesign = []
+  let displayDesign = null
 
-  // If there are no images for the current design, try to fall back to
-  // the first design in `designNames`, or the first design that has images.
-  if (!imagesForDesign || imagesForDesign.length === 0) {
-    // Prefer the first provided design name (if it isn't "Everything")
-    const candidates = Array.isArray(designNames) && designNames.length > 0
-      ? designNames
-      : Object.keys(designToBrands)
+  if (currentDesign) {
+    imagesForDesign = (designToBrands[currentDesign] || [])
+      .flatMap(brand => brandToImages[brand] || [])
+      .filter(Boolean)
+    displayDesign = currentDesign
 
-    // Try the first candidate, then any candidate that has images
-    let found = []
-    for (let i = 0; i < candidates.length; i++) {
-      const cand = candidates[i]
-      // Skip a generic 'Everything' if more specific options exist
-      if (cand === 'Everything' && candidates.length > 1) continue
-      const imgs = (designToBrands[cand] || [])
-        .flatMap(b => brandToImages[b] || [])
-        .filter(Boolean)
-      if (imgs && imgs.length > 0) {
-        found = imgs
-        displayDesign = cand
-        break
-      }
-    }
-
-    // As a last resort, pick the first non-empty brand images from brandToImages
-    if (!found || found.length === 0) {
-      for (const arr of Object.values(brandToImages)) {
-        if (Array.isArray(arr) && arr.length > 0) {
-          found = arr.slice()
-          displayDesign = 'Featured'
+    // If there are no images for the hovered design, try reasonable fallbacks
+    // (only when hovered). This keeps the preview helpful while preserving
+    // the "hover-only" behaviour.
+    if (!imagesForDesign || imagesForDesign.length === 0) {
+      const candidates = designServices
+      let found = []
+      for (let i = 0; i < candidates.length; i++) {
+        const cand = candidates[i]
+        if (cand === 'Everything' && candidates.length > 1) continue
+        const imgs = (designToBrands[cand] || [])
+          .flatMap(b => brandToImages[b] || [])
+          .filter(Boolean)
+        if (imgs && imgs.length > 0) {
+          found = imgs
+          displayDesign = cand
           break
         }
       }
+
+      if (!found || found.length === 0) {
+        for (const arr of Object.values(brandToImages)) {
+          if (Array.isArray(arr) && arr.length > 0) {
+            found = arr.slice()
+            displayDesign = 'Featured'
+            break
+          }
+        }
+      }
+
+      imagesForDesign = found || []
     }
-    imagesForDesign = found || []
-  }
 
-  // As an absolute last resort, ensure there's at least one image so we never
-  // render the "No images" placeholder. Use a tiny SVG data URL if needed.
-  if (!imagesForDesign || imagesForDesign.length === 0) {
-    imagesForDesign = [
-      'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="100%" height="100%" fill="%23f3f4f6"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%238b8b8b" font-size="20">No preview available</text></svg>'
-    ]
-    displayDesign = 'Preview'
-  }
+    // Ensure at least 10 images for preview slideshow when hovered
+    if (imagesForDesign.length > 0 && imagesForDesign.length < 10) {
+      const original = imagesForDesign.slice()
+      let i = 0
+      while (imagesForDesign.length < 10) {
+        imagesForDesign.push(original[i % original.length])
+        i++
+      }
+    }
 
-  // Ensure at least 10 images for each tag (repeat or mix as needed)
-  if (imagesForDesign.length > 0 && imagesForDesign.length < 10) {
-    const original = imagesForDesign.slice()
-    let i = 0
-    while (imagesForDesign.length < 10) {
-      imagesForDesign.push(original[i % original.length])
-      i++
+    // Last-resort placeholder when hovered but absolutely no images found
+    if (!imagesForDesign || imagesForDesign.length === 0) {
+      imagesForDesign = [
+        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="100%" height="100%" fill="%23f3f4f6"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%238b8b8b" font-size="20">No preview available</text></svg>'
+      ]
+      displayDesign = 'Preview'
     }
   }
 
@@ -151,7 +207,7 @@ export default function ServiceModal({
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-[100] bg-white/80 backdrop-blur-xl">
+    <div className="fixed inset-0 z-[100] bg-gray/80 backdrop-blur-2xl">
       {/* Fixed close button */}
       <button
         onClick={onClose}
@@ -165,22 +221,26 @@ export default function ServiceModal({
           {/* Image Section - Slideshow for selected design */}
           <div className="h-[400px] pt-4 flex items-center justify-center relative overflow-hidden">
             <div className="absolute inset-0" />
-            {imagesForDesign.length > 0 ? (
-              <img
-                src={imagesForDesign[slideIndex]}
-                alt={currentDesign}
-                className="max-h-full max-w-full object-contain relative z-10 transition-all duration-500 ease-out"
-                style={{ minWidth: 200, minHeight: 200 }}
-              />
+            {currentDesign ? (
+              imagesForDesign.length > 0 ? (
+                <img
+                  src={imagesForDesign[slideIndex]}
+                  alt={currentDesign}
+                  className="max-h-full max-w-full object-contain relative z-10 transition-all duration-500 ease-out"
+                  style={{ minWidth: 200, minHeight: 200 }}
+                />
+              ) : (
+                <div className="text-gray-400 text-lg">No images for this design</div>
+              )
             ) : (
-              <div className="text-gray-400 text-lg">No images for this design</div>
+              <div className="text-gray-500 text-lg">Hover a tag to preview</div>
             )}
           </div>
 
           {/* Options Section */}
           <div className="p-5">
             <div className="flex flex-wrap justify-center gap-2 mb-4">
-              {designNames.map((service) => (
+              {designServices.map((service) => (
                 <button
                   key={service}
                   onClick={() => onServiceSelect(service)}
