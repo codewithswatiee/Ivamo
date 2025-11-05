@@ -95,21 +95,24 @@ const designToBrands = {
 
 
 // Map brand to image paths (relative to /public)
+// Use canonical brand names (match `brandData`) as keys so lookups are
+// consistent across components.
 const brandToImages = {
- "Plus 91": ["/+91/1.png"],
-  "Chorus": ["/chorus/1.jpg"],
-  "rComfort": ["/rcomfort/3.png"],
+  "Plus 91": ["/+91/1.png"],
+  "CHORUS": ["/chorus/1.jpg"],
+  "R Comfort": ["/rcomfort/3.png"],
   "INIT": ["/init/1.jpg"],
-  "Foodoo": ["/foodo.png"],
+  "Foodo": ["/foodo.png"],
   "SU:VE:OR": [],
   "RAF Clothing": ["/raf/1.png"],
-  "Do it Up": ["/doitup/1.jpg"],
+  "Do It Up": ["/doitup/1.jpg"],
   "Homestolife": ["/homestolife/1.png"],
   "Raise": ["/raise/5.png"],
   "Fine Arts": ["/fine-arts/fine.png"],
-  "Scoo boo": ["/Scooboo/sb1.png"],
+  "Scooboo": ["/Scooboo/sb1.png"],
   "Skift": ["/skifit/skifit1.png"],
   "Kaya": ["/kaya/kaya1.png"],
+  "Rad Living": ["/rad-living/1.png"],
 }
 
 

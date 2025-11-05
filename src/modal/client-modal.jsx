@@ -4,16 +4,17 @@ import { cn } from "@/lib/utils"
 import { X } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 
+// Keep these industry strings aligned with the canonical brandData values
 const clientTypes = [
   "Fashion and Apparel",
-  "Furniture and home interior", 
+  "Furniture and home interior",
   "Cosmetics and personal care",
   "SaaS for Hospitality",
   "Fashion and Accessories",
   "Luxury Jewellery",
   "Luxury Event & Decor Services",
   "Home Fragrance & Decor",
-  "Personal Care / Grooming", 
+  "Personal Care / Grooming",
   "Skincare / Haircare / Beauty Services",
   "Stationery & Art Supplies",
   "Not for profit/ NGO",
@@ -24,15 +25,15 @@ const clientTypes = [
 // Map industry to brands
 const industryToBrands = {
   "Fashion and Apparel": ["CHORUS", "RAF Clothing"],
-  "Furniture and Home Interior": ["R Comfort", "Homestolife"],
-  "Cosmetics and Personal Care": ["Plus 91", "INIT", "Skift"],
+  "Furniture and home interior": ["R Comfort", "Homestolife"],
+  "Cosmetics and personal care": ["Plus 91", "INIT", "Skift"],
   "SaaS for Hospitality": ["Foodo"],
   "Fashion and Accessories": ["SU:VE:OR"],
   "Luxury Jewellery": ["Fine Arts"],
   "Luxury Event & Decor Services": ["Do It Up"],
   "Home Fragrance & Decor": ["Rad Living"],
   "Skincare / Haircare / Beauty Services": ["Kaya"],
-  "Stationery and Art Supplies": ["Scooboo"],
+  "Stationery & Art Supplies": ["Scooboo"],
   "Not for profit/ NGO": ["Raise", "Taara"],
   "Everyone": [
     "CHORUS", "R Comfort", "Plus 91", "INIT", "Foodo",
@@ -44,18 +45,24 @@ const industryToBrands = {
 
 
 // Map brand to image paths (relative to /public)
+// Use canonical brand names (match `brandData`) as keys here so lookups are
+// consistent across components.
 const brandToImages = {
   "Plus 91": ["/+91/1.png"],
-  "Chorus": ["/chorus/1.jpg"],
-  "rComfort": ["/rcomfort/3.png"],
+  "CHORUS": ["/chorus/1.jpg"],
+  "R Comfort": ["/rcomfort/3.png"],
   "INIT": ["/init/1.jpg"],
-  "Foodoo": ["/foodo.png"],
+  "Foodo": ["/foodo/foodo.png"],
   "SU:VE:OR": [],
   "RAF Clothing": ["/raf/1.png"],
-  "Do it Up": ["/doitup/1.jpg"],
+  "Do It Up": ["/doitup/1.jpg"],
   "Homestolife": ["/homestolife/1.png"],
   "Raise": ["/raise/5.png"],
   "Fine Arts": ["/fine-arts/fine.png"],
+  "Rad Living": ["/rad_living/2.png"],
+  "Skift": ["/skifit/skifit1.png"],
+  "Kaya": ["/kaya/kaya1.png"],
+  "Scooboo": ["/Scoobo/sb1.png"],
 }
 
 

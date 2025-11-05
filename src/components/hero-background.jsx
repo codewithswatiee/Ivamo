@@ -113,8 +113,8 @@ const heroImagesByBrand = {
     mobile: "/kaya/Kaya1.png",
   },
   "Do It Up": {
-    desktop: "/doitup/5.png",
-    mobile: "/doitup/5.png",
+    desktop: "/doitup/2.png",
+    mobile: "/doitup/2.png",
   },
   "INIT": {
     desktop: "/init/init_banner.png",
@@ -137,7 +137,7 @@ const heroImagesByBrand = {
     mobile: "/raf/raf.png",
   },
   "Plus 91": {
-    desktop: "/+91/+91.png",
+    desktop: "/+91/1.png",
     mobile: "/+91/+91.png",
   }
 }
