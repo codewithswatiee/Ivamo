@@ -26,9 +26,9 @@ export default function HomePage() {
       </Helmet>
       <HeroBackground currentImageIndex={0} onImageChange={() => {}} />
       <FloatingNavBar />
+      <Carousel items={carouselItems} />
       <PortfolioSection left={projects.left} right={projects.right} showHeader={true} />
       <PortfolioSection2 projects={gridData1} />
-      <Carousel items={carouselItems} />
       <PortfolioSection left={belowProjects.left} right={belowProjects.right} />
       <PortfolioSection2 projects={gridData2} />
       <ImageSection imageAlt={'ivamo-studios'} imageSrcDesktop='/lastSection.png' imageSrcMobile='/lastSection-mobile.png'/>

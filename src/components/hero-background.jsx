@@ -15,7 +15,7 @@ export default function HeroBackground() {
   const currentImage = heroImages[currentImageIndex] || heroImages[0]
 
   return (
-      <section id="hero-background" className="h-[92vh] relative top-0 overflow-hidden">
+      <section id="hero-background" className="h-[95vh] sticky top-0 overflow-hidden">
       {/* Background Images (motion-driven scale) */}
       <div className="absolute inset-0 top-0">
         {heroImages.map((image, index) => (

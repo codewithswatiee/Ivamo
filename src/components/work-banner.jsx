@@ -11,7 +11,7 @@ export default function PortfolioSection({ left, right, headerLabel = "See lates
   const isExternal = (url) => /^https?:\/\//i.test(url)
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full relative bg-white">
       {/* Header */}
       {showHeader && <div className="text-center font-regular py-4">
         <p className="text-gray-400 text-md">{headerLabel}</p>
