@@ -138,7 +138,7 @@ const heroImagesByBrand = {
   },
   "Plus 91": {
     desktop: "/+91/1.png",
-    mobile: "/+91/+91.png",
+    mobile: "/+91/+91_2.png",
   }
 }
 
