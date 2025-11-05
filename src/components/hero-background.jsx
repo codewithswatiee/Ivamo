@@ -129,16 +129,16 @@ const heroImagesByBrand = {
     mobile: "/raise/3.png",
   },
   "Homestolife": {
-    desktop: "/homestolife/homestolife.png",
-    mobile: "/homestolife/homestolife.png",
+    desktop: "/homestolife/4.png",
+    mobile: "/homestolife/4.png",
   },
   "RAF Clothing": {
     desktop: "/raf/raf.png",
     mobile: "/raf/raf.png",
   },
   "Plus 91": {
-    desktop: "/+91/plus91.png",
-    mobile: "/+91/plus91.png",
+    desktop: "/+91/+91.png",
+    mobile: "/+91/+91.png",
   }
 }
 
@@ -198,6 +198,15 @@ function getValidCombinations() {
     }
   }
   
+  // Shuffle combinations so the floater nav and hero rotate in a random order
+  // while preserving the service x industry -> brand association.
+  for (let i = combinations.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const tmp = combinations[i];
+    combinations[i] = combinations[j];
+    combinations[j] = tmp;
+  }
+
   return combinations;
 }
 
@@ -271,7 +280,6 @@ export default function HeroBackground() {
               style={{
                 backgroundImage: `url(${image.desktop || image.mobile})`,
                 backgroundSize: "cover",
-                backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundColor: "#0b0b0b",
               }}
@@ -286,6 +294,7 @@ export default function HeroBackground() {
               style={{
                 backgroundImage: `url(${image.mobile || image.desktop})`,
                 backgroundSize: "cover",
+                backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundColor: "#0b0b0b",
               }}
