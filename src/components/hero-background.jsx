@@ -113,8 +113,8 @@ const heroImagesByBrand = {
     mobile: "/kaya/Kaya1.png",
   },
   "Do It Up": {
-    desktop: "/doitup/2.png",
-    mobile: "/doitup/2.png",
+    desktop: "/doitup/2.jpg",
+    mobile: "/doitup/2.jpg",
   },
   "INIT": {
     desktop: "/init/init_banner.png",
@@ -241,6 +241,28 @@ export default function HeroBackground() {
 
   // Compute matching brand in a memo to avoid running findMatchingBrand during
   // render in a way that causes state updates.
+  // Prefer a direct brand provided by the combination (floating nav already
+  // supplies `brand`), fall back to the matching algorithm otherwise.
+  const brandFromCombination = useMemo(() => {
+    if (!isNavAtBottom && currentCombination && currentCombination.brand) {
+      return currentCombination.brand
+    }
+    // if nav at bottom we don't pick a new brand
+    return null
+  }, [currentCombination, isNavAtBottom])
+
+  // When a brand is available from the combination, persist it so scrolling
+  // (which moves nav to bottom) can still show the same image.
+  useEffect(() => {
+    if (brandFromCombination && heroImagesByBrand[brandFromCombination]) {
+      setLastShownImages([heroImagesByBrand[brandFromCombination]])
+    }
+  }, [brandFromCombination])
+
+  // Determine images: prefer direct brand, then algorithmic match. If the
+  // resolved brand has no hero image, don't switch — preserve the last
+  // shown images instead (so combinations without images are effectively
+  // skipped).
   const matchingBrand = useMemo(() => {
     if (!isNavAtBottom && currentCombination) {
       return findMatchingBrand(currentCombination)
@@ -248,25 +270,25 @@ export default function HeroBackground() {
     return null
   }, [currentCombination, isNavAtBottom])
 
-  // When a matching brand appears (nav centered), persist it so scrolling
-  // (which moves nav to bottom) can still show the same image.
-  useEffect(() => {
-    if (matchingBrand && heroImagesByBrand[matchingBrand]) {
-      setLastShownImages([heroImagesByBrand[matchingBrand]])
-    }
-  }, [matchingBrand])
+  // pick candidate brand (direct from combination preferred)
+  const candidateBrand = brandFromCombination || matchingBrand
 
-  if (matchingBrand && heroImagesByBrand[matchingBrand]) {
-    imagesToShow = [heroImagesByBrand[matchingBrand]]
+  if (candidateBrand && heroImagesByBrand[candidateBrand]) {
+    imagesToShow = [heroImagesByBrand[candidateBrand]]
+    // persist shown images (already handled in effect when brandFromCombination changes)
   } else if (isNavAtBottom && lastShownImages) {
     // Preserve the last shown brand images while the nav is at bottom
     imagesToShow = lastShownImages
+  } else {
+    // No candidate with images; keep defaultHeroImages (or nothing) — we
+    // prefer not to switch to a brand that has no hero image.
+    imagesToShow = defaultHeroImages
   }
   
   const currentImage = imagesToShow[currentImageIndex] || imagesToShow[0]
 
   return (
-  <section id="hero-background" className="h-[100dvh] sticky top-0 left-0 right-0 z-0 overflow-hidden">
+  <section id="hero-background" className="h-[100dvh] top-0 left-0 right-0 z-0 overflow-hidden">
       {/* Background Images (motion-driven scale) */}
       <div className="absolute inset-0 top-0">
         {imagesToShow.map((image, index) => (
