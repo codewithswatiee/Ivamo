@@ -9,10 +9,23 @@ import { belowProjects, projects } from "@/data/home/2sideImageData"
 import { gridData2, gridData1} from "@/data/home/6gridSection"
 import carouselItems from "@/data/home/carouselData"
 import { FloatingNavBar } from "@/components/floating-nav-bar"
+import { useEffect } from "react"
 import { Helmet } from "react-helmet"
 
 export default function HomePage() {
 
+  useEffect(() => {
+    // Prevent browser from restoring previous scroll position on reload
+    if (typeof window !== "undefined" && 'scrollRestoration' in history) {
+      try {
+        history.scrollRestoration = 'manual'
+      } catch (e) {
+        // ignore
+      }
+    }
+    // Force scroll to top on page mount
+    if (typeof window !== 'undefined') window.scrollTo(0, 0)
+  }, [])
   return (
     <div className="bg-white">
       <Helmet>

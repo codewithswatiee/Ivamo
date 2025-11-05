@@ -266,7 +266,7 @@ export default function HeroBackground() {
   const currentImage = imagesToShow[currentImageIndex] || imagesToShow[0]
 
   return (
-      <section id="hero-background" className="h-[100vh] sticky top-0 left-0 right-0 z-0 overflow-hidden">
+  <section id="hero-background" className="h-[100dvh] sticky top-0 left-0 right-0 z-0 overflow-hidden">
       {/* Background Images (motion-driven scale) */}
       <div className="absolute inset-0 top-0">
         {imagesToShow.map((image, index) => (
@@ -280,6 +280,7 @@ export default function HeroBackground() {
               style={{
                 backgroundImage: `url(${image.desktop || image.mobile})`,
                 backgroundSize: "cover",
+                backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundColor: "#0b0b0b",
               }}
