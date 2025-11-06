@@ -1,6 +1,6 @@
 "use client"
-import { cn } from "@/lib/utils"
-import { useState, useEffect, useMemo } from "react"
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 // Brand data with industry and services associations
 const brandData = {
@@ -106,44 +106,32 @@ const brandData = {
   }
 };
 
-// Map combinations to hero images - only brands with available images
+// Map combinations to hero images - only the 5 featured brands
 const heroImagesByBrand = {
-  "Kaya": {
-    desktop: "/kaya/Kaya1.png",
-    mobile: "/kaya/Kaya1.png",
-  },
-  "Do It Up": {
-    desktop: "/doitup/2.jpg",
-    mobile: "/doitup/2.jpg",
-  },
-  "INIT": {
-    desktop: "/init/init_banner.png",
-    mobile: "/init/init.png",
+  "Raise": {
+    desktop: "/raise/3.jpg",
+    mobile: "/raise/3.png",
   },
   "CHORUS": {
     desktop: "/chorus/chorus.png",
     mobile: "/chorus/chorus-mobile.png",
   },
-  "Raise": {
-    desktop: "/raise/3.jpg",
-    mobile: "/raise/3.png",
+  "INIT": {
+    desktop: "/init/init_banner.png",
+    mobile: "/init/init.png",
   },
-  "Homestolife": {
-    desktop: "/homestolife/4.png",
-    mobile: "/homestolife/4.png",
+  "Do It Up": {
+    desktop: "/doitup/2.jpg",
+    mobile: "/doitup/2.jpg",
   },
   "RAF Clothing": {
     desktop: "/raf/raf.png",
     mobile: "/raf/raf.png",
-  },
-  "Plus 91": {
-    desktop: "/+91/1.png",
-    mobile: "/+91/+91_2.png",
   }
 }
 
-// Only brands that have hero images available
-const availableBrands = Object.keys(heroImagesByBrand)
+// Only the 5 featured brands
+const availableBrands = ["Raise", "CHORUS", "INIT", "Do It Up", "RAF Clothing"]
 
 // Default fallback images
 const defaultHeroImages = [
@@ -211,96 +199,75 @@ function getValidCombinations() {
 }
 
 export default function HeroBackground() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [currentCombination, setCurrentCombination] = useState(null)
-  const [isNavAtBottom, setIsNavAtBottom] = useState(false)
-  // Keep the last non-default images shown so scrolling (which may move the
-  // floating nav to bottom) doesn't immediately revert the hero to the
-  // default black/background. This preserves the visible image during scroll.
-  const [lastShownImages, setLastShownImages] = useState(null)
+  const [currentBrandIndex, setCurrentBrandIndex] = useState(0)
+  const [currentTagIndex, setCurrentTagIndex] = useState(0)
   
-  // Listen for updates from floating nav
+  // Get the current brand
+  const currentBrand = availableBrands[currentBrandIndex]
+  const brandInfo = brandData[currentBrand]
+  const brandImages = heroImagesByBrand[currentBrand]
+  
+  // Share current brand and tag with floating navbar
   useEffect(() => {
-    const checkNavState = () => {
-      if (typeof window !== 'undefined' && window.floatingNavState) {
-        const { currentCombination: navCombination, isNavAtBottom: navAtBottom } = window.floatingNavState
-        setCurrentCombination(navCombination)
-        setIsNavAtBottom(navAtBottom)
+    if (typeof window !== 'undefined' && brandInfo) {
+      const currentTag = brandInfo.services[currentTagIndex]
+      window.heroState = {
+        currentBrand,
+        currentTag,
+        currentIndustry: brandInfo.industry
       }
     }
+  }, [currentBrand, currentTagIndex, brandInfo])
+  
+  // Auto-rotate through brands every 3 seconds (faster)
+  useEffect(() => {
+    const brandInterval = setInterval(() => {
+      setCurrentBrandIndex((prev) => (prev + 1) % availableBrands.length)
+      setCurrentTagIndex(0) // Reset tag when brand changes
+    }, 3000)
     
-    // Check immediately and then poll for updates
-    checkNavState()
-    const interval = setInterval(checkNavState, 100)
-    
-    return () => clearInterval(interval)
+    return () => clearInterval(brandInterval)
   }, [])
   
-  // Determine which images to show based on nav position and current combination
-  let imagesToShow = defaultHeroImages
-
-  // Compute matching brand in a memo to avoid running findMatchingBrand during
-  // render in a way that causes state updates.
-  // Prefer a direct brand provided by the combination (floating nav already
-  // supplies `brand`), fall back to the matching algorithm otherwise.
-  const brandFromCombination = useMemo(() => {
-    if (!isNavAtBottom && currentCombination && currentCombination.brand) {
-      return currentCombination.brand
-    }
-    // if nav at bottom we don't pick a new brand
-    return null
-  }, [currentCombination, isNavAtBottom])
-
-  // When a brand is available from the combination, persist it so scrolling
-  // (which moves nav to bottom) can still show the same image.
+  // Auto-rotate through tags every 1 second (faster)
   useEffect(() => {
-    if (brandFromCombination && heroImagesByBrand[brandFromCombination]) {
-      setLastShownImages([heroImagesByBrand[brandFromCombination]])
-    }
-  }, [brandFromCombination])
-
-  // Determine images: prefer direct brand, then algorithmic match. If the
-  // resolved brand has no hero image, don't switch — preserve the last
-  // shown images instead (so combinations without images are effectively
-  // skipped).
-  const matchingBrand = useMemo(() => {
-    if (!isNavAtBottom && currentCombination) {
-      return findMatchingBrand(currentCombination)
-    }
-    return null
-  }, [currentCombination, isNavAtBottom])
-
-  // pick candidate brand (direct from combination preferred)
-  const candidateBrand = brandFromCombination || matchingBrand
-
-  if (candidateBrand && heroImagesByBrand[candidateBrand]) {
-    imagesToShow = [heroImagesByBrand[candidateBrand]]
-    // persist shown images (already handled in effect when brandFromCombination changes)
-  } else if (isNavAtBottom && lastShownImages) {
-    // Preserve the last shown brand images while the nav is at bottom
-    imagesToShow = lastShownImages
-  } else {
-    // No candidate with images; keep defaultHeroImages (or nothing) — we
-    // prefer not to switch to a brand that has no hero image.
-    imagesToShow = defaultHeroImages
+    if (!brandInfo || brandInfo.services.length === 0) return
+    
+    const tagInterval = setInterval(() => {
+      setCurrentTagIndex((prev) => (prev + 1) % brandInfo.services.length)
+    }, 1000)
+    
+    return () => clearInterval(tagInterval)
+  }, [brandInfo])
+  
+  if (!brandInfo || !brandImages) {
+    return <section id="hero-background" className="h-[100dvh] bg-black"></section>
   }
   
-  const currentImage = imagesToShow[currentImageIndex] || imagesToShow[0]
+  const currentTag = brandInfo.services[currentTagIndex]
 
   return (
-  <section id="hero-background" className="h-[100dvh] top-0 left-0 right-0 z-0 overflow-hidden">
-      {/* Background Images (motion-driven scale) */}
+  <section id="hero-background" className="h-[100dvh] top-0 left-0 right-0 z-0 overflow-hidden relative">
+      {/* Background Images with Framer Motion */}
       <div className="absolute inset-0 top-0">
-        {imagesToShow.map((image, index) => (
-          <div key={index}>
+        <AnimatePresence>
+          <motion.div
+            key={currentBrandIndex}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.05 }}
+            transition={{ 
+              duration: 0.6, 
+              ease: [0.25, 0.46, 0.45, 0.94],
+              scale: { duration: 4 }
+            }}
+            className="absolute inset-0"
+          >
             {/* Desktop background (md+) */}
             <div
-              className={cn(
-                "hidden md:block absolute bg-black inset-0 transition-opacity duration-1000",
-                index === currentImageIndex ? "opacity-100" : "opacity-0",
-              )}
+              className="hidden md:block absolute bg-black inset-0"
               style={{
-                backgroundImage: `url(${image.desktop || image.mobile})`,
+                backgroundImage: `url(${brandImages.desktop})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -310,67 +277,54 @@ export default function HeroBackground() {
 
             {/* Mobile background (sm) */}
             <div
-              className={cn(
-                "block md:hidden absolute inset-0 transition-opacity duration-1000",
-                index === currentImageIndex ? "opacity-100" : "opacity-0",
-              )}
+              className="block md:hidden absolute inset-0"
               style={{
-                backgroundImage: `url(${image.mobile || image.desktop})`,
+                backgroundImage: `url(${brandImages.mobile})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundColor: "#0b0b0b",
               }}
             />
-          </div>
-        ))}
-  </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
 
-      {/* Project Info + Navigation (mobile: stacked, desktop: side-by-side) */}
-      {/* <div className="absolute bottom-8 left-0 right-0 px-6 md:px-8 text-white flex flex-col md:flex-row items-center md:items-end justify-between">
-        <div className="w-full md:w-auto text-left md:text-left mb-4 md:mb-0">
-          <h3 className="text-[16px] font-bold mb-2">{currentImage.title}</h3>
-          <p className="text-[15px] opacity-90 max-w-2xl">{currentImage.subtitle}</p>
-        </div>
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/40 z-10" />
 
-        <div className="flex items-center gap-4 justify-center">
-          <button
-            aria-label="previous image"
-            onClick={() => setCurrentImageIndex((i) => Math.max(0, i - 1))}
-            className={cn(
-              "rounded-md p-4 shadow-sm transition",
-              currentImageIndex === 0
-                ? "bg-[#5E5E5E] text-gray-600 cursor-not-allowed pointer-events-none"
-                : "bg-white/90 cursor-pointer hover:opacity-95",
-            )}
-            disabled={currentImageIndex === 0}
-          >
-            <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 9.5L2 5.5M2 5.5L6 1.5M2 5.5H12" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10" />
-            </svg>
-          </button>
-
-          <button
-            aria-label="next image"
-            onClick={() => setCurrentImageIndex((i) => Math.min(heroImages.length - 1, i + 1))}
-            className={cn(
-              "rounded-md p-4 shadow-sm transition",
-              currentImageIndex === heroImages.length - 1
-                ? "bg-[#5E5E5E] text-gray-600 cursor-not-allowed pointer-events-none"
-                : "bg-white/90 cursor-pointer hover:opacity-95",
-            )}
-            disabled={currentImageIndex === heroImages.length - 1}
-          >
-            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 9L10 5L6 1" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10" />
-              <path d="M10 5H0" stroke="#1A1A1A" strokeWidth="1.5" strokeMiterlimit="10" />
-            </svg>
-          </button>
-        </div>
-      </div> */}
+      {/* Brand information overlay */}
+      <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-12">
+        {/* Bottom section - Navigation dots */}
+        <motion.div 
+          className="flex gap-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+        >
+          {availableBrands.map((_, index) => (
+            <motion.button
+              key={index}
+              onClick={() => {
+                setCurrentBrandIndex(index)
+                setCurrentTagIndex(0)
+              }}
+              className={`transition-all rounded-full ${
+                index === currentBrandIndex
+                  ? "bg-white w-8 h-3"
+                  : "bg-white/50 hover:bg-white/75 w-3 h-3"
+              }`}
+              aria-label={`Go to brand ${index + 1}`}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0.2 }}
+            />
+          ))}
+        </motion.div>
+      </div>
     </section>
   )
 }
 
-export { defaultHeroImages as heroImages, getValidCombinations, brandData, availableBrands }
+export { availableBrands, brandData, getValidCombinations, defaultHeroImages as heroImages };
 

@@ -1,10 +1,9 @@
 "use client"
 
-
-import { useEffect, useRef, useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+import { useEffect, useState } from "react"
 import ClientModal from "../modal/client-modal"
 import ServiceModal from "../modal/service-modal"
-import { getValidCombinations } from "./hero-background"
 
 // Custom hook to communicate current combination to other components
 function useHeroCombination() {
@@ -25,23 +24,35 @@ export function FloatingNavBar() {
   const { setCurrentCombination, setIsNavAtBottom } = useHeroCombination()
 
   const [isAtBottom, setIsAtBottom] = useState(false)
-  const [combinationIndex, setCombinationIndex] = useState(0)
-  const [designAnimating, setDesignAnimating] = useState(false)
-  const [industryAnimating, setIndustryAnimating] = useState(false)
-  const [prevCombination, setPrevCombination] = useState({ design: '', industry: [] })
+  const [currentHeroState, setCurrentHeroState] = useState({ currentBrand: '', currentTag: '', currentIndustry: '' })
   // Modal state
   const [serviceModalOpen, setServiceModalOpen] = useState(false)
   const [clientModalOpen, setClientModalOpen] = useState(false)
   const [selectedService, setSelectedService] = useState("Everything")
   const [selectedClient, setSelectedClient] = useState("Everyone")
 
-  const combinationIndexRef = useRef(0)
-
-  // Get valid combinations from brands that have hero images
-  const validCombinations = getValidCombinations()
-  
-  // Use the raw valid combinations (each has one service-industry pair)
-  const combinations = validCombinations
+  // Listen to hero state changes
+  useEffect(() => {
+    const checkHeroState = () => {
+      if (typeof window !== 'undefined' && window.heroState) {
+        const newState = window.heroState
+        setCurrentHeroState(newState)
+        
+        // Update combination for hero background sync
+        setCurrentCombination({
+          design: newState.currentTag,
+          industry: newState.currentIndustry,
+          brand: newState.currentBrand
+        })
+      }
+    }
+    
+    // Check immediately and then poll for updates
+    checkHeroState()
+    const interval = setInterval(checkHeroState, 100)
+    
+    return () => clearInterval(interval)
+  }, [setCurrentCombination])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,30 +65,6 @@ export function FloatingNavBar() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [setIsNavAtBottom])
-
-  useEffect(() => {
-    const changeInterval = setInterval(() => {
-      const nextIndex = (combinationIndexRef.current + 1) % combinations.length
-      setPrevCombination(combinations[combinationIndexRef.current])
-      combinationIndexRef.current = nextIndex
-      setCombinationIndex(nextIndex)
-      setDesignAnimating(true)
-      setIndustryAnimating(true)
-      
-      // Update current combination for hero background
-      setCurrentCombination(combinations[nextIndex])
-
-      setTimeout(() => {
-        setDesignAnimating(false)
-        setIndustryAnimating(false)
-      }, 500)
-    }, 3000)
-
-    // Set initial combination
-    setCurrentCombination(combinations[0])
-
-    return () => clearInterval(changeInterval)
-  }, [combinations.length, setCurrentCombination])
 
   // Handlers for modal open/close
   const handleServiceClick = () => setServiceModalOpen(true)
@@ -114,70 +101,6 @@ export function FloatingNavBar() {
           transform: translate(-50%, calc(40vh - 30px));
         }
 
-        /* Optimized animations with overlapping exit/entry for seamless transitions */
-        .slide-in {
-          animation: slideInSmooth 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .slide-out {
-          animation: slideOutSmooth 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
-        }
-
-        .slide-in-up {
-          animation: slideInUpSmooth 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .slide-out-down {
-          animation: slideOutDownSmooth 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
-        }
-
-        @keyframes slideInSmooth {
-          0% { 
-            transform: translateY(100%);
-            opacity: 0;
-          }
-          100% { 
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-
-        @keyframes slideOutSmooth {
-          0% { 
-            transform: translateY(0);
-            opacity: 1;
-          }
-          100% { 
-            transform: translateY(-100%);
-            opacity: 0;
-          }
-        }
-
-        @keyframes slideInUpSmooth {
-          0% { 
-            transform: translateY(-100%);
-            opacity: 0;
-          }
-          100% { 
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-
-        @keyframes slideOutDownSmooth {
-          0% { 
-            transform: translateY(0);
-            opacity: 1;
-          }
-          100% { 
-            transform: translateY(100%);
-            opacity: 0;
-          }
-        }
-
-        .animated-span {
-          will-change: transform, opacity;
-        }
         .nav-bar-container.modal-open { z-index: 110; }
       `}</style>
       <div className={`nav-bar-container ${forcedBottom ? "at-bottom" : ""} ${modalOpenClass}`}>
@@ -186,35 +109,56 @@ export function FloatingNavBar() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 whitespace-nowrap">
               <div className="flex items-center justify-center gap-1.5 text-gray-900 font-medium sm:text-sm">
                 <span>We design</span>
-                <div className="relative overflow-hidden inline-block h-[1.4em] text-gray-900 font-semibold sm:h-[1.2em] sm:text-sm">
-                  <span className={`flex justify-center animated-span ${designAnimating ? "slide-out" : "hidden"}`}>
-                    {prevCombination.design}
-                  </span>
-                  <span
-                    className={`flex justify-center animated-span ${designAnimating ? "slide-in" : ""}`}
-                    style={{ cursor: 'pointer', textDecoration: 'underline' }}
-                    onClick={handleServiceClick}
-                  >
-                    {combinations[combinationIndex].design}
-                  </span>
-                </div>
+                <motion.div 
+                  layout
+                  className="relative inline-block text-gray-900 font-semibold sm:text-sm"
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={currentHeroState.currentTag}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ 
+                        duration: 0.5, 
+                        ease: [0.25, 0.46, 0.45, 0.94],
+                        type: "tween"
+                      }}
+                      className="inline-block whitespace-nowrap cursor-pointer underline"
+                      onClick={handleServiceClick}
+                    >
+                      {currentHeroState.currentTag || 'Everything'}
+                    </motion.span>
+                  </AnimatePresence>
+                </motion.div>
               </div>
               <div className="flex items-center justify-center gap-2 text-gray-900 font-medium sm:text-sm">
                 <span>for</span>
-                <div className="relative overflow-hidden inline-block h-[1.4em] text-gray-900 font-semibold sm:h-[1.2em] sm:text-sm">
-                  <span
-                    className={`flex justify-center animated-span ${industryAnimating ? "slide-out-down" : "hidden"}`}
-                  >
-                    {prevCombination.industry}
-                  </span>
-                  <span
-                    className={`flex justify-center animated-span ${industryAnimating ? "slide-in-up" : ""}`}
-                    style={{ cursor: 'pointer', textDecoration: 'underline' }}
-                    onClick={handleClientClick}
-                  >
-                    {combinations[combinationIndex].industry}
-                  </span>
-                </div>
+                <motion.div 
+                  layout
+                  className="relative inline-block text-gray-900 font-semibold sm:text-sm"
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={currentHeroState.currentIndustry}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ 
+                        duration: 0.5, 
+                        ease: [0.25, 0.46, 0.45, 0.94],
+                        type: "tween",
+                        delay: 0.1
+                      }}
+                      className="inline-block whitespace-nowrap cursor-pointer underline"
+                      onClick={handleClientClick}
+                    >
+                      {currentHeroState.currentIndustry || 'Everyone'}
+                    </motion.span>
+                  </AnimatePresence>
+                </motion.div>
               </div>
             </div>
           </div>
