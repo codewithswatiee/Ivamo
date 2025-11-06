@@ -112,7 +112,7 @@ export function FloatingNavBar() {
                 <motion.div 
                   layout
                   className="relative inline-block text-gray-900 font-semibold sm:text-sm"
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
                 >
                   <AnimatePresence mode="wait">
                     <motion.span
@@ -121,7 +121,7 @@ export function FloatingNavBar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20 }}
                       transition={{ 
-                        duration: 0.5, 
+                        duration: 1.2, 
                         ease: [0.25, 0.46, 0.45, 0.94],
                         type: "tween"
                       }}
@@ -138,7 +138,7 @@ export function FloatingNavBar() {
                 <motion.div 
                   layout
                   className="relative inline-block text-gray-900 font-semibold sm:text-sm"
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
                 >
                   <AnimatePresence mode="wait">
                     <motion.span
@@ -147,10 +147,10 @@ export function FloatingNavBar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20 }}
                       transition={{ 
-                        duration: 0.5, 
+                        duration: 1.2, 
                         ease: [0.25, 0.46, 0.45, 0.94],
                         type: "tween",
-                        delay: 0.1
+                        delay: 0.2
                       }}
                       className="inline-block whitespace-nowrap cursor-pointer underline"
                       onClick={handleClientClick}

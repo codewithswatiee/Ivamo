@@ -219,23 +219,23 @@ export default function HeroBackground() {
     }
   }, [currentBrand, currentTagIndex, brandInfo])
   
-  // Auto-rotate through brands every 3 seconds (faster)
+  // Auto-rotate through brands every 8 seconds (much slower)
   useEffect(() => {
     const brandInterval = setInterval(() => {
       setCurrentBrandIndex((prev) => (prev + 1) % availableBrands.length)
       setCurrentTagIndex(0) // Reset tag when brand changes
-    }, 3000)
+    }, 8000)
     
     return () => clearInterval(brandInterval)
   }, [])
   
-  // Auto-rotate through tags every 1 second (faster)
+  // Auto-rotate through tags every 4 seconds (much slower)
   useEffect(() => {
     if (!brandInfo || brandInfo.services.length === 0) return
     
     const tagInterval = setInterval(() => {
       setCurrentTagIndex((prev) => (prev + 1) % brandInfo.services.length)
-    }, 1000)
+    }, 4000)
     
     return () => clearInterval(tagInterval)
   }, [brandInfo])
@@ -257,9 +257,9 @@ export default function HeroBackground() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.05 }}
             transition={{ 
-              duration: 0.6, 
+              duration: 2.0, 
               ease: [0.25, 0.46, 0.45, 0.94],
-              scale: { duration: 4 }
+              scale: { duration: 8 }
             }}
             className="absolute inset-0"
           >
