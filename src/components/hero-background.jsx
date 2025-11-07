@@ -7,6 +7,8 @@ const brandData = {
   "CHORUS": {
     industry: "Fashion and Apparel",
     services: ["Website", "UI/UX", "Digital Experience", "Platform Design"]
+    ,
+    description: "Evolved Moonray into Chorus through a complete rebrand, expressive digital identity, and immersive art-led web experience."
   },
   "R Comfort": {
     industry: "Furniture and home interior",
@@ -39,6 +41,8 @@ const brandData = {
       "Visual Storytelling",
       "UI/UX"
     ]
+    ,
+    description: "Revitalized INIT with a website redesign and expressive packaging that transforms fragrance into intimate, sensory storytelling."
   },
   "Foodo": {
     industry: "SaaS for Hospitality",
@@ -56,6 +60,8 @@ const brandData = {
   "RAF Clothing": {
     industry: "Fashion and Apparel",
     services: ["Website", "UI/UX", "E-Commerce", "Brand and Visual Identity"]
+    ,
+    description: "Crafted a global digital runway for RAF Clothing with a Shopify-powered store, refined UI/UX, and cohesive brand identity."
   },
   "Fine Arts": {
     industry: "Luxury Jewellery",
@@ -70,6 +76,8 @@ const brandData = {
       "Brand & Visual Identity",
       "Visual Merchandising"
     ]
+    ,
+    description: "Designed an elegant and intuitive UI/UX for Do It Up, bringing its luxury event styling brand to life online."
   },
   "Homestolife": {
     industry: "Furniture and home interior",
@@ -99,6 +107,8 @@ const brandData = {
   "Raise": {
     industry: "Not for profit/ NGO",
     services: ["Website", "UI/UX"]
+    ,
+    description: "Designed the UI/UX for the Raise Project, an initiative by Taara, to create an intuitive and impactful digital platform for community-driven connectivity."
   },
   "Taara": {
     industry: "Not for profit/ NGO",
@@ -293,34 +303,57 @@ export default function HeroBackground() {
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-black/40 z-10" />
 
-      {/* Brand information overlay */}
-      <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 md:p-12">
-        {/* Bottom section - Navigation dots */}
-        <motion.div 
-          className="flex gap-2"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-        >
-          {availableBrands.map((_, index) => (
-            <motion.button
-              key={index}
-              onClick={() => {
-                setCurrentBrandIndex(index)
-                setCurrentTagIndex(0)
-              }}
-              className={`transition-all rounded-full ${
-                index === currentBrandIndex
-                  ? "bg-white w-8 h-3"
-                  : "bg-white/50 hover:bg-white/75 w-3 h-3"
-              }`}
-              aria-label={`Go to brand ${index + 1}`}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.2 }}
-            />
-          ))}
-        </motion.div>
+      {/* Brand information overlay - left: brand + tagline, right: vertical dots */}
+      <div className="absolute inset-0 z-20 flex items-end p-6 md:p-12">
+        <div className="w-full flex justify-between items-end">
+          {/* Left: brand name and tagline (bottom-left) */}
+          <motion.div
+            className="max-w-xl text-left text-white/95"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight uppercase">
+              {currentBrand}
+            </h2>
+            {brandInfo.description ? (
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-white/90">
+                {brandInfo.description}
+              </p>
+            ) : (
+              <p className="mt-3 text-sm md:text-base leading-relaxed text-white/80">
+                {currentTag}
+              </p>
+            )}
+          </motion.div>
+
+          {/* Right: horizontal navigation dots (bottom-right) */}
+          <motion.div
+            className="flex flex-row gap-3 items-end justify-end"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            {availableBrands.map((_, index) => (
+              <motion.button
+                key={index}
+                onClick={() => {
+                  setCurrentBrandIndex(index)
+                  setCurrentTagIndex(0)
+                }}
+                className={`transition-all flex-none focus:outline-none ${
+                  index === currentBrandIndex
+                    ? "bg-white w-8 h-3 rounded-full"
+                    : "bg-white/50 hover:bg-white/75 w-3 h-3 rounded-full"
+                }`}
+                aria-label={`Go to brand ${index + 1}`}
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.15 }}
+              />
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   )

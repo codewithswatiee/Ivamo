@@ -110,22 +110,22 @@ export function FloatingNavBar() {
               <div className="flex items-center justify-center gap-1.5 text-gray-900 font-medium sm:text-sm">
                 <span>We design</span>
                 <motion.div 
-                  layout
-                  className="relative inline-block text-gray-900 font-semibold sm:text-sm"
-                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  className="relative inline-block text-gray-900 font-semibold sm:text-sm overflow-hidden min-w-[50px]"
+                  style={{ height: '1.2em', lineHeight: '1.2em' }}
                 >
-                  <AnimatePresence mode="wait">
+                  <AnimatePresence mode="popLayout">
                     <motion.span
                       key={currentHeroState.currentTag}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
+                      initial={{ y: '100%' }}
+                      animate={{ y: 0 }}
+                      exit={{ y: '-100%' }}
                       transition={{ 
-                        duration: 1.2, 
-                        ease: [0.25, 0.46, 0.45, 0.94],
+                        duration: 0.5, 
+                        ease: [0.22, 1, 0.36, 1],
                         type: "tween"
                       }}
-                      className="inline-block whitespace-nowrap cursor-pointer underline"
+                      className="block whitespace-nowrap cursor-pointer underline"
+                      style={{ lineHeight: '1.2em' }}
                       onClick={handleServiceClick}
                     >
                       {currentHeroState.currentTag || 'Everything'}
@@ -136,23 +136,23 @@ export function FloatingNavBar() {
               <div className="flex items-center justify-center gap-2 text-gray-900 font-medium sm:text-sm">
                 <span>for</span>
                 <motion.div 
-                  layout
-                  className="relative inline-block text-gray-900 font-semibold sm:text-sm"
-                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  className="relative inline-block text-gray-900 font-semibold sm:text-sm overflow-hidden min-w-[100px]"
+                  style={{ height: '1.2em', lineHeight: '1.2em' }}
                 >
-                  <AnimatePresence mode="wait">
+                  <AnimatePresence mode="popLayout">
                     <motion.span
                       key={currentHeroState.currentIndustry}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
+                      initial={{ y: '100%' }}
+                      animate={{ y: 0 }}
+                      exit={{ y: '-100%' }}
                       transition={{ 
-                        duration: 1.2, 
-                        ease: [0.25, 0.46, 0.45, 0.94],
+                        duration: 0.5, 
+                        ease: [0.22, 1, 0.36, 1],
                         type: "tween",
-                        delay: 0.2
+                        delay: 0.1
                       }}
-                      className="inline-block whitespace-nowrap cursor-pointer underline"
+                      className="block whitespace-nowrap cursor-pointer underline"
+                      style={{ lineHeight: '1.2em' }}
                       onClick={handleClientClick}
                     >
                       {currentHeroState.currentIndustry || 'Everyone'}
