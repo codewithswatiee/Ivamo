@@ -120,7 +120,7 @@ const brandData = {
 const heroImagesByBrand = {
   "Raise": {
     desktop: "/raise/3.jpg",
-    mobile: "/raise/3.png",
+    mobile: "/raise/3.jpg",
   },
   "CHORUS": {
     desktop: "/chorus/chorus.png",
@@ -135,8 +135,8 @@ const heroImagesByBrand = {
     mobile: "/doitup/2.jpg",
   },
   "RAF Clothing": {
-    desktop: "/raf/raf.png",
-    mobile: "/raf/raf.png",
+    desktop: "/raf/raf1.png",
+    mobile: "/raf/raf1.png",
   }
 }
 

@@ -111,8 +111,8 @@ const brandToImages = {
   "Fine Arts": ["/fine-arts/fine.png"],
   "Scooboo": ["/Scooboo/sb1.png"],
   "Skift": ["/skifit/skifit1.png"],
-  "Kaya": ["/kaya/kaya1.png"],
-  "Rad Living": ["/rad-living/1.png"],
+  "Kaya": ["/kaya/Kaya1.png"],
+  "Rad Living": ["/rad_living/2.png"],
 }
 
 

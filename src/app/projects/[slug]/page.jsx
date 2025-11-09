@@ -35,11 +35,11 @@ export default function ProjectPage({ params }) {
   if (!item) return notFound()
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen pt-20 bg-white text-black">
       
       <section className="p-4 md:p-4">
         <div className="mb-6 mt-5">
-          <h1 className="text-[18px] md:text-[38px] mb-4">{item.title}</h1>
+          <h1 className="text-[18px] md:text-[38px] font-laLuxes font-bold mb-4">{item.title}</h1>
           <p className="max-w-3xl text-[16px] opacity-90 mb-4">{item.description}</p>
 
           {item.tags && (
