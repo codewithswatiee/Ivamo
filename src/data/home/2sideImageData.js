@@ -25,8 +25,8 @@ export const belowProjects = {
             title: "RAF Clothing",
             description:
               "Crafted a global digital runway for RAF Clothing with a Shopify-powered store, refined UI/UX, and cohesive brand identity.",
-            imageSrcDesktop: "/raf/raf1.png",
-            imageSrcMobile: "/raf/raf1.png",
+            imageSrcDesktop: "/raf/raf_7.jpg",
+            imageSrcMobile: "/raf/raf_7.jpg",
             imageAlt: "RAF Clothing",
             href: "/projects/raf-clothing",
             tags: ["Fashion", "Lifestyle", "E-Commerce"],

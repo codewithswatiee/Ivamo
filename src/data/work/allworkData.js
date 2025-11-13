@@ -2,7 +2,7 @@ export const workData = {
     'plus-91': {
         title: "+91",
         description: "Created a bold, youth-driven perfume brand with expressive packaging, immersive storytelling, and a digital identity that celebrates Indian individuality.",
-        images: ["/+91/1.png"],
+        images: ["/+91/plus__91.png", "/+91/1.png"],
     about:  `Plus 91 Perfumes was born from a challenge to the status quo. In a market where fine fragrances are reserved for special occasions and luxury labels dominate the conversation, +91 set out to democratize the perfume experience — making it accessible, expressive, and unmistakably Indian. \n\n
             IVAMO Studios partnered with the founders to bring this ambition to life through a complete brand creation. From name to narrative, from packaging to digital design, every element was built to channel confidence, color, and character. The mission was clear: create a perfume brand that doesn’t whisper refinement but speaks boldly of individuality and everyday luxury.
             The visual language is unapologetically playful yet polished. A vibrant color system, dynamic typography, and kinetic motion graphics reflect the pulse of modern Indian youth — expressive, curious, and proud of their identity. The packaging system for all eight perfumes extends this energy into tangible form. Each scent carries its own personality, with storytelling that transforms fragrance into feeling — from the thrill of rebellion to the calm of self-assurance.
@@ -14,7 +14,7 @@ export const workData = {
     'raf-clothing': {
         title: "RAF Clothing",
         description: "Crafted a global digital runway for RAF Clothing with a Shopify-powered store, refined UI/UX, and cohesive brand identity.",
-        images: ["/raf/raf.png", "/raf/1.png", "/raf/2.png", "/raf/raf2.png", "/raf/raf3.png", "/raf/raf4.png", "/raf/raf5.png", "/raf/raf6.png", "/raf/raf7.png", "/raf/raf8.png"],
+        images: ["/raf/raf_7.jpg", "/raf/1.png", "/raf/2.png", "/raf/raf2.png", "/raf/raf3.png", "/raf/raf4.png", "/raf/raf5.png", "/raf/raf6.png", "/raf/raf7.png", "/raf/raf8.png"],
         about: `RAF Clothing was conceived as a brand where style meets precision, and quality is never compromised. Founder Rafat Kazi envisioned an online presence that could communicate the sophistication of the label while making global fashion accessible at a click. The challenge was to transform an e-commerce store into an experience that feels curated, intentional, and aspirational — a digital runway for modern shoppers.
 
                 IVAMO Studios partnered with RAF Clothing to design a fully Shopify-powered website that elevates both presentation and interaction. Every element of the UI and UX was crafted to reflect the brand’s elegance, from browsing collections to completing a purchase. The visual identity extends across digital touchpoints, presenting a cohesive aesthetic that balances minimalism with modern flair.

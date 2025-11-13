@@ -22,9 +22,9 @@ export default function Carousel({ items }) {
     return () => window.removeEventListener("keydown", handler)
   }, [index])
 
-  // group items into sets of 4
+  // group items into sets of 3
   const sets = []
-  for (let i = 0; i < items.length; i += 4) sets.push(items.slice(i, i + 4))
+  for (let i = 0; i < items.length; i += 3) sets.push(items.slice(i, i + 3))
 
   const prev = () => {
     setIndex((i) => Math.max(0, i - 1))

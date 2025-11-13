@@ -24,15 +24,8 @@ export const carouselItems = [
     id: "raf-clothing",
     title: "RAF Clothing",
     description: "Redefined RAF Clothing’s identity with a full rebrand and digital experience that elevates handcrafted furniture into a modern symbol of luxury living.",
-    image: "/raf/raf.png",
-    tags: ["Furniture", "Lifestyle", "Luxury"],
-  },
-  {
-    id: "plus-91",
-    title: "+91",
-    description: "Created a bold, youth-driven perfume brand with expressive packaging, immersive storytelling, and a digital identity that celebrates Indian individuality.",
-    image: "/+91/1.png",
-    tags: ["Beauty", "Lifestyle"],
+    image: "/raf/raf_7.jpg",
+    tags: ["Lifestyle", "Luxury"],
   },
   {
     id: "rcomfort",
