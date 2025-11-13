@@ -64,7 +64,7 @@ export default function ProjectPage({ params }) {
       )}
 
       {/* About */}
-      <section className="p-3  md:p-3">
+      <section className="p-4  md:p-4">
         <div className="mb-8 flex flex-col md:items-end">
           <p className="text-gray-700 md:max-w-[60vw] text-justify">{item.about}</p>
         </div>

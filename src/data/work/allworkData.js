@@ -2,7 +2,7 @@ export const workData = {
     'plus-91': {
         title: "+91",
         description: "Created a bold, youth-driven perfume brand with expressive packaging, immersive storytelling, and a digital identity that celebrates Indian individuality.",
-        images: ["/+91/plus__91.png", "/+91/1.png"],
+        images: ["/+91/plus__91.jpg", "/+91/1.png"],
     about:  `Plus 91 Perfumes was born from a challenge to the status quo. In a market where fine fragrances are reserved for special occasions and luxury labels dominate the conversation, +91 set out to democratize the perfume experience — making it accessible, expressive, and unmistakably Indian. \n\n
             IVAMO Studios partnered with the founders to bring this ambition to life through a complete brand creation. From name to narrative, from packaging to digital design, every element was built to channel confidence, color, and character. The mission was clear: create a perfume brand that doesn’t whisper refinement but speaks boldly of individuality and everyday luxury.
             The visual language is unapologetically playful yet polished. A vibrant color system, dynamic typography, and kinetic motion graphics reflect the pulse of modern Indian youth — expressive, curious, and proud of their identity. The packaging system for all eight perfumes extends this energy into tangible form. Each scent carries its own personality, with storytelling that transforms fragrance into feeling — from the thrill of rebellion to the calm of self-assurance.

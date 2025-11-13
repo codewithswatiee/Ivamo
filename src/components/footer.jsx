@@ -8,7 +8,7 @@ export default function Footer() {
   const handleSubmit = (e) => {
     e.preventDefault()
     // placeholder - integrate with your newsletter backend
-    alert(`Thanks — we'll keep you updated: ${email}`)
+    alert(`Thanks : ${email}`)
     setEmail('')
   }
 
