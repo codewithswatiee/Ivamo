@@ -13,7 +13,7 @@ export const gridData1 = [
     title: "+91",
     description:
       "Created a bold, youth-driven perfume brand with expressive packaging, immersive storytelling, and a digital identity that celebrates Indian individuality.",
-    image: "/+91/1.png",
+    image: "/+91/plus__91.jpg",
     categories: ["Beauty", "Lifestyle"],
     link: "/projects/plus-91",
     backgroundColor: "bg-gray-200",
