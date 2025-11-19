@@ -4,6 +4,8 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import { Header } from "@/components/header";
 import Script from 'next/script'
+import PageLoader from '@/components/page-loader'
+import SmoothScroll from "@/components/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -57,7 +59,8 @@ export default function RootLayout({ children }) {
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P88NVSPG" height="0" width="0" style={{display:'none',visibility:'hidden'}} title="gtm" />
         </noscript>
         <Header />
-        {children}
+        <PageLoader />
+        <SmoothScroll>{children}</SmoothScroll>
         <Footer />
       </body>
     </html>

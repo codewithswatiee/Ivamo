@@ -3,7 +3,7 @@ export const gridData1 = [
     id: "rComfort",
     title: "rComfort",
     description:"Redefined R Comfort’s identity with a full rebrand and digital experience that elevates handcrafted furniture into a modern symbol of luxury living.",
-    image: "/rcomfort/1.png",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/rcomfort/1.png",
     categories: ["Furniture", "Lifestyle", "Luxury"],
     link: "/projects/rcomfort",
     backgroundColor: "bg-slate-800",
@@ -13,7 +13,7 @@ export const gridData1 = [
     title: "+91",
     description:
       "Created a bold, youth-driven perfume brand with expressive packaging, immersive storytelling, and a digital identity that celebrates Indian individuality.",
-    image: "/+91/plus__91.jpg",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/%2B91/plus__91.jpg",
     categories: ["Beauty", "Lifestyle"],
     link: "/projects/plus-91",
     backgroundColor: "bg-gray-200",
@@ -23,7 +23,7 @@ export const gridData1 = [
     title: "INIT",
     description:
       "Revitalized INIT with a website redesign and expressive packaging that transforms fragrance into intimate, sensory storytelling.",
-    image: "/init/3.jpg",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/3.jpg",
     categories: ["Beauty", "Lifestyle", "Experiential Design"],
     link: "/projects/init",
     backgroundColor: "bg-black",
@@ -33,7 +33,7 @@ export const gridData1 = [
     title: "Do It Up",
     description:
       "Designed an elegant and intuitive UI/UX for Do It Up, bringing its luxury event styling brand to life online.",
-    image: "/doitup/1.jpg",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/doitup/1.jpg",
     categories: ["Lifestyle", "Events", "Digital Experience"],
     link: "/projects/doitup",
     backgroundColor: "bg-gray-100",
@@ -43,7 +43,7 @@ export const gridData1 = [
     title: "Fine Arts",
     description:
       "Redesigned the digital gallery for Fine Arts with a refined website, intuitive UI/UX, and immersive visual storytelling.",
-    image: "/fine-arts/fine-arts.png",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/fine-arts/fine-arts.png",
     categories: ["Art", "Lifestyle", "Digital Experience"],
     link: "/projects/finearts",
     backgroundColor: "bg-emerald-900",
@@ -53,7 +53,7 @@ export const gridData1 = [
     title: "Foodoo",
     description:
       "Designed a vibrant visual identity and seamless digital platform that makes healthy eating simple, engaging, and effortless.",
-    image: "/foodo/foodo.png",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/foodo/foodo.png",
     categories: ["Food Tech", "Health", "Lifestyle"],
     link: "/projects/foodo",
     backgroundColor: "bg-white",
@@ -65,7 +65,7 @@ export const gridData2 = [
     id: "scooboo",
     title: "Scoo boo",
     description:"Stationary made desirable and accessible with faster UX",
-    image: "/Scoobo/sb3.png",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Scoobo/sb3.png",
     categories: ["UI/UX", "Website"],
     link: "/projects/scooboo",
     backgroundColor: "bg-slate-800",
@@ -85,7 +85,7 @@ export const gridData2 = [
     title: "Skifit",
     description:
       "Empowering athletes with skincare solutions through a seamless digital experience.",
-    image: "/skifit/skifit.png",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/skifit/skifit12.png",
     categories: ["Brand Identity", "Website", "UIUX and Production"],
     link: "/projects/skifit",
     backgroundColor: "bg-black",
@@ -95,7 +95,7 @@ export const gridData2 = [
     title: "Kaya",
     description:
       "Designed a vibrant visual identity and seamless digital platform that makes healthy eating simple, engaging, and effortless.",
-    image: "/kaya/kaya.png",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/kaya/Kaya1.png",
     categories: ["Food Tech", "Health", "Lifestyle"],
     link: "/projects/kaya",
     backgroundColor: "bg-white",

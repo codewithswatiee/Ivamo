@@ -2,7 +2,7 @@ export const workData = {
     'plus-91': {
         title: "+91",
         description: "Created a bold, youth-driven perfume brand with expressive packaging, immersive storytelling, and a digital identity that celebrates Indian individuality.",
-        images: ["/+91/plus__91.jpg", "/+91/1.png"],
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/%2B91/plus__91.jpg"],
     about:  `Plus 91 Perfumes was born from a challenge to the status quo. In a market where fine fragrances are reserved for special occasions and luxury labels dominate the conversation, +91 set out to democratize the perfume experience — making it accessible, expressive, and unmistakably Indian. \n\n
             IVAMO Studios partnered with the founders to bring this ambition to life through a complete brand creation. From name to narrative, from packaging to digital design, every element was built to channel confidence, color, and character. The mission was clear: create a perfume brand that doesn’t whisper refinement but speaks boldly of individuality and everyday luxury.
             The visual language is unapologetically playful yet polished. A vibrant color system, dynamic typography, and kinetic motion graphics reflect the pulse of modern Indian youth — expressive, curious, and proud of their identity. The packaging system for all eight perfumes extends this energy into tangible form. Each scent carries its own personality, with storytelling that transforms fragrance into feeling — from the thrill of rebellion to the calm of self-assurance.
@@ -39,7 +39,7 @@ export const workData = {
     'chorus':{
         title: "Chorus",
         description: "Evolved Moonray into Chorus through a complete rebrand, expressive digital identity, and immersive art-led web experience.",
-        images: ["/chorus/chorus.png", "/chorus/1.jpg","/chorus/2.jpg","/chorus/3.jpg","/chorus/4.jpg","/chorus/5.jpg", "/chorus/6.png", "/chorus/7.png", "/chorus/8.png", "/chorus/9.png"],
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/chorus/chorus.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/chorus/1.jpg","https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/chorus/2.jpg","https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/chorus/3.jpg","https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/chorus/4.jpg","https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/chorus/5.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/chorus/6.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/chorus/7.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/chorus/8.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/chorus/9.png"],
         about: `IVAMO Studios partnered with the creative collective formerly known as Moonray to guide its transformation into Chorus — a new identity that unites fashion, art, and experiential design within one expressive universe.
         This evolution marked a significant moment for the brand. What began as a clothing label rooted in craft and consciousness expanded into a multidisciplinary movement that celebrates collaboration and collective creation. The new name, Chorus, reflects this shift — a convergence of voices, ideas, and forms that harmonize into something greater than their parts.
         The process was deeply collaborative. Working closely with the founders, our team built the digital and visual foundation for Chorus from the ground up. The objective was to preserve Moonray’s artisanal soul while creating a broader world where texture, motion, and narrative could coexist. Every design decision was shaped by the tension between fluidity and structure, restraint and expression.
@@ -52,7 +52,7 @@ export const workData = {
     'homestolife':{
         title: "HomesToLife",
         description: "Elevated a luxury furniture brand’s digital presence through refined UI/UX design and visual storytelling that mirrors its sophistication and global ambition.",
-        images: ["/homestolife/1.png", "/homestolife/2.png","/homestolife/3.png", "/homestolife/4.png","/homestolife/8.png","/homestolife/9.png",],
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/homestolife/1.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/homestolife/2.png","https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/homestolife/3.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/homestolife/4.png","https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/homestolife/8.png","https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/homestolife/9.png",],
         about: "Homestolife, a Singaporean luxury furniture giant, sought to expand its international reach by entering the Indian market, a bold move that demanded a digital identity as refined as its craftsmanship. IVAMO Studios partnered with the brand to design a web experience that embodies Homestolife’s ethos of modern comfort and elegance. Our UI/UX approach focused on visual harmony with clean compositions, intuitive navigation, and elevated imagery that echo the brand’s commitment to quality and design excellence. Beyond aesthetics, the redesign translated into performance. Through strategic visual communication and user-centered flow, Homestolife achieved a 10× increase in revenue, demonstrating how thoughtful design can drive tangible business growth. This project stands as a testament to the power of strategic creativity where design decisions don’t just look good, but also deliver measurable impact.",
         tags: ["LifeStyle", "Furniture"],
         href: "/projects/homestolife",
@@ -60,7 +60,7 @@ export const workData = {
     'init':{
         title: "INIT",
         description: "Revitalized INIT with a website redesign and expressive packaging that transforms fragrance into intimate, sensory storytelling.",
-        images: ["/init/1.jpg", "/init/2.jpg", "/init/3.jpg","/init/4.jpg" , "/init/5.jpg", "/init/6.png", "/init/7.png", "/init/8.png", "/init/9.png", "/init/10.png", "/init/11.png", "/init/12.png"],
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/1.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/2.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/3.jpg","https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/4.jpg" , "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/5.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/6.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/7.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/8.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/9.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/10.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/11.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/12.png"],
         about: `INIT is a perfume house that exists between memory and imagination. Its fragrances are letters to the self — intimate, emotional, and deeply personal. The brand was conceived not as a commodity but as an experience: a pause in the day, a moment of remembrance, a rush of emotion. Each scent is an invitation to explore identity, memory, and desire, giving form to feelings that linger just beneath consciousness.
 
                 IVAMO Studios partnered with INIT to bring this philosophy to life through a complete packaging overhaul and website revamp. The goal was to create a digital and physical presence that mirrors the poetry of the fragrances themselves — elegant, sensory, and atmospheric. The packaging was designed to reflect a modern, summery Italian sensibility: sunlit palettes, tactile materials, and refined structural details that evoke warmth, sophistication, and emotional resonance.
@@ -74,7 +74,7 @@ export const workData = {
     'rcomfort':{
         title: "R Comfort",
         description: "Redefined R Comfort’s identity with a full rebrand and digital experience that elevates handcrafted furniture into a modern symbol of luxury living.",
-        images: ["/rcomfort/3.png"],
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/rcomfort/3.png"],
         about: `R Comfort began as a homegrown furniture company with a simple mission — to bring comfort and craftsmanship into everyday spaces. As the brand matured, its founder envisioned something greater: a transition from a maker of furniture to a curator of lifestyle. This ambition marked the beginning of R Comfort’s evolution into the luxury segment.
 
         IVAMO Studios was entrusted with this transformation from the ground up. The project extended far beyond design — it was about shaping a new identity for a first-generation entrepreneur stepping into a world of refined branding and storytelling. Every element, from tone to typography, was crafted to articulate a sense of sophistication while honoring the authenticity that defines the brand’s roots.
@@ -90,7 +90,7 @@ export const workData = {
     'foodo':{
         title: "Foodo",
         description: "Designed a vibrant visual identity and seamless digital platform that makes healthy eating simple, engaging, and effortless.",
-        images: ["/foodo/foodo.png", "/foodo/foodo2.png"],
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/foodo/foodo.png"],
         about: `Foodo set out to solve one of modern life’s quiet challenges — eating well without overthinking it. As a food-tech brand, their goal was to simplify healthy eating through a digital platform that inspires confidence, clarity, and delight.
         IVAMO Studios collaborated with Foodo to design a complete visual and digital identity that reflects their promise of quality and convenience. The task was to create a system that balances nourishment with energy, and structure with spontaneity — a brand that feels both reliable and refreshing.
         The website serves as the heart of this ecosystem. Its design prioritizes intuition: clear typography, fluid navigation, and a color palette that evokes freshness and appetite. Every element works toward one simple goal — to make discovery and ordering feel as satisfying as the food itself.
@@ -102,7 +102,7 @@ export const workData = {
     'doitup':{
         title: "DO IT UP",
         description: "Designed an elegant and intuitive UI/UX for Do It Up, bringing its luxury event styling brand to life online.",
-        images: ["/doitup/1.jpg", "/doitup/2.jpg", "/doitup/3.jpg", "/doitup/4.png", "/doitup/5.png", "/doitup/6.png", "/doitup/7.png"],
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/doitup/1.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/doitup/2.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/doitup/3.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/doitup/4.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/doitup/5.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/doitup/6.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/doitup/7.png"],
         about: `Do It Up began as a blog by Architect Taral Jadhav during the lockdown of 2020, offering refined tips on transforming spaces with elegance and creativity. What started as a personal exploration of home styling quickly evolved into Mumbai’s most sought-after luxury event design and decor brand, trusted by celebrities and prestigious lifestyle brands alike.
 
                 IVAMO Studios collaborated with Do It Up to translate this ethos into a digital experience. The objective was to create a UI/UX that reflected the sophistication, personality, and attention to detail that defines every curated event while making the brand accessible and engaging online.
@@ -116,7 +116,7 @@ export const workData = {
     'finearts':{
         title: "Fine Arts",
         description: "Redesigned the digital gallery for Fine Arts with a refined website, intuitive UI/UX, and immersive visual storytelling.",
-        images: ["/fine-arts/fine.png", "/fine-arts/fine1.png", "/fine-arts/fine2.png", "/fine-arts/fine3.png", "/fine-arts/fine4.png", "/fine-arts/fine5.png"],
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/fine-arts/fine.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/fine-arts/fine1.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/fine-arts/fine2.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/fine-arts/fine3.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/fine-arts/fine4.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/fine-arts/fine5.png"],
         about: `"Fine Arts was founded to celebrate and showcase the finest artistic creations from the UAE, offering a window into a world of creativity, craftsmanship, and vision. Founder Maisha Samiha envisioned a digital presence that could match the elegance of the physical gallery — immersive, sophisticated, and effortless to navigate.
             IVAMO Studios collaborated with Fine Arts to create a seamless online experience that transforms the gallery into a digital extension of its physical space. Every aspect of the redesign — from UI and UX to visual hierarchy and interaction design — was crafted to guide visitors naturally through the collection while maintaining the integrity and beauty of each artwork.
             The platform emphasizes clarity and refinement. High-resolution imagery, subtle motion, and clean layouts allow artworks to take center stage, while interactive features provide context and depth for art enthusiasts. The experience is intuitive yet elevated, balancing usability with a sense of discovery and engagement.
@@ -127,7 +127,7 @@ export const workData = {
     'scooboo':{
         title: "Scoo boo",
         description: "Stationary made desirable and accessible with faster UX",
-        images: ["/Scoobo/sb1.png", "/Scoobo/sb2.png", "/Scoobo/sb3.png", "/Scoobo/sb4.png", "/Scoobo/sb5.png", "/Scoobo/sb6.png"],
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Scoobo/sb1.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Scoobo/sb2.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Scoobo/sb3.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Scoobo/sb4.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Scoobo/sb5.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Scoobo/sb6.png"],
         about: "Scooboo brings kids’ imagination to life through thoughtfully designed, safe, and fun products. We took their playful vision and translated it into a seamless digital experience. From browsing to checkout, the new website and UI/UX revamp create a space where parents and kids can easily explore and discover. The result? A joyful online playground that reflects the fun and innovation Scooboo stands for,making shopping as playful as their products!",
         tags: ["UI/UX", "Website"],
         href: "/projects/scooboo",
@@ -135,7 +135,7 @@ export const workData = {
     'skifit':{
         title: "Skifit",
         description: "Empowering athletes with skincare solutions through a seamless digital experience.",
-        images: ["/skifit/skifit1.png", "/skifit/skifit3.png", "/skifit/skifit4.png", "/skifit/skifit12.png"],
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/skifit/skifit1.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/skifit/skifit3.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/skifit/skifit4.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/skifit/skifit12.png"],
         about: "Beyond the website, we knew Skiftcare’s digital presence needed to extend into the world of social media in a way that felt just as dynamic. So, we created stunning 3D videos that brought their brand to life, strategically rolling them out across YouTube and social platforms. These videos weren’t just about showcasing their services,they were about telling the story of how Skiftcare is revolutionizing healthcare, one click at a time. With this approach, we connected the brand with its audience in a meaningful, visually engaging way.",
         tags: ["Brand Identity", "Website", "UIUX and Production"],
         href: "/projects/skifit",
@@ -143,7 +143,7 @@ export const workData = {
     'kaya':{
         title: "Kaya SkinCare",
         description: "The Kaya Bride reimagines bridal beauty, offering a flawless skincare journey for every bride",
-        images: ["/kaya/Kaya1.png", "/kaya/kaya2.png", "/kaya/kaya3.png", "/kaya/kaya4.png"],
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/kaya/Kaya1.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/kaya/kaya2.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/kaya/kaya3.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/kaya/kaya4.png"],
         about: "For The Kaya Bride, we focused on elevating the brand’s identity by bringing a refined digital experience to brides-to-be. From creating a stunning video shoot and visual communication strategy to revamping the website’s UI/UX, we crafted a seamless journey that showcases Kaya’s skincare expertise. The result? A digital transformation that brings luxury skincare closer to brides, making their experience feel as special as their big day.",
         tags: ["UI/UX", "Website"],
         href: "/projects/kaya",

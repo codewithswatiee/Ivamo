@@ -95,8 +95,8 @@ export const Header = () => {
                 </a>
 
                 {/* desktop nav */}
-                <nav className="hidden md:flex gap-8 items-center font-[400] font-sans">
-                    <a className="hover:text-gray-400 transition-colors" href="/work">Work</a>
+                <nav className="hidden md:flex gap-8 items-center font-[500] font-sans">
+                    <a className="hover:underline transition-all" href="/work">Work</a>
                     
                     <a onClick={(e) => { e.preventDefault(); window.open(CALENDLY_URL, '_blank'); try{ localStorage.setItem('ivamo_calendly', String(Date.now())) }catch{} }} href="#" className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-white text-black font-medium hover:opacity-95 transition">Book a Call
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">

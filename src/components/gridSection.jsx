@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 
 
@@ -48,14 +49,6 @@ export function PortfolioSection2({projects}) {
                     className="w-full h-full object-cover"
                   />
                 </motion.div>
-
-                {/* Hover overlay
-                // <motion.div
-                //   initial={{ opacity: 0 }}
-                //   animate={{ opacity: hoveredCard === project.id ? 1 : 0 }}
-                //   transition={{ duration: 0.3 }}
-                //   className="absolute inset-0 bg-black/20"
-                // /> */}
               </div>
 
               <motion.div className="text-regular mt-2">

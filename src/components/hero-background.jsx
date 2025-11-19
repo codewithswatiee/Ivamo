@@ -119,24 +119,24 @@ const brandData = {
 // Map combinations to hero images - only the 5 featured brands
 const heroImagesByBrand = {
   "Raise": {
-    desktop: "/raise/3.jpg",
-    mobile: "/raise/3.jpg",
+    desktop: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/raise/3.jpg",
+    mobile: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/raise/3.jpg",
   },
   "CHORUS": {
-    desktop: "/chorus/chorus.png",
-    mobile: "/chorus/chorus-mobile.png",
+    desktop: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/chorus/chorus.png",
+    mobile: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/chorus/chorus-mobile.png",
   },
   "INIT": {
-    desktop: "/init/init_banner.png",
-    mobile: "/init/init.png",
+    desktop: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/init_banner.png",
+    mobile: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/init.png",
   },
   "Do It Up": {
-    desktop: "/doitup/2.jpg",
-    mobile: "/doitup/2.jpg",
+    desktop: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/doitup/2.jpg",
+    mobile: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/doitup/2.jpg",
   },
   "RAF Clothing": {
-    desktop: "/raf/raf1.png",
-    mobile: "/raf/raf1.png",
+    desktop: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/raf/raf1.png",
+    mobile: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/raf/raf1.png",
   }
 }
 

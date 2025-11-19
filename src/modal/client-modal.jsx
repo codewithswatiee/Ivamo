@@ -48,21 +48,21 @@ const industryToBrands = {
 // Use canonical brand names (match `brandData`) as keys here so lookups are
 // consistent across components.
 const brandToImages = {
-  "Plus 91": ["/+91/1.png"],
-  "CHORUS": ["/chorus/1.jpg"],
-  "R Comfort": ["/rcomfort/3.png"],
-  "INIT": ["/init/1.jpg"],
-  "Foodo": ["/foodo/foodo.png"],
+  "Plus 91": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/%2B91/1.png"],
+  "CHORUS": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/chorus/1.jpg"],
+  "R Comfort": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/rcomfort/3.png"],
+  "INIT": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/1.jpg"],
+  "Foodo": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/foodo/foodo.png"],
   "SU:VE:OR": [],
-  "RAF Clothing": ["/raf/1.png"],
-  "Do It Up": ["/doitup/1.jpg"],
-  "Homestolife": ["/homestolife/1.png"],
-  "Raise": ["/raise/5.png"],
-  "Fine Arts": ["/fine-arts/fine.png"],
-  "Rad Living": ["/rad_living/2.png"],
-  "Skift": ["/skifit/skifit1.png"],
-  "Kaya": ["/kaya/Kaya1.png"],
-  "Scooboo": ["/Scoobo/sb1.png"],
+  "RAF Clothing": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/raf/1.png"],
+  "Do It Up": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/doitup/1.jpg"],
+  "Homestolife": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/homestolife/1.png"],
+  "Raise": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/raise/5.png"],
+  "Fine Arts": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/fine-arts/fine.png"],
+  "Rad Living": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/rad_living/2.png"],
+  "Skift": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/skifit/skifit1.png"],
+  "Kaya": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/kaya/Kaya1.png"],
+  "Scooboo": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Scoobo/sb1.png"],
 }
 
 
