@@ -10,6 +10,7 @@ export const ImageSection = ({imageSrcDesktop, imageSrcMobile, imageAlt}) => {
         src={imageSrcMobile}
         alt={imageAlt}
         className="w-full object-cover h-auto md:h-auto"
+        loading="lazy"
       />
     </picture>
   )

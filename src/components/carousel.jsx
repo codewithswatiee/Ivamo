@@ -93,7 +93,7 @@ export default function Carousel({ items }) {
                   {set.map((it) => (
                     <article key={it.id} className="carousel-card bg-[#111] shrink-0 w-[320px]">
                       <Link href={`/projects/${it.id}`} className="block">
-                        <div className="h-[400px] bg-cover bg-center" style={{ backgroundImage: `url(${it.image})` }} />
+                        <div className="h-[400px] bg-cover bg-center" style={{ backgroundImage: `url(${it.image})`}} />
                         <div className="p-4">
                           <h3 className="text-[16px] text-white mb-1">{it.title}</h3>
                           <p className="text-[16px] text-[#8C8C8C]">{it.description}</p>

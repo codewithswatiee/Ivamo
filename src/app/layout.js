@@ -5,7 +5,6 @@ import Footer from "@/components/footer";
 import { Header } from "@/components/header";
 import Script from 'next/script'
 import PageLoader from '@/components/page-loader'
-import SmoothScroll from "@/components/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -60,7 +59,7 @@ export default function RootLayout({ children }) {
         </noscript>
         <Header />
         <PageLoader />
-        <SmoothScroll>{children}</SmoothScroll>
+        {children}
         <Footer />
       </body>
     </html>

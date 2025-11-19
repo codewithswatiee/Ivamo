@@ -46,6 +46,7 @@ export default function ReversePortfolioSection({ left, right, headerLabel = "Se
                   src={left.imageSrcMobile || left.imageSrc || "/placeholder.svg"}
                   alt={left.imageAlt || left.alt}
                   className="w-full object-cover h-auto md:h-auto"
+                  loading="lazy"
                 />
               </picture>
             </Link>
