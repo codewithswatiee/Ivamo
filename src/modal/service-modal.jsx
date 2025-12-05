@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils"
 import { X } from "lucide-react"
+import { useRouter } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 
 const designServices = [
@@ -118,6 +119,27 @@ const brandToImages = {
 
 
 
+// Map service types to project IDs (matching the grid data)
+const serviceTypeToProjectIds = {
+  "Website": ["rComfort", "init", "foodo", "raf-clothing", "fine-arts", "do-it-up", "homestolife", "raise", "chorus"],
+  "UI/UX": ["rComfort", "init", "foodo", "raf-clothing", "fine-arts", "do-it-up", "homestolife", "raise", "chorus", "scooboo"],
+  "Digital Experience": ["foodo", "do-it-up", "chorus"],
+  "Platform Design": ["homestolife", "chorus"],
+  "Brand Identity": ["rComfort", "init", "skifit"],
+  "Visual Storytelling": ["rComfort", "init", "fine-arts"],
+  "Brand Creation": ["rComfort", "plus-91"],
+  "Art Direction": ["rComfort", "fine-arts"],
+  "Creative Direction": ["rComfort", "plus-91", "do-it-up"],
+  "Visual Identity": ["rComfort", "plus-91", "foodo", "raf-clothing", "do-it-up", "homestolife"],
+  "Packaging": ["plus-91", "init", "skifit"],
+  "E-Commerce": ["raf-clothing"],
+  "Product Strategy": [],
+  "Performance Marketing": [],
+  "MarComm": ["skifit"],
+  "Go-To-Market Strategy": ["skifit"],
+  "Everything": ["rComfort", "plus-91", "init", "do-it-up", "fine-arts", "foodo", "scooboo", "skifit", "kaya", "chorus", "raf-clothing", "homestolife", "raise"]
+};
+
 export default function ServiceModal({
   isOpen,
   onClose,
@@ -126,9 +148,19 @@ export default function ServiceModal({
   onServiceSelect,
   onClientModalOpen,
 }) {
+  const router = useRouter()
   const [hoveredService, setHoveredService] = useState(null)
   const [slideIndex, setSlideIndex] = useState(0)
   const intervalRef = useRef(null)
+
+  const handleServiceTypeClick = (serviceType) => {
+    // Close the modal
+    onClose()
+    
+    // Navigate to work page with service type as query parameter
+    const encodedServiceType = encodeURIComponent(serviceType)
+    router.push(`/work?serviceType=${encodedServiceType}`)
+  }
 
   // Get the current design (only show preview when hovering a tag)
   // NOTE: we intentionally *do not* use `selectedService` here so that
@@ -246,7 +278,7 @@ export default function ServiceModal({
               {designServices.map((service) => (
                 <button
                   key={service}
-                  onClick={() => onServiceSelect(service)}
+                  onClick={() => handleServiceTypeClick(service)}
                   onMouseEnter={() => setHoveredService(service)}
                   onMouseLeave={() => setHoveredService(null)}
                   className={cn(

@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils"
 import { X } from "lucide-react"
+import { useRouter } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 
 // Keep these industry strings aligned with the canonical brandData values
@@ -43,6 +44,23 @@ const industryToBrands = {
   ]
 };
 
+// Map client types to project IDs (matching the grid data)
+const clientTypeToProjectIds = {
+  "Fashion and Apparel": ["chorus", "raf-clothing"],
+  "Furniture and home interior": ["rComfort", "homestolife"],
+  "Cosmetics and personal care": ["plus-91", "init", "skifit"],
+  "SaaS for Hospitality": ["foodo"],
+  "Fashion and Accessories": ["suveor"],
+  "Luxury Jewellery": ["fine-arts"],
+  "Luxury Event & Decor Services": ["do-it-up"],
+  "Home Fragrance & Decor": ["rad-living"],
+  "Personal Care / Grooming": ["plus-91", "init"],
+  "Skincare / Haircare / Beauty Services": ["kaya", "skifit"],
+  "Stationery & Art Supplies": ["scooboo"],
+  "Not for profit/ NGO": ["raise", "taara"],
+  "Everyone": ["rComfort", "plus-91", "init", "do-it-up", "fine-arts", "foodo", "scooboo", "skifit", "kaya"]
+};
+
 
 // Map brand to image paths (relative to /public)
 // Use canonical brand names (match `brandData`) as keys here so lookups are
@@ -75,10 +93,20 @@ export default function ClientModal({
   onClientSelect,
   onServiceModalOpen,
 }) {
+  const router = useRouter()
   if (!isOpen) return null
   const [hoveredClient, setHoveredClient] = useState(null)
   const [slideIndex, setSlideIndex] = useState(0)
   const intervalRef = useRef(null)
+
+  const handleClientTypeClick = (clientType) => {
+    // Close the modal
+    onClose()
+    
+    // Navigate to work page with client type as query parameter
+    const encodedClientType = encodeURIComponent(clientType)
+    router.push(`/work?clientType=${encodedClientType}`)
+  }
 
   // Get the current industry (only show preview when hovering a tag)
   // NOTE: we intentionally *do not* use `currentClient` here so the modal
@@ -186,7 +214,7 @@ export default function ClientModal({
               {clientTypes.map((client) => (
                 <button
                   key={client}
-                  onClick={() => onClientSelect(client)}
+                  onClick={() => handleClientTypeClick(client)}
                   onMouseEnter={() => setHoveredClient(client)}
                   onMouseLeave={() => setHoveredClient(null)}
                   className={cn(

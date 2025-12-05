@@ -67,8 +67,14 @@ export function FloatingNavBar() {
   }, [setIsNavAtBottom])
 
   // Handlers for modal open/close
-  const handleServiceClick = () => setServiceModalOpen(true)
-  const handleClientClick = () => setClientModalOpen(true)
+  const handleServiceClick = () => {
+    setClientModalOpen(false) // Close client modal when service modal opens
+    setServiceModalOpen(true)
+  }
+  const handleClientClick = () => {
+    setServiceModalOpen(false) // Close service modal when client modal opens
+    setClientModalOpen(true)
+  }
   const handleServiceModalClose = () => setServiceModalOpen(false)
   const handleClientModalClose = () => setClientModalOpen(false)
   // When a service/client is selected in modal
