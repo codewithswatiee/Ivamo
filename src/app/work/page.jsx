@@ -6,7 +6,7 @@ import PortfolioSection from "@/components/work-banner"
 import { gridData1, gridData2 } from "@/data/home/6gridSection"
 import { belowProjects, projects } from "@/data/work/2sideImageData"
 import { useSearchParams } from "next/navigation"
-import { useMemo } from "react"
+import { useMemo, Suspense } from "react"
 import { Helmet } from "react-helmet"
 
 // Map client types to project IDs (matching the grid data)
@@ -47,7 +47,7 @@ const serviceTypeToProjectIds = {
   "Everything": ["rComfort", "plus-91", "init", "do-it-up", "fine-arts", "foodo", "scooboo", "skifit", "kaya", "chorus", "raf-clothing", "homestolife", "raise"]
 };
 
-export default function Work() {
+function WorkContent() {
   const searchParams = useSearchParams()
   const clientType = searchParams.get('clientType')
   const serviceType = searchParams.get('serviceType')
@@ -148,5 +148,17 @@ export default function Work() {
       )}
       <ImageSection imageAlt={'ivamo-studios'} imageSrcDesktop='/lastSection.png' imageSrcMobile='/lastSection-mobile.png'/>
     </div>
+  )
+}
+
+export default function Work() {
+  return (
+    <Suspense fallback={
+      <div className="bg-white min-h-screen pt-24 pl-3">
+        <h1 className="text-[38px] md:text-[48px] text-black">Loading...</h1>
+      </div>
+    }>
+      <WorkContent />
+    </Suspense>
   )
 }
