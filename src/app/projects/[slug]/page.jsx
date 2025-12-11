@@ -6,7 +6,7 @@ import ZoomImageSection from '@/components/ZoomImage'
 // Use Next.js app-router metadata function instead of react-helmet which
 // causes SSR/runtime errors in this environment.
 export async function generateMetadata({ params }) {
-  const { slug } = params
+  const { slug } = await params
   const normalized = slug.startsWith('+') ? slug.slice(1) : slug
   const item = workData[slug] || workData[normalized]
 
@@ -25,8 +25,8 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default function ProjectPage({ params }) {
-  const { slug } = params
+export default async function ProjectPage({ params }) {
+  const { slug } = await params
 
   // support slugs that may include a leading + (e.g. "+91") while keys in data may be "91"
   const normalized = slug.startsWith('+') ? slug.slice(1) : slug

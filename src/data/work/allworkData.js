@@ -148,4 +148,32 @@ export const workData = {
         tags: ["UI/UX", "Website"],
         href: "/projects/kaya",
     },
+    'hobo':{
+        title: "HOBO Designs",
+        description: "HOBO Designs is a UK-based creative studio founded by multidisciplinary artist Arjun, specializing in branding, interior design, wall murals, and digital art.",
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/hobo/hobo.jpg"],
+        about:`HOBO Designs is a UK-based creative studio founded by multidisciplinary artist Arjun, specializing in branding, interior design, wall murals, and digital art. What began as Arjun’s personal artistic journey has evolved into a full-scale agency known for bold expression and immersive visual storytelling.
+
+HOBO approached IVAMO Studios to build an agency-level website that could match the studio’s creative energy and showcase its diverse portfolio. The vision centered on creating a digital experience that feels alive — driven by animation, texture, and movement. Custom cursor systems, expressive hover effects, and scroll-based transitions were crafted to capture the fluidity and personality of HOBO’s art.
+
+The design prioritizes clarity and impact. Minimal layouts let their branding work speak with confidence, while striking visuals reflect the raw, dynamic nature of their murals and digital art. The entire site functions like a curated gallery, offering visitors an inside look into HOBO’s creative universe.
+
+Built on a flexible CMS, the platform allows the team to expand their portfolio and services with ease as the agency continues to grow across the UK. The result is a modern, expressive digital identity that elevates HOBO Designs from an artist-led studio to a contemporary creative agency — one defined by imagination, craftsmanship, and movement.`,
+        tags: ["Website", "UI/UX", "Digital Experience"],
+        href: "/projects/hobo",
+    },
+    'suveor':{
+        title: "SU:VE:OR",
+        description: "Developed a complete brand ecosystem for SU:VE:OR, from visual identity and packaging to website and product strategy for sustainable vegan leather bags.",
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/suveor/Slide+16_9+-+148.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/suveor/Slide+16_9+-+149.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/suveor/Slide+16_9+-+150.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/suveor/Slide+16_9+-+154.png"],
+        about:`"SU:VE:OR emerged from a vision to create luxury vegan leather bags that are as conscious as they are desirable. Inspired by plannt based leather material, the brand reimagines sustainable fashion for a generation that values style, ethics, and individuality. Each bag is designed to balance trend-forward appeal with environmental responsibility, offering a contemporary alternative to traditional leather.
+
+IVAMO Studios partnered with SU:VE:OR to build their identity from the ground up. Our work encompassed every facet of the brand experience — from narrative and story development to packaging, website design, and product strategy. We helped translate raw materials into a compelling lifestyle brand, one that speaks to sustainability without compromising desirability or design sensibility.
+
+The visual language is bold, modern, and intentionally tactile. Packaging, color palette, and typography reflect the textures and authenticity of the materials themselves, while the website is designed to showcase products with clarity and sophistication. Trend research informed design decisions, ensuring SU:VE:OR’s collection resonates with contemporary fashion sensibilities and viral aesthetics.
+
+Beyond visuals, we crafted a brand story that situates SU:VE:OR in the growing landscape of sustainable luxury. From sourcing ethically to designing products that appeal to conscious consumers, the brand’s identity communicates both purpose and aspiration. The result is a fully realized ecosystem that positions SU:VE:OR as a leader in the next generation of eco-conscious, stylish accessories."`,
+        tags: ["Brand Creation", "Creative Direction", "Product Strategy", "Visual Identity"],
+        href: "/projects/suveor",
+    }
 }

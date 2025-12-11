@@ -58,4 +58,24 @@ export const gridData = [
     link: "/projects/foodo",
     backgroundColor: "bg-white",
   },
+  {
+    id: "hobo",
+    title: "Hobo Designs",
+    description:
+      "HOBO Designs is a UK-based creative studio founded by multidisciplinary artist Arjun, specializing in branding, interior design, wall murals, and digital art. What began as Arjun’s personal artistic journey has evolved into a full-scale agency known for bold expression and immersive visual storytelling. HOBO approached IVAMO Studios to build an agency-level website that could match the studio’s creative energy and showcase its diverse portfolio. The vision centered on creating a digital experience that feels alive — driven by animation, texture, and movement. Custom cursor systems, expressive hover effects, and scroll-based transitions were crafted to capture the fluidity and personality of HOBO’s art. The design prioritizes clarity and impact. Minimal layouts let their branding work speak with confidence, while striking visuals reflect the raw, dynamic nature of their murals and digital art. The entire site functions like a curated gallery, offering visitors an inside look into HOBO’s creative universe.Built on a flexible CMS, the platform allows the team to expand their portfolio and services with ease as the agency continues to grow across the UK. The result is a modern, expressive digital identity that elevates HOBO Designs from an artist-led studio to a contemporary creative agency — one defined by imagination, craftsmanship, and movement.",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/hobo/hobo.jpg",
+    categories: ["Website", "UI/UX", "Digital Experience" ],
+    link: "/projects/hobo",
+    backgroundColor: "bg-white",
+  },
+  {
+    id: "foodo",
+    title: "Foodoo",
+    description:
+      "Designed a vibrant visual identity and seamless digital platform that makes healthy eating simple, engaging, and effortless.",
+    image: "/foodo/foodo.png",
+    categories: ["Food Tech", "Health", "Lifestyle"],
+    link: "/projects/foodo",
+    backgroundColor: "bg-white",
+  },
 ]

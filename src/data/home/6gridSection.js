@@ -100,4 +100,24 @@ export const gridData2 = [
     link: "/projects/kaya",
     backgroundColor: "bg-white",
   },
+  {
+    id: "hobo",
+    title: "Hobo Designs",
+    description:
+      "HOBO Designs is a UK-based creative studio founded by multidisciplinary artist Arjun, specializing in branding, interior design, wall murals, and digital art.",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/hobo/hobo.jpg",
+    categories: ["Website", "UI/UX", "Digital Experience"],
+    link: "/projects/hobo",
+    backgroundColor: "bg-white",
+  },
+  {
+    id: "suveor",
+    title: "SU:VE:OR",
+    description:
+      "Developed a complete brand ecosystem for SU:VE:OR, from visual identity and packaging to website and product strategy for sustainable vegan leather bags.",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/suveor/Slide+16_9+-+148.png",
+    categories: ["Brand Creation", "Creative Direction", "Product Strategy", "Visual Identity" ],
+    link: "/projects/suveor",
+    backgroundColor: "bg-white",
+  },
 ]
