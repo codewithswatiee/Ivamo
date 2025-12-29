@@ -74,7 +74,7 @@ export const workData = {
     'rcomfort':{
         title: "R Comfort",
         description: "Redefined R Comfort’s identity with a full rebrand and digital experience that elevates handcrafted furniture into a modern symbol of luxury living.",
-        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/rcomfort/3.png"],
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/rcomfort/Screenshot+2025-12-29+160926.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/rcomfort/Screenshot+2025-12-29+160024.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/rcomfort/Screenshot+2025-12-29+160217.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/rcomfort/Screenshot+2025-12-29+160231.png"],
         about: `R Comfort began as a homegrown furniture company with a simple mission — to bring comfort and craftsmanship into everyday spaces. As the brand matured, its founder envisioned something greater: a transition from a maker of furniture to a curator of lifestyle. This ambition marked the beginning of R Comfort’s evolution into the luxury segment.
 
         IVAMO Studios was entrusted with this transformation from the ground up. The project extended far beyond design — it was about shaping a new identity for a first-generation entrepreneur stepping into a world of refined branding and storytelling. Every element, from tone to typography, was crafted to articulate a sense of sophistication while honoring the authenticity that defines the brand’s roots.
