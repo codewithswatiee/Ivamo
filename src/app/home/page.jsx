@@ -29,7 +29,7 @@ export default function HomePage() {
   return (
     <div className="bg-white">
       <Helmet>
-        <title>IVAMO Studios: Creative Branding & Marketing Agency in Mumbai</title>
+        <title>IVAMO Studios: Creative Branding and Marketing Agency in Mumbai</title>
         <meta name="description" content="Mumbai-based creative agency delivering branding, design, and marketing solutions. IVAMO crafts campaigns, identities, and websites that make brands unforgettable." />
         <meta property="og:title" content="IVAMO Studios: Creative Branding & Marketing Agency in Mumbai" />
         <meta property="og:description" content="Mumbai-based creative agency delivering branding, design, and marketing solutions. IVAMO crafts campaigns, identities, and websites that make brands unforgettable." />
