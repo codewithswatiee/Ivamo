@@ -31,12 +31,12 @@ const designToBrands = {
   "Website": [
     "CHORUS", "R Comfort", "INIT", "Foodo",
     "RAF Clothing", "Fine Arts", "Do It Up",
-    "Homestolife", "Raise", "Taara"
+    "Homestolife", "Raise", "Taara","Burosys"
   ],
   "UI/UX": [
     "CHORUS", "R Comfort", "INIT", "Foodo",
     "RAF Clothing", "Fine Arts", "Do It Up",
-    "Homestolife", "Raise", "Taara"
+    "Homestolife", "Raise", "Taara","Burosys"
   ],
   "Digital Experience": [
     "CHORUS", "Foodo", "Do It Up"
@@ -114,6 +114,7 @@ const brandToImages = {
   "Skift": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/skifit/skifit1.png"],
   "Kaya": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/kaya/Kaya1.png"],
   "Rad Living": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/rad_living/2.png"],
+  "Burosys": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Slide+16_9+-+1.jpg"]
 }
 
 

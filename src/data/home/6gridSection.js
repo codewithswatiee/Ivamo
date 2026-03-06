@@ -70,16 +70,16 @@ export const gridData2 = [
     link: "/projects/scooboo",
     backgroundColor: "bg-slate-800",
   },
-  // {
-  //   id: "rad-living",
-  //   title: "Rad Living",
-  //   description:
-  //     "Created a bold, youth-driven perfume brand with expressive packaging, immersive storytelling, and a digital identity that celebrates Indian individuality.",
-  //   image: "/+91/1.png",
-  //   categories: ["Beauty", "Lifestyle"],
-  //   link: "/projects/91",
-  //   backgroundColor: "bg-gray-200",
-  // },
+  {
+    id: "burosys",
+    title: "Burosys",
+    description:
+      "Designed and developed a complete digital platform for Burosys, transforming their online presence through an immersive, responsive website with interactive product experiences and custom integrations.",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Slide+16_9+-+1.jpg",
+    categories: ["Interior Design", "Architecture" ,"Furniture"],
+    link: "/projects/burosys",
+    backgroundColor: "bg-gray-200",
+  },
   {
     id: "skifit",
     title: "Skifit",

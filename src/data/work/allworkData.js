@@ -175,5 +175,23 @@ The visual language is bold, modern, and intentionally tactile. Packaging, color
 Beyond visuals, we crafted a brand story that situates SU:VE:OR in the growing landscape of sustainable luxury. From sourcing ethically to designing products that appeal to conscious consumers, the brand’s identity communicates both purpose and aspiration. The result is a fully realized ecosystem that positions SU:VE:OR as a leader in the next generation of eco-conscious, stylish accessories."`,
         tags: ["Brand Creation", "Creative Direction", "Product Strategy", "Visual Identity"],
         href: "/projects/suveor",
+    },
+    'burosys':{
+        title: "Burosys",
+        description: "Designed and developed a complete digital platform for Burosys, transforming their online presence through an immersive, responsive website with interactive product experiences and custom integrations.",
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Slide+16_9+-+1.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Slide+16_9+-+2.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Slide+16_9+-+3.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Slide+16_9+-+4.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Slide+16_9+-+5.png", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Slide+16_9+-+6.png"],
+        about:`IVAMO Studios partnered with Burosys to redesign and develop their digital presence through a fully custom website that reflects the brand’s innovation in workspace and architectural furniture solutions. The project was delivered end to end, beginning with detailed discussions with the Burosys team and founder Hersh Pitroda to understand the brand vision and the experience they wanted to create for architects, designers, and professional clients.
+
+The collaboration was highly engaging, with Hersh Pitroda playing an active role throughout the process. His clarity and proactive involvement helped shape the direction of the website and ensured the final platform aligned closely with the ambitions of the Burosys brand.
+
+The website was designed to present Burosys not only as a furniture manufacturer but as a solutions driven brand within the architecture and interior design ecosystem. A custom homepage animation was developed to introduce movement and personality while maintaining a refined and professional aesthetic.
+
+A layered navigation system was created for Elevated Spaces, where each category opens into its own distinct environment. For example, Gaming Tables appears as its own realm within the website as a collaboration between Burosys and Impatia, supported by custom header animations and dedicated content structures.
+
+The platform also integrates multiple connected websites and includes a resources section designed to provide useful material for architects and interior designers. Built on Shopify, the website supports advanced integrations including a custom wishlist feature that allows users to create project collections, save products, and share curated lists with Burosys or through email.
+
+The entire experience was designed to be fully responsive across desktop and mobile devices. Through this project, IVAMO Studios delivered a comprehensive digital platform that enhances product discovery and strengthens the Burosys brand within the professional design community.`,
+        tags: ["Interior Design", "Architecture" ,"Furniture"],
+        href: "/projects/burosys",
     }
 }

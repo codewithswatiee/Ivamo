@@ -1,19 +1,69 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Footer() {
   const [email, setEmail] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [toast, setToast] = useState({ show: false, message: '', type: '' })
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    if (toast.show) {
+      const timer = setTimeout(() => {
+        setToast({ show: false, message: '', type: '' })
+      }, 3000)
+      return () => clearTimeout(timer)
+    }
+  }, [toast.show])
+
+  const showToast = (message, type) => {
+    setToast({ show: true, message, type })
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // placeholder - integrate with your newsletter backend
-    alert(`Thanks : ${email}`)
-    setEmail('')
+    setIsSubmitting(true)
+    
+    try {
+      const response = await fetch('https://sheetdb.io/api/v1/4usy0lgozh442', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ data: { email: email } }),
+      })
+      
+      if (response.ok) {
+        showToast('Thanks for subscribing!', 'success')
+        setEmail('')
+      } else {
+        const errorData = await response.json().catch(() => ({}))
+        console.error('SheetDB error:', errorData)
+        showToast('Something went wrong. Please try again.', 'error')
+      }
+    } catch (error) {
+      console.error('Network error:', error)
+      showToast('Something went wrong. Please try again.', 'error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
-    <footer className="bg-[#111] text-white px-6 md:px-12 py-12">
+    <footer className="bg-[#111] text-white px-6 md:px-12 py-12 relative">
+      {/* Toast notification */}
+      {toast.show && (
+        <div
+          className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
+            toast.type === 'success'
+              ? 'bg-white text-black'
+              : 'bg-red-500 text-white'
+          }`}
+        >
+          {toast.message}
+        </div>
+      )}
       {/* large logo */}
       <div className=" mx-auto">
         <div className="mb-8">
@@ -41,27 +91,40 @@ export default function Footer() {
           <div>
             <h4 className="text-gray-300 mb-4">Socials</h4>
             <ul className="space-y-2 text-gray-200">
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">Linkedin</a></li>
-              <li><a href="#">X</a></li>
+              <li><a href="https://www.instagram.com/ivamo.studios?igsh=YW8xY3RiMGhmdHM4">Instagram</a></li>
+              <li><a href="https://www.linkedin.com/company/109457545/ivamo-studios">Linkedin</a></li>
+              {/* <li><a href="#">X</a></li>
               <li><a href="#">Youtube</a></li>
-              <li><a href="#">Behance</a></li>
+              <li><a href="#">Behance</a></li> */}
             </ul>
           </div>
 
           <div className="col-span-2 md:col-span-1">
             <h4 className="text-gray-300 mb-4">Get Updates</h4>
             <p className="text-gray-400 mb-4">Drop us your email to learn what's next.</p>
-            <form onSubmit={handleSubmit} className="flex items-center gap-4">
+            <form onSubmit={handleSubmit} className="flex items-center">
               <input
-                className="flex-1 bg-[#CACACA]/40 placeholder:text-gray-300 text-white rounded-full px-6 py-3 outline-none"
-                placeholder="Enter Email"
+                className="flex-1 bg-[#CACACA]/40 placeholder:text-gray-300 text-white rounded-full px-6 py-3 outline-none disabled:opacity-50"
+                placeholder={isSubmitting ? 'Submitting...' : 'Enter Email'}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 type="email"
                 aria-label="email"
                 required
+                disabled={isSubmitting}
               />
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="cursor-pointer text-white p-3 rounded-full hover:scale-95 transition-transform disabled:opacity-50 disabled:cursor-not-allowed"
+                aria-label="Submit"
+              >
+                <svg width="16" height="16" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 1H10.5V8" stroke="currentColor" strokeWidth="1.5"/>
+                  <path d="M10.5 1L2.5 9" stroke="currentColor" strokeWidth="1.5"/>
+                  <path d="M2 9.5L1 10.5" stroke="currentColor" strokeWidth="1.5"/>
+                </svg>
+              </button>
             </form>
           </div>
 
@@ -93,11 +156,11 @@ export default function Footer() {
 
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
           <div className="mb-4 md:mb-0">© 2025 IVAMO Studios.</div>
-          <div className="flex gap-6">
+          {/* <div className="flex gap-6">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
             <a href="#">Legal</a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

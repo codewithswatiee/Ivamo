@@ -66,7 +66,13 @@ export default async function ProjectPage({ params }) {
       {/* About */}
       <section className="p-4  md:p-4">
         <div className="mb-8 flex flex-col md:items-end">
-          <p className="text-gray-700 md:max-w-[60vw] text-justify">{item.about}</p>
+         <p className="max-w-3xl text-[16px] opacity-90 mb-4">
+            {item.about?.split(/(?<=\.)\s+/).reduce((acc, sentence, i) => {
+              if (i === 0) return [sentence];
+              if (i % 2 === 0) return [...acc, <br key={i} />, <br key={`${i}-space`} />, sentence];
+              return [...acc, ' ', sentence];
+            }, [])}
+          </p>
         </div>
       </section>
 

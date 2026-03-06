@@ -47,7 +47,7 @@ const industryToBrands = {
 // Map client types to project IDs (matching the grid data)
 const clientTypeToProjectIds = {
   "Fashion and Apparel": ["chorus", "raf-clothing"],
-  "Furniture and home interior": ["rComfort", "homestolife"],
+  "Furniture and home interior": ["rComfort", "homestolife","Burosys"],
   "Cosmetics and personal care": ["plus-91", "init", "skifit"],
   "SaaS for Hospitality": ["foodo"],
   "Fashion and Accessories": ["suveor"],
@@ -58,7 +58,7 @@ const clientTypeToProjectIds = {
   "Skincare / Haircare / Beauty Services": ["kaya", "skifit"],
   "Stationery & Art Supplies": ["scooboo"],
   "Not for profit/ NGO": ["raise", "taara"],
-  "Everyone": ["rComfort", "plus-91", "init", "do-it-up", "fine-arts", "foodo", "scooboo", "skifit", "kaya"]
+  "Everyone": ["rComfort", "plus-91","Burosys", "init", "do-it-up", "fine-arts", "foodo", "scooboo", "skifit", "kaya"]
 };
 
 
@@ -81,6 +81,7 @@ const brandToImages = {
   "Skift": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/skifit/skifit1.png"],
   "Kaya": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/kaya/Kaya1.png"],
   "Scooboo": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Scoobo/sb1.png"],
+  "Burosys": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Slide+16_9+-+1.jpg"]
 }
 
 
