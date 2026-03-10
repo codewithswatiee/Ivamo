@@ -22,15 +22,15 @@ export const projects = {
 
 export const belowProjects = {
          left: {
-            title: "Norvik",
-            description:
-              "Crafted a global digital runway for RAF Clothing with a Shopify-powered store, refined UI/UX, and cohesive brand identity.",
-            imageSrcDesktop: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/norvik/Slide+16_9+-+132.jpg",
-            imageSrcMobile: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/norvik/Slide+16_9+-+132.jpg",
-            imageAlt: "Norvik",
-            href: "/projects/norvik",
-            tags: ["Fashion", "Lifestyle", "E-Commerce"],
-          },
+          title: "RAF Clothing",
+          description:
+            "Crafted a global digital runway for RAF Clothing with a Shopify-powered store, refined UI/UX, and cohesive brand identity.",
+          imageSrcDesktop: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/raf/raf_7.jpg",
+          imageSrcMobile: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/raf/raf_7.jpg",
+          imageAlt: "RAF Clothing",
+          href: "/projects/raf-clothing",
+          tags: ["Fashion", "Lifestyle", "E-Commerce"],
+        },
           right:{
             title: "The Raise Project",
             description:
