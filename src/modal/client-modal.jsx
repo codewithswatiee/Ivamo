@@ -19,14 +19,15 @@ const clientTypes = [
   "Skincare / Haircare / Beauty Services",
   "Stationery & Art Supplies",
   "Not for profit/ NGO",
+  "Manufacturing",
   "Everyone"
 ]
 
 
 // Map industry to brands
 const industryToBrands = {
-  "Fashion and Apparel": ["CHORUS", "RAF Clothing"],
-  "Furniture and home interior": ["R Comfort", "Homestolife"],
+  "Fashion and Apparel": ["CHORUS", "RAF Clothing",],
+  "Furniture and home interior": ["Homestolife","rComfort", "Burosys"],
   "Cosmetics and personal care": ["Plus 91", "INIT", "Skift"],
   "SaaS for Hospitality": ["Foodo"],
   "Fashion and Accessories": ["SU:VE:OR"],
@@ -36,11 +37,12 @@ const industryToBrands = {
   "Skincare / Haircare / Beauty Services": ["Kaya"],
   "Stationery & Art Supplies": ["Scooboo"],
   "Not for profit/ NGO": ["Raise", "Taara"],
+  "Manufacturing": ["SAAN"],
   "Everyone": [
-    "CHORUS", "R Comfort", "Plus 91", "INIT", "Foodo",
+    "CHORUS", "rComfort", "Plus 91", "INIT", "Foodo",
     "SU:VE:OR", "RAF Clothing", "Fine Arts", "Do It Up",
     "Homestolife", "Rad Living", "Skift", "Kaya", "Scooboo",
-    "Raise", "Taara"
+    "Raise", "Taara", "SAAN", "Burosys"
   ]
 };
 
@@ -58,7 +60,7 @@ const clientTypeToProjectIds = {
   "Skincare / Haircare / Beauty Services": ["kaya", "skifit"],
   "Stationery & Art Supplies": ["scooboo"],
   "Not for profit/ NGO": ["raise", "taara"],
-  "Everyone": ["rComfort", "plus-91","Burosys", "init", "do-it-up", "fine-arts", "foodo", "scooboo", "skifit", "kaya"]
+  "Everyone": ["rComfort", "plus-91","Burosys","SAAN", "init", "do-it-up", "fine-arts", "foodo", "scooboo", "skifit", "kaya"]
 };
 
 
@@ -68,7 +70,7 @@ const clientTypeToProjectIds = {
 const brandToImages = {
   "Plus 91": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/%2B91/1.png"],
   "CHORUS": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/chorus/1.jpg"],
-  "R Comfort": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/rcomfort/3.png"],
+  "rComfort": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/rcomfort/3.png"],
   "INIT": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/1.jpg"],
   "Foodo": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/foodo/foodo.png"],
   "SU:VE:OR": [],
@@ -81,7 +83,8 @@ const brandToImages = {
   "Skift": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/skifit/skifit1.png"],
   "Kaya": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/kaya/Kaya1.png"],
   "Scooboo": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Scoobo/sb1.png"],
-  "Burosys": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Slide+16_9+-+1.jpg"]
+  "Burosys": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Slide+16_9+-+1.jpg"],
+  "SAAN": ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/saan/242.jpg"]
 }
 
 

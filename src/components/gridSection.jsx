@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 import Link from "next/link"
-import Image from "next/image"
+import AnimatedImage from "./AnimatedImage"
 
 
 
@@ -43,11 +43,10 @@ export function PortfolioSection2({projects}) {
                   /* use inset-0 so the image edges align flush with the container and the text below */
                   className={`absolute inset-0`}
                 >
-                  <img
-                    src={project.image || "/placeholder.svg"}
+                  <AnimatedImage
+                    desktopSrc={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
+                    className="w-full h-full"
                   />
                 </motion.div>
               </div>

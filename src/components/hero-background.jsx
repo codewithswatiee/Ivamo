@@ -6,8 +6,7 @@ import { useEffect, useState } from "react";
 const brandData = {
   "CHORUS": {
     industry: "Fashion and Apparel",
-    services: ["Website", "UI/UX", "Digital Experience", "Platform Design"]
-    ,
+    services: ["Website", "UI/UX", "Digital Experience", "Platform Design"],
     description: "Evolved Moonray into Chorus through a complete rebrand, expressive digital identity, and immersive art-led web experience."
   },
   "R Comfort": {
@@ -59,8 +58,7 @@ const brandData = {
   },
   "RAF Clothing": {
     industry: "Fashion and Apparel",
-    services: ["Website", "UI/UX", "E-Commerce", "Brand and Visual Identity"]
-    ,
+    services: ["Website", "UI/UX", "E-Commerce", "Brand and Visual Identity"],
     description: "Crafted a global digital runway for RAF Clothing with a Shopify-powered store, refined UI/UX, and cohesive brand identity."
   },
   "Fine Arts": {
@@ -106,9 +104,18 @@ const brandData = {
   },
   "Raise": {
     industry: "Not for profit/ NGO",
-    services: ["Website", "UI/UX"]
-    ,
+    services: ["Website", "UI/UX"] ,
     description: "Designed the UI/UX for the Raise Project, an initiative by Taara, to create an intuitive and impactful digital platform for community-driven connectivity."
+  },
+  "Burosys": {
+    industry: "Furniture",
+    services: ["Website", "UI/UX"],
+    description: "Designed and developed a complete digital platform for Burosys, transforming their online presence through an immersive, responsive website with interactive product experiences and custom integrations."
+  },
+   "SAAN": {
+    industry: "Manufacturing",
+    services: ["Packaging"],
+    description: "Revamped product brochures for Saan Engineers to align with their updated brand identity through refined typography, logo integration, and improved layout systems."
   },
   "Taara": {
     industry: "Not for profit/ NGO",
@@ -118,30 +125,30 @@ const brandData = {
 
 // Map combinations to hero images - only the 5 featured brands
 const heroImagesByBrand = {
-  "Raise": {
-    desktop: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/raise/3.jpg",
-    mobile: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/raise/3.jpg",
-  },
   "CHORUS": {
     desktop: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/chorus/chorus.png",
     mobile: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/chorus/chorus-mobile.png",
   },
-  "INIT": {
-    desktop: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/init_banner.png",
-    mobile: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/init.png",
+  "Burosys": {
+    desktop: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Slide+16_9+-+1.jpg",
+    mobile: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Slide+16_9+-+1.jpg",
+  },
+  "SAAN": {
+    desktop: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/saan/242.jpg",
+    mobile: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/saan/242.jpg",
+  },
+  "Raise": {
+    desktop: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/raise/3.jpg",
+    mobile: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/raise/3.jpg",
   },
   "Do It Up": {
     desktop: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/doitup/2.jpg",
     mobile: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/doitup/2.jpg",
-  },
-  "RAF Clothing": {
-    desktop: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/raf/raf1.png",
-    mobile: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/raf/raf1.png",
   }
 }
 
 // Only the 5 featured brands
-const availableBrands = ["Raise", "CHORUS", "INIT", "Do It Up", "RAF Clothing"]
+const availableBrands = ["CHORUS", "Burosys", "SAAN", "Do It Up", "Raise",]
 
 // Default fallback images
 const defaultHeroImages = [

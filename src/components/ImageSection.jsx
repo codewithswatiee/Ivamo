@@ -1,18 +1,15 @@
-import Image from "next/image"
+import AnimatedImage from "./AnimatedImage"
 
 export const ImageSection = ({imageSrcDesktop, imageSrcMobile, imageAlt}) => {
   return (
-    <picture className="">
-      <source media="(min-width: 768px)" srcSet={imageSrcDesktop} />
-      <Image
-        width={100}
-        height={100}
-        src={imageSrcMobile}
+    <div className="w-full h-auto">
+      <AnimatedImage 
+        desktopSrc={imageSrcDesktop} 
+        mobileSrc={imageSrcMobile || imageSrcDesktop}
         alt={imageAlt}
-        className="w-full object-cover h-auto md:h-auto"
-        loading="lazy"
+        imgClassName="w-full h-auto md:h-auto" 
       />
-    </picture>
+    </div>
   )
 }
 

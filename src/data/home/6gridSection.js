@@ -1,32 +1,21 @@
 export const gridData1 = [
   {
-    id: "rComfort",
-    title: "rComfort",
-    description:"Redefined R Comfort’s identity with a full rebrand and digital experience that elevates handcrafted furniture into a modern symbol of luxury living.",
-    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/rcomfort/1.png",
-    categories: ["Furniture", "Lifestyle", "Luxury"],
-    link: "/projects/rcomfort",
-    backgroundColor: "bg-slate-800",
+    id: "hobo",
+    title: "Hobo Designs",
+    description: "HOBO Designs is a UK-based creative studio founded by multidisciplinary artist Arjun, specializing in branding, interior design, wall murals, and digital art.",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/hobo/hobo.jpg",
+    categories: ["Website", "UI/UX", "Digital Experience"],
+    link: "/projects/hobo",
+    backgroundColor: "bg-white",
   },
   {
-    id: "plus-91",
-    title: "+91",
-    description:
-      "Created a bold, youth-driven perfume brand with expressive packaging, immersive storytelling, and a digital identity that celebrates Indian individuality.",
-    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/%2B91/plus__91.jpg",
-    categories: ["Beauty", "Lifestyle"],
-    link: "/projects/plus-91",
-    backgroundColor: "bg-gray-200",
-  },
-  {
-    id: "init",
-    title: "INIT",
-    description:
-      "Revitalized INIT with a website redesign and expressive packaging that transforms fragrance into intimate, sensory storytelling.",
-    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/3.jpg",
-    categories: ["Beauty", "Lifestyle", "Experiential Design"],
-    link: "/projects/init",
-    backgroundColor: "bg-black",
+    id: "saan",
+    title: "SAAN Engineers",
+    description: "Revamped product brochures for Saan Engineers to align with their updated brand identity through refined typography, logo integration, and improved layout systems.",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/saan/241.jpg",
+    categories: ["Engineering", "Manufacturing", "Industrial"],
+    link: "/projects/saan",
+    backgroundColor: "bg-white",
   },
   {
     id: "do-it-up",
@@ -39,14 +28,14 @@ export const gridData1 = [
     backgroundColor: "bg-gray-100",
   },
   {
-    id: "fine-arts",
-    title: "Fine Arts",
+    id: "plus-91",
+    title: "+91",
     description:
-      "Redesigned the digital gallery for Fine Arts with a refined website, intuitive UI/UX, and immersive visual storytelling.",
-    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/fine-arts/fine-arts.png",
-    categories: ["Art", "Lifestyle", "Digital Experience"],
-    link: "/projects/finearts",
-    backgroundColor: "bg-emerald-900",
+      "Created a bold, youth-driven perfume brand with expressive packaging, immersive storytelling, and a digital identity that celebrates Indian individuality.",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/%2B91/plus__91.jpg",
+    categories: ["Beauty", "Lifestyle"],
+    link: "/projects/plus-91",
+    backgroundColor: "bg-gray-200",
   },
   {
     id: "foodo",
@@ -58,9 +47,39 @@ export const gridData1 = [
     link: "/projects/foodo",
     backgroundColor: "bg-white",
   },
+  {
+    id: "suveor",
+    title: "SU:VE:OR",
+    description:
+      "Developed a complete brand ecosystem for SU:VE:OR, from visual identity and packaging to website and product strategy for sustainable vegan leather bags.",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/suveor/Slide+16_9+-+148.png",
+    categories: ["Brand Creation", "Creative Direction", "Product Strategy", "Visual Identity" ],
+    link: "/projects/suveor",
+    backgroundColor: "bg-white",
+  },
+
 ]
 
 export const gridData2 = [
+  {
+    id: "init",
+    title: "INIT",
+    description:
+      "Revitalized INIT with a website redesign and expressive packaging that transforms fragrance into intimate, sensory storytelling.",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/init/3.jpg",
+    categories: ["Beauty", "Lifestyle", "Experiential Design"],
+    link: "/projects/init",
+    backgroundColor: "bg-black",
+  },
+  {
+    id: "homestolife",
+    title: "HomesToLife",
+    description: "Elevated a luxury furniture brand’s digital presence through refined UI/UX design and visual storytelling that mirrors its sophistication and global ambition.",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/homestolife/1.png",
+    link: "/projects/homestolife",
+    categories: ["Lifestyle", "Furniture"],
+    backgroundColor: "bg-black",
+  },
   {
     id: "scooboo",
     title: "Scoo boo",
@@ -69,26 +88,6 @@ export const gridData2 = [
     categories: ["UI/UX", "Website"],
     link: "/projects/scooboo",
     backgroundColor: "bg-slate-800",
-  },
-  {
-    id: "burosys",
-    title: "Burosys",
-    description:
-      "Designed and developed a complete digital platform for Burosys, transforming their online presence through an immersive, responsive website with interactive product experiences and custom integrations.",
-    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/Slide+16_9+-+1.jpg",
-    categories: ["Interior Design", "Architecture" ,"Furniture"],
-    link: "/projects/burosys",
-    backgroundColor: "bg-gray-200",
-  },
-  {
-    id: "skifit",
-    title: "Skifit",
-    description:
-      "Empowering athletes with skincare solutions through a seamless digital experience.",
-    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/skifit/skifit12.png",
-    categories: ["Brand Identity", "Website", "UIUX and Production"],
-    link: "/projects/skifit",
-    backgroundColor: "bg-black",
   },
   {
     id: "kaya",
@@ -101,23 +100,23 @@ export const gridData2 = [
     backgroundColor: "bg-white",
   },
   {
-    id: "hobo",
-    title: "Hobo Designs",
+    id: "fine-arts",
+    title: "Fine Arts",
     description:
-      "HOBO Designs is a UK-based creative studio founded by multidisciplinary artist Arjun, specializing in branding, interior design, wall murals, and digital art.",
-    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/hobo/hobo.jpg",
-    categories: ["Website", "UI/UX", "Digital Experience"],
-    link: "/projects/hobo",
-    backgroundColor: "bg-white",
+      "Redesigned the digital gallery for Fine Arts with a refined website, intuitive UI/UX, and immersive visual storytelling.",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/fine-arts/fine-arts.png",
+    categories: ["Art", "Lifestyle", "Digital Experience"],
+    link: "/projects/finearts",
+    backgroundColor: "bg-emerald-900",
   },
   {
-    id: "suveor",
-    title: "SU:VE:OR",
+    id: "skifit",
+    title: "Skifit",
     description:
-      "Developed a complete brand ecosystem for SU:VE:OR, from visual identity and packaging to website and product strategy for sustainable vegan leather bags.",
-    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/suveor/Slide+16_9+-+148.png",
-    categories: ["Brand Creation", "Creative Direction", "Product Strategy", "Visual Identity" ],
-    link: "/projects/suveor",
-    backgroundColor: "bg-white",
+      "Empowering athletes with skincare solutions through a seamless digital experience.",
+    image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/skifit/skifit12.png",
+    categories: ["Brand Identity", "Website", "UIUX and Production"],
+    link: "/projects/skifit",
+    backgroundColor: "bg-black",
   },
 ]

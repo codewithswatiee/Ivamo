@@ -25,6 +25,40 @@ export const workData = {
         tags: ["Fashion", "E-commerce", 'Lifestyle'],
         href: "/projects/raf-clothing",
     },
+    'saan': {
+        title: "SAAN Engineers",
+        description: "Revamped product brochures for Saan Engineers to align with their updated brand identity through refined typography, logo integration, and improved layout systems.",
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/saan/245+(1).jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/saan/242.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/saan/241.jpg"],
+        about: `IVAMO Studios collaborated with SAAN Engineers, a manufacturer of process machinery for the pharmaceutical, chemical, and allied industries, to update and refine their product communication through a series of redesigned brochures.
+
+The objective of the project was to align all existing brochures with the company’s updated brand guidelines. This included integrating the newly updated logo across their machine visuals and replacing existing typography with the new brand typeface to ensure visual consistency across all marketing material.
+
+In total, eight brochures were part of the engagement. Six of these required a structured revamp where the layout, branding elements, and typography were updated while preserving the existing content and product information. The goal was to create a more cohesive and refined visual identity across the company’s documentation.
+
+For two of the brochures, IVAMO Studios proposed a completely new structure and design system. These were redesigned from the ground up to better represent the premium quality and engineering precision associated with the SAAN brand. The new layouts improved readability, product storytelling, and visual hierarchy while maintaining a professional industrial aesthetic.
+
+Through this process, the brochure suite was transformed into a unified set of communication assets that reflect the company’s evolving brand identity while maintaining clarity for technical and professional audiences.`,
+        tags: ["Engineering", "Manufacturing", "Industrial"],
+        href: "/projects/saan",
+    },
+    'norvik': {
+        title: "Norvik",
+        description: "Built the foundation for a new distribution brand through strategy, naming, website design, and content production to support both direct consumer sales and bulk business distribution.",
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/norvik/Slide+16_9+-+132.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/norvik/Slide+16_9+-+133.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/norvik/Slide+16_9+-+134.jpg"],
+        about: `IVAMO Studios partnered with Sudeep to create Norvik International, a new distribution focused brand designed to introduce global beauty products to the Indian market. The vision for Norvik extends beyond a single product line, with the long term ambition of building a platform that can evolve into a multi brand ecosystem similar to a curated beauty marketplace.
+
+The engagement began with defining the brand strategy. Working closely with the founder, the team explored positioning, brand direction, and potential names before establishing Norvik International as the identity that would carry the brand forward.
+
+The first phase of the business focuses on distributing ENZO Hair Products, beginning with a curated set of seven products. IVAMO Studios studied the existing product content and brand material to build a digital presence that clearly communicates the offering while preparing the platform for future expansion.
+
+As part of the project, the studio designed the Norvik website to support both direct consumer sales and bulk distribution for businesses. The platform was structured to accommodate a hybrid model that serves individual buyers while also enabling larger scale B2B partnerships with salons, retailers, and distributors.
+
+To support the launch, IVAMO Studios also conducted a dedicated product shoot to create visual assets for the website and marketing channels. The shoot was planned to generate enough content to populate the website and support digital marketing and social media communication for the initial months following launch.
+
+Norvik International is an ongoing collaboration, and the project continues to evolve as the brand expands its product catalogue and strengthens its presence across both D2C and B2B channels. Through strategy, design, and content creation, IVAMO Studios is helping build the foundation for a scalable beauty distribution platform.`,
+        tags: ["Beauty" ,"Ecommerce","Brand Strategy"],
+        href: "/projects/norvik",
+    },
     'raise': {
         title: "Raise",
         description: "Designed the UI/UX for the Raise Project, an initiative by Taara, to create an intuitive and impactful digital platform for community-driven connectivity.",
@@ -151,7 +185,7 @@ export const workData = {
     'hobo':{
         title: "HOBO Designs",
         description: "HOBO Designs is a UK-based creative studio founded by multidisciplinary artist Arjun, specializing in branding, interior design, wall murals, and digital art.",
-        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/hobo/hobo.jpg"],
+        images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/hobo/hobo.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/hobo/Slide+16_9+-+135.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/hobo/Slide+16_9+-+136.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/hobo/Slide+16_9+-+137.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/hobo/Slide+16_9+-+138.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/hobo/Slide+16_9+-+139.jpg"],
         about:`HOBO Designs is a UK-based creative studio founded by multidisciplinary artist Arjun, specializing in branding, interior design, wall murals, and digital art. What began as Arjun’s personal artistic journey has evolved into a full-scale agency known for bold expression and immersive visual storytelling.
 
 HOBO approached IVAMO Studios to build an agency-level website that could match the studio’s creative energy and showcase its diverse portfolio. The vision centered on creating a digital experience that feels alive — driven by animation, texture, and movement. Custom cursor systems, expressive hover effects, and scroll-based transitions were crafted to capture the fluidity and personality of HOBO’s art.

@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import AnimatedImage from "./AnimatedImage"
 
 
 export default function PortfolioSection({ left, right, headerLabel = "See latest projects", showHeader = false }) {
@@ -38,17 +39,14 @@ export default function PortfolioSection({ left, right, headerLabel = "See lates
               aria-label={left.title}
               target={isExternal(left.href) ? "_blank" : undefined}
               rel={isExternal(left.href) ? "noopener noreferrer" : undefined}
+              className="block"
             >
-              {/* Use <picture> to switch images between desktop and mobile */}
-              <picture>
-                <source media="(min-width: 768px)" srcSet={left.imageSrcDesktop || left.imageSrc || "/placeholder.svg"} />
-                <img
-                  src={left.imageSrcMobile || left.imageSrc || "/placeholder.svg"}
-                  alt={left.imageAlt || left.alt}
-                  className="w-full object-cover h-auto md:h-auto"
-                  loading="lazy"
-                />
-              </picture>
+              <AnimatedImage
+                desktopSrc={left.imageSrcDesktop || left.imageSrc || "/placeholder.svg"}
+                mobileSrc={left.imageSrcMobile || left.imageSrc || "/placeholder.svg"}
+                alt={left.imageAlt || left.alt}
+                imgClassName="w-full h-auto md:h-auto"
+              />
             </Link>
           </div>
 
@@ -89,17 +87,15 @@ export default function PortfolioSection({ left, right, headerLabel = "See lates
               aria-label={right.title}
               target={isExternal(right.href) ? "_blank" : undefined}
               rel={isExternal(right.href) ? "noopener noreferrer" : undefined}
+              className="block"
             >
-              <picture>
-                <source media="(min-width: 768px)" srcSet={right.imageSrcDesktop || right.imageSrc || "/placeholder.svg"} />
-                {/* On mobile make the right image taller to match design */}
-                <img
-                  src={right.imageSrcMobile || right.imageSrc || "/placeholder.svg"}
-                  alt={right.imageAlt || right.alt}
-                  className="w-full object-cover h-[620px] md:h-[620px]"
-                  style={{ minHeight: '620px' }}
-                />
-              </picture>
+              <AnimatedImage
+                desktopSrc={right.imageSrcDesktop || right.imageSrc || "/placeholder.svg"}
+                mobileSrc={right.imageSrcMobile || right.imageSrc || "/placeholder.svg"}
+                alt={right.imageAlt || right.alt}
+                imgClassName="w-full h-[620px] md:h-[620px]"
+                style={{ minHeight: '620px' }}
+              />
             </Link>
           </div>
 
