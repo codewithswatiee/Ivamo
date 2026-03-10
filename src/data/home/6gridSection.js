@@ -11,7 +11,7 @@ export const gridData1 = [
   {
     id: "saan",
     title: "SAAN Engineers",
-    description: "Revamped product brochures for Saan Engineers to align with their updated brand identity through refined typography, logo integration, and improved layout systems.",
+    description: "Revitalized product communication for SAAN Engineers by aligning their brochures with the updated brand identity, redesigning digital and print collateral across the product range",
     image: "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/saan/241.jpg",
     categories: ["Engineering", "Manufacturing", "Industrial"],
     link: "/projects/saan",

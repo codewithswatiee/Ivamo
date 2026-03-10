@@ -27,7 +27,7 @@ export const workData = {
     },
     'saan': {
         title: "SAAN Engineers",
-        description: "Revamped product brochures for Saan Engineers to align with their updated brand identity through refined typography, logo integration, and improved layout systems.",
+        description: "Revitalized product communication for SAAN Engineers by aligning their brochures with the updated brand identity, redesigning digital and print collateral across the product range",
         images: ["https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/saan/245+(1).jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/saan/242.jpg", "https://ivamo-studios.s3.eu-north-1.amazonaws.com/public/saan/241.jpg"],
         about: `IVAMO Studios collaborated with SAAN Engineers, a manufacturer of process machinery for the pharmaceutical, chemical, and allied industries, to update and refine their product communication through a series of redesigned brochures.
 
