@@ -89,18 +89,19 @@ export default function Footer() {
               </ul>
             </div>
             <div className='flex flex-col gap-4'>
-              <h4 className="text-gray-300">UK Address</h4>
+              <h4 className="text-gray-300">IVAMO Address</h4>
               <div>
-                <p className='space-y-2 text-gray-200'>5 Paladine way,</p>
-                <p className='space-y-2 text-gray-200'>Coventry CV3 1NG</p>
+                <p className='space-y-2 text-gray-200'>Office 208, VTimes Square, Sec 15 , CBD </p>
+                <p className='space-y-2 text-gray-200'>Belapur, Navi Mumbai</p>
+                <p className='space-y-2 text-gray-200'>India</p>
+              </div>
+              <div>
+                <p className='space-y-2 text-gray-200'>5 Paladine way</p>
+                <p className='space-y-2 text-gray-200'>Coventry </p>
+                <p className='space-y-2 text-gray-200'>CV3 1NG</p>
+                <p className='space-y-2 text-gray-200'>United Kingdom</p>
               </div>
 
-          </div>
-          <div className='flex flex-col gap-4'>
-              <h4 className="text-gray-300">India Address</h4>
-              <div>
-                <p className='space-y-2 text-gray-200'>Mumbai, India</p>
-              </div>
           </div>
           </div>
 
