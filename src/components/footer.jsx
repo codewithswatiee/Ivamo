@@ -77,7 +77,7 @@ export default function Footer() {
 
         {/* main columns */}
   <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-44">
-          <div className='flex flex-col gap-8 md:gap-12'>
+          <div className='flex flex-col gap-6 md:gap-8'>
             <div>
               <h4 className="text-gray-300 mb-4">Links</h4>
               <ul className="space-y-2 text-gray-200">
@@ -89,13 +89,18 @@ export default function Footer() {
               </ul>
             </div>
             <div className='flex flex-col gap-4'>
-            <h4 className="text-gray-300">Address</h4>
-            <div>
-              <p className='space-y-2 text-gray-200'>5 Paladine way,</p>
-              <p className='space-y-2 text-gray-200'>Coventry CV3 1NG</p>
-            </div>
+              <h4 className="text-gray-300">UK Address</h4>
+              <div>
+                <p className='space-y-2 text-gray-200'>5 Paladine way,</p>
+                <p className='space-y-2 text-gray-200'>Coventry CV3 1NG</p>
+              </div>
 
-            <p className='space-y-2 text-gray-200'>Mumbai, India</p>
+          </div>
+          <div className='flex flex-col gap-4'>
+              <h4 className="text-gray-300">India Address</h4>
+              <div>
+                <p className='space-y-2 text-gray-200'>Mumbai, India</p>
+              </div>
           </div>
           </div>
 
