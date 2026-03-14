@@ -77,15 +77,26 @@ export default function Footer() {
 
         {/* main columns */}
   <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-44">
-          <div>
-            <h4 className="text-gray-300 mb-4">Links</h4>
-            <ul className="space-y-2 text-gray-200">
-              {/* /<li><a href="#">Our Story</a></li> */}
-              <li><a href="/work">Work</a></li>
-              {/* <li><a href="#">Careers</a></li>
-              <li><a href="#">Get in touch</a></li>
-              <li><a href="#">Blogs</a></li> */}
-            </ul>
+          <div className='flex flex-col gap-8 md:gap-12'>
+            <div>
+              <h4 className="text-gray-300 mb-4">Links</h4>
+              <ul className="space-y-2 text-gray-200">
+                {/* /<li><a href="#">Our Story</a></li> */}
+                <li><a href="/work">Work</a></li>
+                {/* <li><a href="#">Careers</a></li>
+                <li><a href="#">Get in touch</a></li>
+                <li><a href="#">Blogs</a></li> */}
+              </ul>
+            </div>
+            <div className='flex flex-col gap-4'>
+            <h4 className="text-gray-300">Address</h4>
+            <div>
+              <p className='space-y-2 text-gray-200'>5 Paladine way,</p>
+              <p className='space-y-2 text-gray-200'>Coventry CV3 1NG</p>
+            </div>
+
+            <p className='space-y-2 text-gray-200'>Mumbai, India</p>
+          </div>
           </div>
 
           <div>
@@ -156,11 +167,6 @@ export default function Footer() {
 
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
           <div className="mb-4 md:mb-0">© 2025 IVAMO Studios.</div>
-          {/* <div className="flex gap-6">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Legal</a>
-          </div> */}
         </div>
       </div>
     </footer>
